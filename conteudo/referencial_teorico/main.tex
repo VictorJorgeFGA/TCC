@@ -1,0 +1,34 @@
+\chapter{Referencial Teórico}
+
+Este capítulo possui como propósito expor e definir tópicos pertinentes sobre o assunto abordado nesse trabalho, a fim de trazer maior contexto e entendimento sobre o unverso do assunto. Os conceitos que aqui serão abordados são: Conceitos Gerais (Aplicações \textit{Standalone} e Aplicações \textit{Web}), Componentes Gerais de uma aplicação \textit{Web} (\textit{Front-end}, \textit{Back-end} e Banco de Dados), padrão de projeto \textit{Model View Controller} (MVC), \textit{Ruby on Rails}, Escalabilidade e performance, e Cache com \textit{Ruby on Rails}.
+
+Com a clarificação desses assuntos, será traga maior fundação teórica para que se siga com a pesquisa e com o caso de estudo, possibilitando assim maior embasamento durante as discussões referentes à problemática a ser estudada.
+
+\section{Conceitos Gerais}
+
+A seção Conceitos Gerais tem como objetivo introduzir conceitos fundamentais no escopo deste trabalho, a saber Aplicações \textit{Standalone} e Aplicações \textit{Web}. A apresentação destes dois tópicos permite com que sejam destacados aspectos pertinentes ao funcionamento de um \textit{software}, bem como a aplicação Brasil Participativo, através da comparação direta desses dois principais modelos de \textit{software} que operam no dia a dia, desde o computador pessoal de um estudante até os grandes \textit{mainframes} do mercado.
+
+\subsection{Aplicações \textit{Desktop}}
+
+Aplicações \textit{Desktop}, também chamadas de aplicações \textit{standalone} são softwares que atingem seu proposito de operacionalidade sem a necessidade de estarem conectados à internet, isto é, estas aplicações rodam em um computador ou dispositivo local que não necessariamente estão conectados à \textit{web}. Uma aplicação \textit{desktop} é autocontida, portanto, todo o código e os recursos utilizados por ela se encontram presentes no dispositivo que a executa.
+
+Geralmente, aplicações \textit{desktop} são específicas à plataforma no qual foi projetada para operar, seja Windows, MacOS ou Linux. Dessa maneira, outro conceito pertinente que surge em meio às aplicações \textit{desktop} é a portabilidade. Portabilidade se refere à possibilidade de uma aplicação ser executada em diferentes ambientes com a mínima quantidade de ajustes que for necessária. Um \textit{software} dito portável pode executar, por exemplo, em Windows e MacOS com pouca ou nenhuma adaptação em seu código fonte, enquanto que, um software dito pouco portável, pode precisar ser reescrito do absoluto zero ou ter boa parte do seu código fonte adaptado para rodar em uma plataforma diferente da qual foi primariamente projetado \cite{tanenbaum1978guidelines}.
+
+\subsection{Aplicações \textit{Web}}
+
+Aplicações \textit{Web}, diferentemente de aplicações \textit{desktop}, são executadas no dispositivo do usuário através de outra aplicação, o \textit{Web Browser}. Aplicações \textit{Web} funcionam através do uso do modelo cliente/servidor, onde um dispositivo remoto, que possui os recursos da aplicação, os fornece para o dispositivo cliente, que serão exibidos para o usuário pelo \textit{browser}. Para que uma aplicação \textit{web} execute, é necessário que o dispositivo cliente esteja conectado à internet, ou, no mínimo à uma rede que tenha acesso ao dispositivo servidor. Geralmente, a conexão estabelecida no modelo cliente/servidor é através do protocolo \textit{Hypertext Transfer Protocol} (HTTP) ou sua variante \textit{Hypertext Transfer Protocol Secure} (HTTPS) \cite{conallen1999modeling}.
+
+\subsubsection{Modelo Cliente/Servidor}
+
+No modelo cliente/servidor, diferentemente de aplicações \textit{desktop} convencionais, o processamento de dados é feito no lado servidor. Portanto, na maioria das vezes, o lado cliente fica isento do processamento pesado de dados, sendo responsável apenas por exibir o resultado final ao usuário. Em geral, o fluxo seguido por uma aplicação cliente/servidor é iniciado pelo dispositivo cliente (usuário final), que solicita ao dispositivo servidor algum recurso; o servidor processa a requisição do cliente realizando o processamento necessário, e em seguida, devolve o recurso em um formato que o lado cliente consiga processar e exibir ao usuário final. Essa comunicação pode ocorrer através de diversos protocolos: \textit{File Transfer Protocol} (FTP) para transferência de arquivos, \textit{Simple Mail Transfer Protocol} (SMTP) para envio e recebimento de e-mails, e o já mencionado HTTP.
+
+Cada protocolo dispõe de particularidades que derivam dos seus propósitos, fazendo com que cada um deles seja aplicável em um contexto específico. Entretanto, uma aplicação pode se beneficiar do uso de vários protocolos diferentes para cada uma de suas funcionalidades, isso a depender do propósito de cada um de seus módulos. Uma aplicação \textit{web} moderna, geralmente dispõe de funcionalidades para gerenciar recursos e exibi-los aos usuários utilizando o protocolo HTTP, em contrapartida, a própria entidade usuário pode ser considerada um recurso, onde, cada usuário tem um e-mail vinculado, permitindo que a aplicação envie informações utilizando o protocolo SMTP em algum outro momento oportuno.
+
+A adoção do modelo cliente/servidor pode proporcionar à aplicação \textit{web} diversas características importantes, sendo a principal delas a centralização dos dados no lado servidor. Uma vez que os dados estejam centralizados no lado servidor, máquinas com mais recursos computacionais podem ser alocadas para que o processamento ocorra mais rapidamente e de forma desacoplada do ambiente do lado cliente, permitindo maior portabilidade da aplicação \cite{oluwatosin2014client}.
+
+\input{conteudo/referencial_teorico/componentesgeraisapplicacaoweb}
+\input{conteudo/referencial_teorico/mvc}
+\input{conteudo/referencial_teorico/ruby_on_rails}
+\input{conteudo/referencial_teorico/performance}
+\input{conteudo/referencial_teorico/cache_com_ruby_on_rails}
+\input{conteudo/referencial_teorico/consideracoes_finais}

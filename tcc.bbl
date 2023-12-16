@@ -1,0 +1,177 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Action Controller Overview 2023]{actioncontroller-overview}
+\abntrefinfo{Action\ldots}{ACTION\ldots}{2023a}
+{ACTION Controller Overview. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/action\_controller\_overview.html}.}
+
+\bibitem[Action View Overview 2023]{actionview-overview}
+\abntrefinfo{Action\ldots}{ACTION\ldots}{2023b}
+{ACTION View Overview. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/action\_view\_overview.html}.}
+
+\bibitem[Active Model Basics 2023]{activemodel-basics}
+\abntrefinfo{Active\ldots}{ACTIVE\ldots}{2023a}
+{ACTIVE Model Basics. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/active\_model\_basics.html}.}
+
+\bibitem[Active Record Basics 2023]{activerecord-basics}
+\abntrefinfo{Active\ldots}{ACTIVE\ldots}{2023b}
+{ACTIVE Record Basics. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/active\_record\_basics.html}.}
+
+\bibitem[Adam, Besari e Bachtiar 2019]{adam2019backend}
+\abntrefinfo{Adam, Besari e Bachtiar}{ADAM; BESARI; BACHTIAR}{2019}
+{ADAM, B.~M.; BESARI, A. R.~A.; BACHTIAR, M.~M. Backend server system design
+  based on rest api for cashless payment system on retail community. In:  IEEE.
+  \emph{2019 International Electronics Symposium (IES)}. [S.l.], 2019. p.
+  208--213.}
+
+\bibitem[Associa{\c c}\~ao Brasileira de Normas T\'ecnicas 2011]{NBR14724:2011}
+\abntrefinfo{ABNT}{ABNT}{2011}
+{ASSOCIA{\c C}\~AO BRASILEIRA DE NORMAS T\'ECNICAS. {NBR} 14724: Informa{\c
+  c}\~ao e documenta{\c c}\~ao --- trabalhos acad\^emicos --- apresenta{\c
+  c}\~ao.
+Rio de Janeiro, p.~15, mar. 2011.}
+
+\bibitem[Carlson 2013]{redis-in-action}
+\abntrefinfo{Carlson}{CARLSON}{2013}
+{CARLSON, J.~L. \emph{Redis in Action}. Shelter Island, NY: Manning
+  Publications Co., 2013.
+ISBN 9781935182054.}
+
+\bibitem[Conallen 1999]{conallen1999modeling}
+\abntrefinfo{Conallen}{CONALLEN}{1999}
+{CONALLEN, J. Modeling web application architectures with uml.
+\emph{Communications of the ACM}, ACM New York, NY, USA, v.~42, n.~10, p.
+  63--70, 1999.}
+
+\bibitem[Decidim 2023]{decidim-about}
+\abntrefinfo{Decidim}{DECIDIM}{2023a}
+{DECIDIM. \emph{Decidim Documentation}. 2023.
+Acesso em: 10 de dezembro de 2023.
+Dispon{\'\i}vel em: \url{https://docs.decidim.org/en/v0.27/index.html}.}
+
+\bibitem[Decidim 2023]{decidim-descriptionpage}
+\abntrefinfo{Decidim}{DECIDIM}{2023b}
+{DECIDIM. \emph{General description and introduction to how Decidim works}.
+  2023.
+Acesso em: 10 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://docs.decidim.org/en/v0.27/features/general-description}.}
+
+\bibitem[Fry e Sibley 1976]{fry1976evolution}
+\abntrefinfo{Fry e Sibley}{FRY; SIBLEY}{1976}
+{FRY, J.~P.; SIBLEY, E.~H. Evolution of data-base management systems.
+\emph{ACM Computing Surveys (CSUR)}, ACM New York, NY, USA, v.~8, n.~1, p.
+  7--42, 1976.}
+
+\bibitem[Gong et al. 2020]{gong2020architecture}
+\abntrefinfo{Gong et al.}{GONG et al.}{2020}
+{GONG, Y. et al. The architecture of micro-services and the separation of
+  frond-end and back-end applied in a campus information system. In:  IEEE.
+  \emph{2020 IEEE International Conference on Advances in Electrical
+  Engineering and Computer Applications (AEECA)}. [S.l.], 2020. p. 321--324.}
+
+\bibitem[Gough, Bryant e Auburn 2021]{gough2021mastering}
+\abntrefinfo{Gough, Bryant e Auburn}{GOUGH; BRYANT; AUBURN}{2021}
+{GOUGH, J.; BRYANT, D.; AUBURN, M. \emph{Mastering API Architecture}. [S.l.]: "
+  O'Reilly Media, Inc.", 2021.}
+
+\bibitem[Group 2023]{postgresql_about}
+\abntrefinfo{Group}{GROUP}{2023}
+{GROUP, P. G.~D. \emph{About PostgreSQL}. 2023.
+Accessed on December 4, 2023.
+Dispon{\'\i}vel em: \url{https://www.postgresql.org/about/}.}
+
+\bibitem[Jatana et al. 2012]{jatana2012survey}
+\abntrefinfo{Jatana et al.}{JATANA et al.}{2012}
+{JATANA, N. et al. A survey and comparison of relational and non-relational
+  database.
+\emph{International Journal of Engineering Research \& Technology}, v.~1, n.~6,
+  p.~1--5, 2012.}
+
+\bibitem[Jugo, Kermek e Me{\v{s}}trovi{\'c} 2014]{jugo2014analysis}
+\abntrefinfo{Jugo, Kermek e Me{\v{s}}trovi{\'c}}{JUGO; KERMEK;
+  ME{\v{S}}TROVI{\'C}}{2014}
+{JUGO, I.; KERMEK, D.; ME{\v{S}}TROVI{\'C}, A. Analysis and evaluation of web
+  application performance enhancement techniques. In:  SPRINGER. \emph{Web
+  Engineering: 14th International Conference, ICWE 2014, Toulouse, France, July
+  1-4, 2014. Proceedings 14}. [S.l.], 2014. p. 40--56.}
+
+\bibitem[Model-View-Controller Pattern 2009]{Bucanek2009}
+\abntrefinfo{Model-View-Controller\ldots}{MODEL-VIEW-CONTROLLER\ldots}{2009}
+{MODEL-VIEW-CONTROLLER Pattern.
+In:  LEARN Objective-C for Java Developers. Berkeley, CA: Apress, 2009. p.
+  353--402.
+ISBN 978-1-4302-2370-2.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/978-1-4302-2370-2\_20}.}
+
+\bibitem[Oluwatosin 2014]{oluwatosin2014client}
+\abntrefinfo{Oluwatosin}{OLUWATOSIN}{2014}
+{OLUWATOSIN, H.~S. Client-server model.
+\emph{IOSR Journal of Computer Engineering}, IOSR Journals, v.~16, n.~1, p.
+  67--71, 2014.}
+
+\bibitem[Participativo 2023]{brasilparticipativo-sobre}
+\abntrefinfo{Participativo}{PARTICIPATIVO}{2023}
+{PARTICIPATIVO, B. \emph{Sobre o Brasil Participativo}. 2023.
+Acesso em: 10 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://brasilparticipativo.presidencia.gov.br/processes/brasilparticipativo/f/33}.}
+
+\bibitem[Rails 2023]{actionpack-action-caching}
+\abntrefinfo{Rails}{RAILS}{2023a}
+{RAILS, R. on. \emph{Actionpack Action Caching}. 2023.
+Acesso em: 12 de dezembro de 2023.
+Dispon{\'\i}vel em: \url{https://github.com/rails/actionpack-action\_caching}.}
+
+\bibitem[Rails 2023]{actionpack-page-caching}
+\abntrefinfo{Rails}{RAILS}{2023b}
+{RAILS, R. on. \emph{Actionpack Page Caching}. 2023.
+Acesso em: 12 de dezembro de 2023.
+Dispon{\'\i}vel em: \url{https://github.com/rails/actionpack-page\_caching}.}
+
+\bibitem[Rails 2023]{caching-with-rails-overview}
+\abntrefinfo{Rails}{RAILS}{2023c}
+{RAILS, R. on. \emph{Caching with Rails: An Overview}. 2023.
+Acesso em: 12 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/caching\_with\_rails.html}.}
+
+\bibitem[Ruby on Rails API 2023]{railsapi2023}
+\abntrefinfo{Ruby\ldots}{RUBY\ldots}{2023}
+{RUBY on Rails API. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em: \url{https://api.rubyonrails.org/}.}
+
+\bibitem[Tanenbaum, Klint e Bohm 1978]{tanenbaum1978guidelines}
+\abntrefinfo{Tanenbaum, Klint e Bohm}{TANENBAUM; KLINT; BOHM}{1978}
+{TANENBAUM, A.~S.; KLINT, P.; BOHM, W. Guidelines for software portability.
+\emph{Software: Practice and Experience}, Wiley Online Library, v.~8, n.~6, p.
+  681--698, 1978.}
+
+\bibitem[Williams e Smith 2004]{williams2004web}
+\abntrefinfo{Williams e Smith}{WILLIAMS; SMITH}{2004}
+{WILLIAMS, L.~G.; SMITH, C.~U. Web application scalability: A model-based
+  approach. In:  \emph{Int. CMG Conference}. [S.l.: s.n.], 2004. p. 215--226.}
+
+\bibitem[Yu 2009]{yu2009acid}
+\abntrefinfo{Yu}{YU}{2009}
+{YU, S. Acid properties in distributed databases.
+\emph{Advanced eBusiness Transactions for B2B-Collaborations}, p.~17, 2009.}
+
+\end{thebibliography}

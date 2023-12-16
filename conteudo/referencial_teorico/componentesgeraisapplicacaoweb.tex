@@ -1,0 +1,45 @@
+\section{Componentes Gerais de uma Aplicação \textit{Web}}
+
+Uma aplicação \textit{web} moderna em geral pode ser vista dividida em duas partes: \textit{back-end} e \textit{front-end}. Ao contrário de aplicações \textit{standalone} convencionais que possuem a lógica de negócio altamente acoplada com a lógica de exibição, aplicações \textit{web} tendem a ter uma divisão mais clara nesse aspecto, permitindo com que a lógica de negócio não necessariamente interfira na renderização. Vale notar ainda a grande semelhança dessa abordagem com o modelo cliente/servidor \cite{gong2020architecture}. Outro importante componente no contexto de aplicações \textit{web} é o banco de dados, que cumpre o papel de persistir informações da aplicação. A seção Componentes Gerais de uma Aplicação \textit{Web} possui como objetivo introduzir cada um desses conceitos e elucidar seus papeis, trazendo maior clareza para cada um de seus papeis e como estes influenciam no funcionamento da aplicação \textit{web}, e consequentemente na sua performance.
+
+\subsection{\textit{Front-end}}
+
+O \textit{front-end} é a parte da aplicação \textit{web} responsável pela exibição dos dados e da interface de usuário. Idealmente, o \textit{front-end} lida apenas com a renderização de páginas, a lógica de \textit{design} da aplicação, sistema de rotas de páginas e recursos estáticos \cite{gong2020architecture}.
+
+\subsection{\textit{Back-end}}
+
+O \textit{back-end} é a parte da aplicação \textit{web} que lida com toda a lógica de negócio contida no escopo do \textit{software}. Todos os dados, bem como o processamento desses dados é realizado nessa camada. Do ponto de vista do funcionamento da aplicação como um todo, o \textit{back-end} possui como trabalho responder as requisições do usuário que vêm da camada do \textit{front-end}. Uma vez que o usuário pode enviar e requisitar dados, o \textit{back-end} deve ser capaz, através de um conjunto de métodos, processar a requisição e devolver uma resposta no menor tempo possível \cite{adam2019backend}.
+
+A comunicação entre \textit{back-end} e \textit{front-end} pode ser realizada de diversas maneiras e com vários protocolos. Uma das formas mais adotadas como mecanismo de comunicação em aplicações \textit{web} modernas é a exposição de funções do \textit{back-end} por meio de \textit{Application Programming Interfaces} (APIs). As APIs podem ser vistas como interfaces de comunicação que visam abstrair a lógica de funcionamento por detrás de uma aplicação, expondo suas funcionalidades através de \textit{endpoints} que podem ser acessados por outras aplicações sem que a aplicação cliente precise saber como estas operam \cite{gough2021mastering}. 
+
+\subsection{Banco de Dados}
+
+Banco de Dados, nesse contexto, uma forma reduzida do termo Sistema Gerenciador de Banco de Dados, é uma classe de \textit{software} que lida com a manipulação e persistência de dados. Um banco de dados tem como objetivo fornecer aos seus usuários uma fonte de dados centralizada, com qualidade, integridade e segurança \cite{fry1976evolution}. Existem diversos tipos de bancos de dados, sendo revelantes para este trabalho: bancos de dados relacionais e bancos de dados de chave-valor.
+
+\subsubsection{Banco de Dados Relacionais}
+
+ mas o foco deste trabalho estará nos bancos de dados relacionais. Bancos de dados relacionais são bancos cujo os dados são guardados no formato de tabelas, também denominadas relações. As tabelas são compostas por colunas e linhas, semelhante a planilhas, onde cada linha representa um registro, denominado tupla, na tabela.
+
+Bancos de dados relacionais permitem a criação de relacionamentos entre tabelas, sendo essa a motivação do termo "relacional". A maioria dos bancos de dados permitem manipular e consultar seus dados através do uso da linguagem de consulta \textit{Structured Query Language} (SQL) \cite{jatana2012survey}.
+
+\subsubsection{Transações ACID}
+
+No contexto de banco de dados, um importante conceito é o de transações. Uma transação é um agrupamento de operações realizadas pelo banco de dados, sendo a transação um conceito atômico, isto é, a menor instrução que o banco de dados realizará a mando do usuário. Existem características que um banco de dados pode ou não respeitar na sua implementação, estas são: atomicidade, consistência, isolamento e durabilidade (ACID). As propriedades ACID podem ser definidas da seguinte maneira:
+
+\begin{itemize}
+    \item Atomicidade: as operações envolvidas em uma única transação são executadas como uma só, implicando em que, caso uma falhe, a transação como um todo será dada como falha.
+    \item Consistência: os dados presentes no banco de dados devem permanecer consistentes após a execução da transação.
+    \item Isolamento: estados intermediários da transação não são visíveis por outras transações concorrentes, implicando que, uma transação não interferirá em outra.
+    \item Durabilidade: quando uma transação é executada e chega ao fim, seus efeitos são persistentes. Caso ocorra interrupções ou falhas no banco de dados, uma transação completa não será afetada.
+\end{itemize}
+
+\cite{yu2009acid}.
+
+\subsubsection{\textit{PostgreSQL}}
+
+Segundo a documentação, o PostgreSQL é um gerenciador de banco de dados relacional \textit{open-source} que implementa e incrementa o padrão da linguagem SQL. O PostgreSQL implementa todos os princípios ACID desde 2001, além de oferecer \textit{plugins} que permitem o uso de outras funcionalidades não convencionais no contexto de banco de dados relacionais \cite{postgresql_about}.
+
+\subsubsection{\textit{Redis}}
+
+Bancos de dados chave-valor são sistemas gerenciadores de banco de dados que armazenam seus dados de forma não relacional utilizando de chaves e valores. Cada registro consistirá em uma chave e em um valor, podendo este ser armazenado tanto na memoria RAM, quanto no disco. Uma das principais características de bancos de dados chave-valor é a sua velocidade quando comparado com bancos relacionais. O \textit{Redis} é um banco de dados chave valor \textit{open-source} extremamente rápido que guarda seus dados em forma persistente no disco ou na memória RAM \cite{redis-in-action}.
+

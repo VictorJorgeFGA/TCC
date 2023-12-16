@@ -1,0 +1,90 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: tcc.aux
+The style file: abntex2-alf.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: bibliografia.bib
+Warning--entry type for "postgresql_about" isn't style-file defined
+--line 176 of file bibliografia.bib
+Warning--entry type for "railsapi2023" isn't style-file defined
+--line 214 of file bibliografia.bib
+Warning--entry type for "activerecord-basics" isn't style-file defined
+--line 221 of file bibliografia.bib
+Warning--entry type for "activemodel-basics" isn't style-file defined
+--line 228 of file bibliografia.bib
+Warning--entry type for "actionview-overview" isn't style-file defined
+--line 235 of file bibliografia.bib
+Warning--entry type for "actioncontroller-overview" isn't style-file defined
+--line 242 of file bibliografia.bib
+Warning--entry type for "brasilparticipativo-sobre" isn't style-file defined
+--line 266 of file bibliografia.bib
+Warning--entry type for "decidim-about" isn't style-file defined
+--line 274 of file bibliografia.bib
+Warning--entry type for "decidim-descriptionpage" isn't style-file defined
+--line 282 of file bibliografia.bib
+Warning--entry type for "caching-with-rails-overview" isn't style-file defined
+--line 290 of file bibliografia.bib
+Warning--entry type for "actionpack-page-caching" isn't style-file defined
+--line 298 of file bibliografia.bib
+Warning--entry type for "actionpack-action-caching" isn't style-file defined
+--line 306 of file bibliografia.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.9.7           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 27 entries,
+            6714 wiz_defined-function locations,
+            1340 strings with 13199 characters,
+and the built_in function-call counts, 35235 in all, are:
+= -- 4323
+> -- 520
+< -- 713
++ -- 1042
+- -- 159
+* -- 2085
+:= -- 4307
+add.period$ -- 112
+call.type$ -- 27
+change.case$ -- 234
+chr.to.int$ -- 37
+cite$ -- 26
+duplicate$ -- 2971
+empty$ -- 1732
+format.name$ -- 749
+if$ -- 7679
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 461
+newline$ -- 147
+num.names$ -- 95
+pop$ -- 633
+preamble$ -- 1
+purify$ -- 95
+quote$ -- 0
+skip$ -- 3664
+stack$ -- 1
+substring$ -- 1607
+swap$ -- 1118
+text.length$ -- 35
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 62
+warning$ -- 0
+while$ -- 180
+width$ -- 0
+write$ -- 415
+(There were 12 warnings)

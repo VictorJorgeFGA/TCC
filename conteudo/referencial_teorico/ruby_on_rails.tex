@@ -1,0 +1,33 @@
+\section{\textit{Ruby on Rails}}
+
+O \textit{Ruby on Rails}, ou simplesmente \textit{Rails}, é um \textit{framework} de aplicação \textit{web} que fornece tudo o que é necessário para a criação de aplicações que seguem o modelo MVC e que utilizam de bancos de dados para armazenamento de suas estruturas e dados. O \textit{Rails} traz para cada uma das entidades do modelo MVC uma interface que provê as funcionalidades necessárias para que estas sejam implementadas em uma aplicação \textit{web}.
+
+O \textit{Rails} traz duas interfaces para que o desenvolvedor consiga criar as \textit{models} no domínio de sua aplicação: o \textit{Active Record} e o \textit{Active Model}. Para as \textit{views}, o \textit{Rails} fornece a \textit{Action View}, que disponibiliza funcionalidades de geração de novas \textit{views} na aplicação. Para as \textit{controllers}, o \textit{Rails} fornece o \textit{Action Controller}. Cada uma dessas interfaces são exploradas em mais detalhes a seguir \cite{railsapi2023}.
+
+\subsection{\textit{Active Record}}
+
+O \textit{Active Record} é o "M" do modelo MVC no contexto do \textit{Rails}. De fato, o \textit{Active Record} é um padrão de projeto que precede o \textit{Rails}, este foi descrito por \textit{Martin Fowler} em seu livro \textit{Patterns of Enterprise Application}. Porém, no contexto de aplicações \textit{Rails}, o Active Record é caracterizado por sua responsabilidade de representar regras de negócio e dados, sendo uma ponte direta entre as \textit{models} da aplicação e o banco de dados, disponibilizando uma interface de \textit{Object Relational Mappping} (ORM) \cite{activerecord-basics}.
+
+\subsubsection{\textit{Active Record como uma interface de ORM}}
+
+O \textit{Active Record} provê, por padrão, uma interface de comunicação entre os objetos da aplicação com bancos de dados relacionais. Esta interface permite que o programador não necessite de escrever instruções SQL diretamente no código fonte da aplicação para buscar e persistir dados das \textit{models} no banco de dados \cite{activerecord-basics}. Além de prover esse mecanismo de interação com o banco, o \textit{Active Record} fornece diversas outras funcionalidades que permitem a configuração de validações sobre atributos da \textit{model}, além de prover mecanismos de \textit{callbacks} que são ativados automaticamente para os eventos básicos do ciclo de vida do objeto: criar, salvar, atualizar e destruir.
+
+\subsection{\textit{Active Model}}
+
+O \textit{Active Model} possibilita incorporar funcionalidades do \textit{Active Record} em uma classe \textit{Ruby} pura, sem a intenção de persistir seus atributos no banco de dados. O \textit{Rails} provê maneiras de se incluir separadamente cada uma dessas funcionalidades, permitindo com que a classe herde apenas os comportamentos desejados do \textit{Active Record} \cite{activemodel-basics}. 
+
+\subsection{\textit{Action View}}
+
+As \textit{Action Views} no \textit{Rails} são usadas para renderizar o resultado de uma ação ou requisição processada pelo sistema. Em termos dos fundamentos de uma aplicação cliente/servidor, a função de uma \textit{Action View} é processar as informações a serem retornadas pelo sistema e compilá-las em um formato compreensível pelo usuário. O \textit{Rails} facilita essa renderização por meio de três componentes chave: \textit{templates}, \textit{partials} e \textit{layouts}.
+
+\subsubsection{\textit{Templates}}
+
+Os \textit{templates} atuam como um guia para a exibição das informações resultantes de uma ação. Por padrão, um \textit{template} da \textit{Action View} pode ser renderizado em diversos formatos, destacando-se, entre eles, o \textit{HyperText Markup Language} (HTML), \textit{JavaScript Object Notation} (JSON) e \textit{Extensible Markup Language} (XML).
+
+\subsubsection{\textit{Partials}}
+
+As \textit{partials}, ou o termo mais completo \textit{template partials}, são exatamente o que o nome sugere: \textit{templates} parciais, ou seja, fragmentos de código que são extraídos para um arquivo separado e podem ser reutilizados em diversas partes. O propósito das \textit{partials} é dividir o processo de renderização em partes para um melhor controle e permitir a reusabilidade, o que fomenta a filosofia do \textit{Don't Repeat Yourself} (DRY) \cite{actionview-overview}.
+
+\subsection{\textit{Action Controller}}
+
+O \textit{Action Controller} é uma parte essencial do padrão de arquitetura MVC, representando a letra "C". Ele gerencia as solicitações, processa dados provenientes da \textit{model} e gera a saída apropriada para exibição ao usuário. Em aplicações \textit{Rails} convencionais, o \textit{Action Controller} recebe a solicitação, interage com a \textit{model} para obter ou salvar dados, e utiliza a \textit{view} para criar uma saída em HTML ou qualquer outro formato necessário. Ou seja, o \textit{Action Controller} atua como intermediário entre os dados das \textit{models} e a apresentação ao usuário por meio das \textit{Action Views}. No \textit{Rails}, é possível definir \textit{actions} dentro das \textit{controllers} por meio de funções que recebem os dados da requisição e realizam as operações necessárias. Cada \textit{action} tem um \textit{template} de \textit{view} correspondente, fortalecendo a cooperação entre o \textit{Action Controller} e a \textit{Action View} \cite{actioncontroller-overview}.
