@@ -1,0 +1,26 @@
+\chapter{Introdução}
+
+As aplicações \textit{web} desempenham um papel crucial no cenário digital, oferecendo funcionalidades acessíveis através de navegadores \textit{web} sem a necessidade de instalação local. Essas se diferenciam das aplicações \textit{desktop standalone}, que requerem instalação no dispositivo do usuário para operar. Enquanto as aplicações \textit{desktop} são autossuficientes e independem de uma conexão constante com a internet, as aplicações \textit{web} dependem da comunicação com servidores remotos para processar dados e oferecer serviços \cite{tanenbaum1978guidelines}.
+
+O funcionamento de uma aplicação \textit{web} envolve um modelo cliente-servidor, onde o cliente (navegador \textit{web}) solicita recursos ou serviços ao servidor, que processa essas solicitações e retorna os resultados. Em termos de arquitetura, as aplicações \textit{web} são divididas em \textit{back-end}, \textit{front-end} e banco de dados. O \textit{back-end} é responsável pelo processamento das solicitações do cliente, o \textit{front-end} lida com a apresentação e interação do usuário, enquanto o banco de dados armazena e recupera os dados necessários para a aplicação \cite{gough2021mastering}.
+
+Na construção de aplicações \textit{web}, são empregados padrões de projeto para organizar e estruturar o código de forma eficiente. Um desses padrões é o Modelo-Visão-Controlador (MVC), que divide a aplicação em três componentes principais: a \textit{model} (responsável pelos dados e regras de negócios), a \textit{view} (responsável pela apresentação dos dados ao usuário) e a \textit{controller} (gerencia as interações entre o Modelo e a Visão) \cite{Bucanek2009}. Um exemplo notável de aplicação \textit{web} que segue o padrão MVC é o \textit{Ruby on Rails}, um \textit{framework} construído sobre a linguagem de programação \textit{Ruby} \cite{railsapi2023}. Essa abordagem contribui para a modularidade, manutenção e escalabilidade das aplicações \textit{web}.
+
+Apesar dos benefícios proporcionados pelo padrão MVC na construção de aplicações \textit{web}, é importante destacar que esses sistemas podem enfrentar desafios significativos de escalabilidade, especialmente em cenários de alto tráfego e grande quantidade de usuários. Um exemplo notável é a plataforma Brasil Participativo, do governo federal, que atualmente conta com um milhão e quatrocentos mil (1.400.000) usuários. Esta plataforma, desenvolvida utilizando o \textit{framework Ruby on Rails} e a \textit{gem/framework Decidim}, tem enfrentado problemas de desempenho devido ao aumento substancial na demanda e acesso dos usuários.
+
+O crescimento exponencial de usuários pode sobrecarregar a capacidade do sistema em processar simultaneamente um grande número de solicitações, resultando em lentidão, tempo de resposta prolongado e possíveis falhas na execução de funcionalidades críticas. Problemas como esse são indicativos da necessidade de otimização e reestruturação da arquitetura para lidar com o aumento de carga e garantir uma experiência de usuário eficiente e sem interrupções. Esses desafios ressaltam a importância de abordagens proativas na identificação e resolução de questões de desempenho, destacando a relevância de estratégias como a implementação eficaz de cache, otimização de consultas ao banco de dados e distribuição eficiente das cargas de trabalho.
+
+\section{Justificativa}
+
+A plataforma Brasil Participativo tonou-se a maior instância do \textit{Decidim} em todo o mundo. Mesmo a comunidade responsável pelo o desenvolvimento dessa tecnologia reconheceu que o \textit{framework} não foi desenvolvido com pensamento de tomar proporções tão grandes quanto as que se vêem no Brasil. Dessa maneira, notou-se a necessidade de intervenção na arquitetura da plataforma para garantir que esta subsistirá mediante a carga de uso futura e também atual.
+
+\section{Objetivos}
+
+Este trabalho tem como objetivo explorar as diversas possibilidades de utilização de ferramentas e estratégias de cache de dados em aplicações \textit{web} que utilizam o \textit{framework Ruby on Rails} tomando como exemplo o caso da plataforma Brasil Participativo. Dado que este trabalho envolverá um caso real e que serão utilizadas técnicas já conhecidas na literatura, pode-se resumir os objetivos da seguinte maneira:
+
+\begin{itemize}
+  \item Listar e discutir os principais problemas de performance da plataforma;
+  \item Definir estratégias de utilização de cache nas funcionalidades que apresentam problemas de performance;
+  \item Implementar alterações de código na plataforma Brasil Participativo, expondo os ganhos e trazendo a debate a abordagem adotada;
+  \item Melhorar a usabilidade e estabilidade da plataforma no Brasil, trazendo confiabilidade e melhor experiência de usuário.
+\end{itemize}

@@ -6,7 +6,7 @@ O \textit{Rails} traz duas interfaces para que o desenvolvedor consiga criar as 
 
 \subsection{\textit{Active Record}}
 
-O \textit{Active Record} é o "M" do modelo MVC no contexto do \textit{Rails}. De fato, o \textit{Active Record} é um padrão de projeto que precede o \textit{Rails}, este foi descrito por \textit{Martin Fowler} em seu livro \textit{Patterns of Enterprise Application}. Porém, no contexto de aplicações \textit{Rails}, o Active Record é caracterizado por sua responsabilidade de representar regras de negócio e dados, sendo uma ponte direta entre as \textit{models} da aplicação e o banco de dados, disponibilizando uma interface de \textit{Object Relational Mappping} (ORM) \cite{activerecord-basics}.
+O \textit{Active Record} é o "M" do modelo MVC no contexto do \textit{Rails}. De fato, o \textit{Active Record} é um padrão de projeto que precede o \textit{Rails}, este foi descrito por \textit{Martin Fowler} em seu livro \textit{Patterns of Enterprise Application}. No contexto de aplicações \textit{Rails}, o Active Record é caracterizado por sua responsabilidade de representar regras de negócio e dados, sendo uma ponte direta entre as \textit{models} da aplicação e o banco de dados, disponibilizando uma interface de \textit{Object Relational Mapping} (ORM) \cite{activerecord-basics}.
 
 \subsubsection{\textit{Active Record como uma interface de ORM}}
 
@@ -14,7 +14,7 @@ O \textit{Active Record} provê, por padrão, uma interface de comunicação ent
 
 \subsection{\textit{Active Model}}
 
-O \textit{Active Model} possibilita incorporar funcionalidades do \textit{Active Record} em uma classe \textit{Ruby} pura, sem a intenção de persistir seus atributos no banco de dados. O \textit{Rails} provê maneiras de se incluir separadamente cada uma dessas funcionalidades, permitindo com que a classe herde apenas os comportamentos desejados do \textit{Active Record} \cite{activemodel-basics}. 
+O \textit{Active Model} possibilita incorporar funcionalidades do \textit{Active Record} em uma classe \textit{Ruby} pura, sem a intenção de persistir seus atributos no banco de dados. O \textit{Rails} provê maneiras de se incluir separadamente cada uma dessas funcionalidades, permitindo com que a classe herde apenas os comportamentos desejados do \textit{Active Record} \cite{activemodel-basics}.
 
 \subsection{\textit{Action View}}
 
@@ -22,11 +22,11 @@ As \textit{Action Views} no \textit{Rails} são usadas para renderizar o resulta
 
 \subsubsection{\textit{Templates}}
 
-Os \textit{templates} atuam como um guia para a exibição das informações resultantes de uma ação. Por padrão, um \textit{template} da \textit{Action View} pode ser renderizado em diversos formatos, destacando-se, entre eles, o \textit{HyperText Markup Language} (HTML), \textit{JavaScript Object Notation} (JSON) e \textit{Extensible Markup Language} (XML).
+Os \textit{templates} atuam como um guia para a exibição das informações resultantes de uma ação. Por padrão, um \textit{template} da \textit{Action View} pode ser renderizado em diversos formatos, destacando-se entre eles: o \textit{HyperText Markup Language} (HTML), \textit{JavaScript Object Notation} (JSON) e \textit{Extensible Markup Language} (XML).
 
 \subsubsection{\textit{Partials}}
 
-As \textit{partials}, ou o termo mais completo \textit{template partials}, são exatamente o que o nome sugere: \textit{templates} parciais, ou seja, fragmentos de código que são extraídos para um arquivo separado e podem ser reutilizados em diversas partes. O propósito das \textit{partials} é dividir o processo de renderização em partes para um melhor controle e permitir a reusabilidade, o que fomenta a filosofia do \textit{Don't Repeat Yourself} (DRY) \cite{actionview-overview}.
+As \textit{partials}, ou o termo mais completo \textit{template partials}, são exatamente o que o nome sugere: \textit{templates} parciais, ou seja, fragmentos de código que são extraídos para um arquivo separado e que podem ser reutilizados em diversas partes. O propósito das \textit{partials} é dividir o processo de renderização em partes para um melhor controle e permitir a reusabilidade, o que fomenta a filosofia do \textit{Don't Repeat Yourself} (DRY) \cite{actionview-overview}.
 
 \subsection{\textit{Action Controller}}
 

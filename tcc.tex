@@ -9,12 +9,12 @@
 
 \begin{document}
 
-\frenchspacing 
+\frenchspacing
 \imprimircapa
 \imprimirfolhaderosto*
 
 \input{fixos/fichaCatalografica}
-\input{editaveis/errata}
+% \input{editaveis/errata}
 \input{fixos/folhaDeAprovacao}
 \input{editaveis/dedicatoria}
 \input{editaveis/agradecimentos}
@@ -23,10 +23,11 @@
 \input{editaveis/abstract}
 \input{fixos/listasAutomaticas}
 \input{editaveis/abreviaturas}
-\input{editaveis/simbolos}
+% \input{editaveis/simbolos}
 \input{fixos/indiceAutomatico}
 
 \textual
+\input{conteudo/introducao/main}
 \input{conteudo/referencial_teorico/main}
 \input{conteudo/proposta/main}
 
@@ -37,13 +38,13 @@
 % \input{editaveis/elementosdotexto}
 % \input{editaveis/elementosdopostexto}
 
-\bookmarksetup{startatroot} 
+\bookmarksetup{startatroot}
 
 \postextual
 
-\bibliography{bibliografia} 
-\input{editaveis/apendices}
-\input{editaveis/anexos}
+\bibliography{bibliografia}
+% \input{editaveis/apendices}
+% \input{editaveis/anexos}
 \printindex
 
 \end{document}

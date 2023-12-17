@@ -10,12 +10,12 @@ A \textit{model} é a entidade do MVC que possui como preocupação encapsular i
 
 \subsection{\textit{View}}
 
-Em poucas palavras, a \textit{view} é a entidade do MVC que apresenta informações na tela para o usuário final. Porém, a \textit{view} desempenha muitos outros papeis; na verdade, ela é a ponte entre o usuário e o sistema. Dessa forma, a \textit{view} é responsável por captar o \textit{input} do usuário e transformá-lo em comandos para o sistema processar. Outro aspecto importante é o escopo que uma \textit{view} pode atuar. No desenvolvimento de aplicações com o modelo MVC, objetos de \textit{view} podem ser generalistas ao ponto de apenas saberem renderizar e lidar com textos, imagens e mídias, ou podem ser específicos ao ponto de saber renderizar apenas objetos específicos do sistema definidos no código pelo programador \cite{Bucanek2009}.
+Em poucas palavras, a \textit{view} é a entidade do MVC que apresenta informações na tela para o usuário final. Porém, a \textit{view} desempenha muitos outros papeis; na verdade, ela é a ponte entre o usuário e o sistema. Dessa forma, a \textit{view} é responsável por captar o \textit{input} do usuário e transformá-lo em comandos para o sistema processar. Outro aspecto importante é o escopo que uma \textit{view} pode atuar. No desenvolvimento de aplicações com o modelo MVC, objetos de \textit{view} podem ser generalistas ao ponto de saberem renderizar e lidar qualquer com qualquer tipo de texto, imagem ou mídia, ou podem ser específicos ao ponto de saberem renderizar apenas determinados objetos do sistema definidos no código pelo programador \cite{Bucanek2009}.
 
 \subsection{\textit{Controller}}
 
 A \textit{controller} é a entidade do MVC que implementa as ações do sistema. Como já mencionado, as \textit{models} sabem gerenciar seus dados a nível de persistência e abstração, as \textit{views} são responsáveis por coletar o \textit{input} do usuário para disparar as ações, estas que residem nas \textit{controllers}. Uma ação realizada por uma \textit{controller}, por exemplo, seria o comando "salvar como" de um dado armazenado dentro de uma \textit{model} \cite{Bucanek2009}.
-Em geral, a comunicação realizada pelas entidades no modelo MVC pode ser visualizada na Figura \ref{fig:diagrama_mvc}.  
+Em geral, a comunicação realizada pelas entidades no modelo MVC pode ser visualizada na Figura \ref{fig:diagrama_mvc}.
 
 \begin{figure}
     \centering
