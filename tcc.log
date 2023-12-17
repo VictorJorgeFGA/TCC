@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.12)  16 DEC 2023 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.12)  17 DEC 2023 07:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,17 +853,12 @@ Package epstopdf Info: Source file: <figuras/capa.eps>
 (epstopdf)                    date: 2023-12-16 17:35:10
 (epstopdf)                    size: 12409969 bytes
 (epstopdf)             Output file: <figuras/capa-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-12-16 15:34:33
+(epstopdf)                    date: 2023-12-16 17:51:13
 (epstopdf)                    size: 1515774 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/capa-eps-converted
 -to.pdf figuras/capa.eps>
 (epstopdf)             \includegraphics on input line 13.
-runsystem(repstopdf --outfile=figuras/capa-eps-converted-to.pdf figuras/capa.ep
-s)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <figuras/capa-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-12-16 15:34:41
-(epstopdf)                    size: 1515774 bytes.
+Package epstopdf Info: Output file is already uptodate.
 <figuras/capa-eps-converted-to.pdf, id=5, 10037.5pt x 14194.02875pt>
 File: figuras/capa-eps-converted-to.pdf Graphic file (type pdf)
 <use figuras/capa-eps-converted-to.pdf>
@@ -951,134 +946,134 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 30.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 30.
-) (./editaveis/errata.texpdfTeX warning (ext4): destination with the same ident
-ifier (name{page.2}) has been already used, duplicate ignored
+) (./fixos/folhaDeAprovacao.texpdfTeX warning (ext4): destination with the same
+ identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2 E
-     lemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. \textbf{Caso nÃ£o
-[2] [3
+l.2 
+     [2] [3
 
 ] [4
 
-]) (./fixos/folhaDeAprovacao.tex [5
-
-] [6
+]) (./editaveis/dedicatoria.tex [5] [6
 
 ])
-(./editaveis/dedicatoria.tex [7] [8
+(./editaveis/agradecimentos.tex [7
 
-]) (./editaveis/agradecimentos.tex [9
+] [8
+
+]) (./editaveis/epigrafe.tex)
+(./editaveis/resumo.tex [9] [10
+
+]) (./editaveis/abstract.tex
+Overfull \hbox (13.42363pt too wide) in paragraph at lines 3--4
+\T1/lmr/m/n/12 (MVC) may face scal-a-bil-ity and per-for-mance is-sues, par-tic
+-u-larly re-gard-ing in-ten-sive database
+ []
+
+[11] [12
+
+]) (./fixos/listasAutomaticas.tex (./tcc.lof) [13] [14
+
+] (./tcc.lot)
+[15] [16
+
+]) (./editaveis/abreviaturas.tex [17
+
+] [18
+
+])
+(./fixos/indiceAutomatico.tex (./tcc.toc
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 15.
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 18.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 24.
+
+Underfull \vbox (badness 1325) has occurred while \output is active []
+
+ [19])
+[20]) (./conteudo/introducao/main.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21
+
 
 ]
-[10
-
-]) (./editaveis/epigrafe.tex) (./editaveis/resumo.tex [11] [12
-
-])
-(./editaveis/abstract.tex [13] [14
-
-]) (./fixos/listasAutomaticas.tex (./tcc.lof) [15] [16
-
-] (./tcc.lot) [17] [18
-
-]) (./editaveis/abreviaturas.tex [19
-
-] [20
-
-])
-(./editaveis/simbolos.tex [21
-
-] [22
-
-]) (./fixos/indiceAutomatico.tex (./tcc.toc
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 13.
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 16.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 22.
-
-[23]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 66.
-) [24]) (./conteudo/referencial_teorico/main.tex
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 11.
- [25
-
-
-] [26]
-(./conteudo/referencial_teorico/componentesgeraisapplicacaoweb.tex
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <17.28> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1.
- [27]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-0.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+2.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [28])
-(./conteudo/referencial_teorico/mvc.tex [29]
+))
+(./conteudo/referencial_teorico/main.tex [22]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 11.
+ [23
+
+] [24]
+(./conteudo/referencial_teorico/componentesgeraisapplicacaoweb.tex
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <17.28> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1.
+ [25]
+[26]) (./conteudo/referencial_teorico/mvc.tex [27]
 Package epstopdf Info: Source file: <figuras/diagrama_mvc.eps>
 (epstopdf)                    date: 2023-12-16 17:35:10
 (epstopdf)                    size: 22489 bytes
 (epstopdf)             Output file: <figuras/diagrama_mvc-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2023-12-16 15:34:34
+(epstopdf)                    date: 2023-12-16 17:51:13
 (epstopdf)                    size: 8603 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/diagrama_mvc-eps-c
 onverted-to.pdf figuras/diagrama_mvc.eps>
 (epstopdf)             \includegraphics on input line 23.
-runsystem(repstopdf --outfile=figuras/diagrama_mvc-eps-converted-to.pdf figuras
-/diagrama_mvc.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <figuras/diagrama_mvc-eps-converted-to.pdf>
-
-(epstopdf)                    date: 2023-12-16 15:34:41
-(epstopdf)                    size: 8603 bytes.
-<figuras/diagrama_mvc-eps-converted-to.pdf, id=364, 571.13374pt x 230.8625pt>
+Package epstopdf Info: Output file is already uptodate.
+<figuras/diagrama_mvc-eps-converted-to.pdf, id=368, 571.13374pt x 230.8625pt>
 File: figuras/diagrama_mvc-eps-converted-to.pdf Graphic file (type pdf)
 <use figuras/diagrama_mvc-eps-converted-to.pdf>
 Package pdftex.def Info: figuras/diagrama_mvc-eps-converted-to.pdf  used on inp
 ut line 23.
 (pdftex.def)             Requested size: 455.0pt x 183.91878pt.
 )
-(./conteudo/referencial_teorico/ruby_on_rails.tex [30 <./figuras/diagrama_mvc-e
-ps-converted-to.pdf>] [31]) (./conteudo/referencial_teorico/performance.tex
-[32]) (./conteudo/referencial_teorico/cache_com_ruby_on_rails.tex [33]
-Overfull \hbox (16.26936pt too wide) in paragraph at lines 12--13
+(./conteudo/referencial_teorico/ruby_on_rails.tex [28 <./figuras/diagrama_mvc-e
+ps-converted-to.pdf>] [29]) (./conteudo/referencial_teorico/performance.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30])
+(./conteudo/referencial_teorico/cache_com_ruby_on_rails.tex
+Underfull \vbox (badness 5288) has occurred while \output is active []
+
+ [31]
+Overfull \hbox (16.54414pt too wide) in paragraph at lines 12--13
 []\T1/lmr/m/n/12 O \T1/lmr/m/it/12 page ca-ching \T1/lmr/m/n/12 é uma es-tra-té
--gia de ca-che for-ne-cida pela \T1/lmr/m/it/12 gem actionpack-page_caching\T1/
-lmr/m/n/12 ,
+-gia de \T1/lmr/m/it/12 ca-che \T1/lmr/m/n/12 for-ne-cida pela \T1/lmr/m/it/12 
+gem actionpack-page_caching\T1/lmr/m/n/12 ,
  []
 
-[34]
-<figuras/russian_doll_template_example.png, id=436, 1433.355pt x 674.52pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+<figuras/russian_doll_template_example.png, id=441, 1433.355pt x 674.52pt>
 File: figuras/russian_doll_template_example.png Graphic file (type png)
 <use figuras/russian_doll_template_example.png>
 Package pdftex.def Info: figuras/russian_doll_template_example.png  used on inp
 ut line 37.
 (pdftex.def)             Requested size: 318.49861pt x 149.87695pt.
-<figuras/russian_doll_touch_true.png, id=442, 875.27pt x 598.235pt>
+<figuras/russian_doll_touch_true.png, id=447, 875.27pt x 598.235pt>
 File: figuras/russian_doll_touch_true.png Graphic file (type png)
 <use figuras/russian_doll_touch_true.png>
 Package pdftex.def Info: figuras/russian_doll_touch_true.png  used on input lin
 e 46.
 (pdftex.def)             Requested size: 318.49861pt x 217.69215pt.
- [35 <./figuras/russian_doll_template_example.png>] [36 <./figuras/russian_doll
-_touch_true.png>]) (./conteudo/referencial_teorico/consideracoes_finais.tex [37
-])) (./conteudo/proposta/main.tex [38]
 
-LaTeX Warning: Reference `sec:contextualizando_a_plataforma_brasil_participativ
-o' on page 39 undefined on input line 3.
+Underfull \vbox (badness 1478) has occurred while \output is active []
 
-
-LaTeX Warning: Reference `sec:aspectos_tecnicos_da_plataforma_brasil_participat
-ivo' on page 39 undefined on input line 3.
-
-(./conteudo/proposta/contextualizando_brasilparticipativo.tex)
-(./conteudo/proposta/aspectos_tecnicos.tex [39
+ [33 <./figuras/russian_doll_template_example.png>] [34 <./figuras/russian_doll
+_touch_true.png>]) (./conteudo/referencial_teorico/consideracoes_finais.tex [35
+]))
+(./conteudo/proposta/main.tex [36] [37
 
 ]
 Package epstopdf Info: Source file: <figuras/diagrama_decidim-min.eps>
@@ -1086,72 +1081,34 @@ Package epstopdf Info: Source file: <figuras/diagrama_decidim-min.eps>
 (epstopdf)                    size: 373767 bytes
 (epstopdf)             Output file: <figuras/diagrama_decidim-min-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2023-12-16 15:34:34
+(epstopdf)                    date: 2023-12-16 17:51:14
 (epstopdf)                    size: 113282 bytes
 (epstopdf)             Command: <repstopdf --outfile=figuras/diagrama_decidim-m
 in-eps-converted-to.pdf figuras/diagrama_decidim-min.eps>
-(epstopdf)             \includegraphics on input line 19.
-runsystem(repstopdf --outfile=figuras/diagrama_decidim-min-eps-converted-to.pdf
- figuras/diagrama_decidim-min.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <figuras/diagrama_decidim-min-eps-converted
--to.pdf>
-(epstopdf)                    date: 2023-12-16 15:34:42
-(epstopdf)                    size: 113282 bytes.
-<figuras/diagrama_decidim-min-eps-converted-to.pdf, id=479, 2402.9775pt x 1192.
+(epstopdf)             \includegraphics on input line 36.
+Package epstopdf Info: Output file is already uptodate.
+<figuras/diagrama_decidim-min-eps-converted-to.pdf, id=487, 2402.9775pt x 1192.
 455pt>
 File: figuras/diagrama_decidim-min-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figuras/diagrama_decidim-min-eps-converted-to.pdf>
 Package pdftex.def Info: figuras/diagrama_decidim-min-eps-converted-to.pdf  use
-d on input line 19.
+d on input line 36.
 (pdftex.def)             Requested size: 455.0pt x 225.7864pt.
-
-Underfull \vbox (badness 5652) has occurred while \output is active []
-
- [40]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41 <./figuras/diagrama_decidim-min-eps-converted-to.pdf>])
-(./conteudo/proposta/problemas_de_performance.tex)
-(./conteudo/proposta/intervencao.tex)) (./tcc.bbl (./tcc.brf)
+ [38] [39 <./figuras/diagrama_decidim-min-eps-converted-to.pdf>] [40] [41] [42]
+) [43] (./tcc.bbl (./tcc.brf)
 \tf@brf=\write5
 \openout5 = `tcc.brf'.
 
- [42]
+ [44]
 bibitemlist
-[43
-
-]) (./editaveis/apendices.tex [44]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 4.
-
 [45
-
-
-] [46] [47
-
-] [48
-
-]) (./editaveis/anexos.tex [49] [50
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 4.
-
-[51
-
-] [52] [53
-
-] [54
 
 ])
 No file tcc.ind.
 
 AED: lastpage setting LastPage
-[55]
+[46]
 \tf@lof=\write6
 \openout6 = `tcc.lof'.
 
@@ -1163,37 +1120,38 @@ AED: lastpage setting LastPage
 
  (./tcc.aux)
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `tcc.brf' has not changed.
-(rerunfilecheck)             Checksum: 17AFDE807CA3F0CB32ECF05E8D6899DA;2381.
+
+Package rerunfilecheck Warning: File `tcc.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `tcc.brf':
+(rerunfilecheck)             Before: 4C413FC7FB64C00D973663FCC02A3198;2635
+(rerunfilecheck)             After:  8D1CD869024010F39663ED04597C0151;2635.
  ) 
 Here is how much of TeX's memory you used:
- 16968 strings out of 478287
- 274061 string characters out of 5849288
- 602225 words of memory out of 5000000
- 34585 multiletter control sequences out of 15000+600000
- 561194 words of font info for 75 fonts, out of 8000000 for 9000
+ 16912 strings out of 478287
+ 272422 string characters out of 5849288
+ 603630 words of memory out of 5000000
+ 34556 multiletter control sequences out of 15000+600000
+ 551822 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,13n,96p,1907b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/shar
-e/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
-m-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmssbo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso17.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on tcc.pdf (57 pages, 2208748 bytes).
+ 80i,12n,96p,1938b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss1
+0.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/font
+s/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmsso17.pfb>
+Output written on tcc.pdf (48 pages, 2197440 bytes).
 PDF statistics:
  912 PDF objects out of 1000 (max. 8388607)
- 806 compressed objects within 9 object streams
- 173 named destinations out of 1000 (max. 500000)
- 582 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 814 compressed objects within 9 object streams
+ 170 named destinations out of 1000 (max. 500000)
+ 622 words of extra memory for PDF output out of 10000 (max. 10000000)
 

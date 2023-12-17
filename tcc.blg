@@ -14,29 +14,29 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: bibliografia.bib
 Warning--entry type for "postgresql_about" isn't style-file defined
---line 176 of file bibliografia.bib
+--line 90 of file bibliografia.bib
 Warning--entry type for "railsapi2023" isn't style-file defined
---line 214 of file bibliografia.bib
+--line 128 of file bibliografia.bib
 Warning--entry type for "activerecord-basics" isn't style-file defined
---line 221 of file bibliografia.bib
+--line 136 of file bibliografia.bib
 Warning--entry type for "activemodel-basics" isn't style-file defined
---line 228 of file bibliografia.bib
+--line 144 of file bibliografia.bib
 Warning--entry type for "actionview-overview" isn't style-file defined
---line 235 of file bibliografia.bib
+--line 152 of file bibliografia.bib
 Warning--entry type for "actioncontroller-overview" isn't style-file defined
---line 242 of file bibliografia.bib
+--line 160 of file bibliografia.bib
 Warning--entry type for "brasilparticipativo-sobre" isn't style-file defined
---line 266 of file bibliografia.bib
+--line 185 of file bibliografia.bib
 Warning--entry type for "decidim-about" isn't style-file defined
---line 274 of file bibliografia.bib
+--line 193 of file bibliografia.bib
 Warning--entry type for "decidim-descriptionpage" isn't style-file defined
---line 282 of file bibliografia.bib
+--line 201 of file bibliografia.bib
 Warning--entry type for "caching-with-rails-overview" isn't style-file defined
---line 290 of file bibliografia.bib
+--line 209 of file bibliografia.bib
 Warning--entry type for "actionpack-page-caching" isn't style-file defined
---line 298 of file bibliografia.bib
+--line 217 of file bibliografia.bib
 Warning--entry type for "actionpack-action-caching" isn't style-file defined
---line 306 of file bibliografia.bib
+--line 225 of file bibliografia.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -46,45 +46,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 27 entries,
+You've used 26 entries,
             6714 wiz_defined-function locations,
-            1340 strings with 13199 characters,
-and the built_in function-call counts, 35235 in all, are:
-= -- 4323
-> -- 520
-< -- 713
-+ -- 1042
-- -- 159
-* -- 2085
-:= -- 4307
-add.period$ -- 112
-call.type$ -- 27
-change.case$ -- 234
-chr.to.int$ -- 37
-cite$ -- 26
-duplicate$ -- 2971
-empty$ -- 1732
-format.name$ -- 749
-if$ -- 7679
-int.to.chr$ -- 5
+            1331 strings with 13010 characters,
+and the built_in function-call counts, 32727 in all, are:
+= -- 3935
+> -- 445
+< -- 712
++ -- 954
+- -- 134
+* -- 1955
+:= -- 3822
+add.period$ -- 114
+call.type$ -- 26
+change.case$ -- 222
+chr.to.int$ -- 33
+cite$ -- 25
+duplicate$ -- 2953
+empty$ -- 1715
+format.name$ -- 634
+if$ -- 7108
+int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 461
-newline$ -- 147
-num.names$ -- 95
-pop$ -- 633
+missing$ -- 449
+newline$ -- 142
+num.names$ -- 70
+pop$ -- 621
 preamble$ -- 1
-purify$ -- 95
+purify$ -- 92
 quote$ -- 0
-skip$ -- 3664
+skip$ -- 3301
 stack$ -- 1
-substring$ -- 1607
-swap$ -- 1118
-text.length$ -- 35
+substring$ -- 1527
+swap$ -- 1116
+text.length$ -- 34
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 62
+type$ -- 29
 warning$ -- 0
-while$ -- 180
+while$ -- 144
 width$ -- 0
-write$ -- 415
+write$ -- 405
 (There were 12 warnings)

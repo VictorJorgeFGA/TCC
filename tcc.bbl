@@ -5,47 +5,12 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[Action Controller Overview 2023]{actioncontroller-overview}
-\abntrefinfo{Action\ldots}{ACTION\ldots}{2023a}
-{ACTION Controller Overview. 2023.
-Acesso em: 9 de dezembro de 2023.
-Dispon{\'\i}vel em:
-  \url{https://guides.rubyonrails.org/action\_controller\_overview.html}.}
-
-\bibitem[Action View Overview 2023]{actionview-overview}
-\abntrefinfo{Action\ldots}{ACTION\ldots}{2023b}
-{ACTION View Overview. 2023.
-Acesso em: 9 de dezembro de 2023.
-Dispon{\'\i}vel em:
-  \url{https://guides.rubyonrails.org/action\_view\_overview.html}.}
-
-\bibitem[Active Model Basics 2023]{activemodel-basics}
-\abntrefinfo{Active\ldots}{ACTIVE\ldots}{2023a}
-{ACTIVE Model Basics. 2023.
-Acesso em: 9 de dezembro de 2023.
-Dispon{\'\i}vel em:
-  \url{https://guides.rubyonrails.org/active\_model\_basics.html}.}
-
-\bibitem[Active Record Basics 2023]{activerecord-basics}
-\abntrefinfo{Active\ldots}{ACTIVE\ldots}{2023b}
-{ACTIVE Record Basics. 2023.
-Acesso em: 9 de dezembro de 2023.
-Dispon{\'\i}vel em:
-  \url{https://guides.rubyonrails.org/active\_record\_basics.html}.}
-
 \bibitem[Adam, Besari e Bachtiar 2019]{adam2019backend}
 \abntrefinfo{Adam, Besari e Bachtiar}{ADAM; BESARI; BACHTIAR}{2019}
 {ADAM, B.~M.; BESARI, A. R.~A.; BACHTIAR, M.~M. Backend server system design
   based on rest api for cashless payment system on retail community. In:  IEEE.
   \emph{2019 International Electronics Symposium (IES)}. [S.l.], 2019. p.
   208--213.}
-
-\bibitem[Associa{\c c}\~ao Brasileira de Normas T\'ecnicas 2011]{NBR14724:2011}
-\abntrefinfo{ABNT}{ABNT}{2011}
-{ASSOCIA{\c C}\~AO BRASILEIRA DE NORMAS T\'ECNICAS. {NBR} 14724: Informa{\c
-  c}\~ao e documenta{\c c}\~ao --- trabalhos acad\^emicos --- apresenta{\c
-  c}\~ao.
-Rio de Janeiro, p.~15, mar. 2011.}
 
 \bibitem[Carlson 2013]{redis-in-action}
 \abntrefinfo{Carlson}{CARLSON}{2013}
@@ -58,20 +23,6 @@ ISBN 9781935182054.}
 {CONALLEN, J. Modeling web application architectures with uml.
 \emph{Communications of the ACM}, ACM New York, NY, USA, v.~42, n.~10, p.
   63--70, 1999.}
-
-\bibitem[Decidim 2023]{decidim-about}
-\abntrefinfo{Decidim}{DECIDIM}{2023a}
-{DECIDIM. \emph{Decidim Documentation}. 2023.
-Acesso em: 10 de dezembro de 2023.
-Dispon{\'\i}vel em: \url{https://docs.decidim.org/en/v0.27/index.html}.}
-
-\bibitem[Decidim 2023]{decidim-descriptionpage}
-\abntrefinfo{Decidim}{DECIDIM}{2023b}
-{DECIDIM. \emph{General description and introduction to how Decidim works}.
-  2023.
-Acesso em: 10 de dezembro de 2023.
-Dispon{\'\i}vel em:
-  \url{https://docs.decidim.org/en/v0.27/features/general-description}.}
 
 \bibitem[Fry e Sibley 1976]{fry1976evolution}
 \abntrefinfo{Fry e Sibley}{FRY; SIBLEY}{1976}
@@ -112,6 +63,20 @@ Dispon{\'\i}vel em: \url{https://www.postgresql.org/about/}.}
   Engineering: 14th International Conference, ICWE 2014, Toulouse, France, July
   1-4, 2014. Proceedings 14}. [S.l.], 2014. p. 40--56.}
 
+\bibitem[Metadecidim 2023]{decidim-about}
+\abntrefinfo{Metadecidim}{METADECIDIM}{2023a}
+{METADECIDIM. \emph{Decidim Documentation}. 2023.
+Acesso em: 10 de dezembro de 2023.
+Dispon{\'\i}vel em: \url{https://docs.decidim.org/en/v0.27/index.html}.}
+
+\bibitem[Metadecidim 2023]{decidim-descriptionpage}
+\abntrefinfo{Metadecidim}{METADECIDIM}{2023b}
+{METADECIDIM. \emph{General description and introduction to how Decidim works}.
+  2023.
+Acesso em: 10 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://docs.decidim.org/en/v0.27/features/general-description}.}
+
 \bibitem[Model-View-Controller Pattern 2009]{Bucanek2009}
 \abntrefinfo{Model-View-Controller\ldots}{MODEL-VIEW-CONTROLLER\ldots}{2009}
 {MODEL-VIEW-CONTROLLER Pattern.
@@ -133,36 +98,64 @@ Acesso em: 10 de dezembro de 2023.
 Dispon{\'\i}vel em:
   \url{https://brasilparticipativo.presidencia.gov.br/processes/brasilparticipativo/f/33}.}
 
-\bibitem[Rails 2023]{actionpack-action-caching}
-\abntrefinfo{Rails}{RAILS}{2023a}
-{RAILS, R. on. \emph{Actionpack Action Caching}. 2023.
-Acesso em: 12 de dezembro de 2023.
-Dispon{\'\i}vel em: \url{https://github.com/rails/actionpack-action\_caching}.}
-
-\bibitem[Rails 2023]{actionpack-page-caching}
-\abntrefinfo{Rails}{RAILS}{2023b}
-{RAILS, R. on. \emph{Actionpack Page Caching}. 2023.
-Acesso em: 12 de dezembro de 2023.
-Dispon{\'\i}vel em: \url{https://github.com/rails/actionpack-page\_caching}.}
-
-\bibitem[Rails 2023]{caching-with-rails-overview}
-\abntrefinfo{Rails}{RAILS}{2023c}
-{RAILS, R. on. \emph{Caching with Rails: An Overview}. 2023.
-Acesso em: 12 de dezembro de 2023.
-Dispon{\'\i}vel em:
-  \url{https://guides.rubyonrails.org/caching\_with\_rails.html}.}
-
-\bibitem[Ruby on Rails API 2023]{railsapi2023}
-\abntrefinfo{Ruby\ldots}{RUBY\ldots}{2023}
-{RUBY on Rails API. 2023.
-Acesso em: 9 de dezembro de 2023.
-Dispon{\'\i}vel em: \url{https://api.rubyonrails.org/}.}
-
 \bibitem[Tanenbaum, Klint e Bohm 1978]{tanenbaum1978guidelines}
 \abntrefinfo{Tanenbaum, Klint e Bohm}{TANENBAUM; KLINT; BOHM}{1978}
 {TANENBAUM, A.~S.; KLINT, P.; BOHM, W. Guidelines for software portability.
 \emph{Software: Practice and Experience}, Wiley Online Library, v.~8, n.~6, p.
   681--698, 1978.}
+
+\bibitem[The Rails Foundation 2023]{actioncontroller-overview}
+\abntrefinfo{The Rails Foundation}{THE RAILS FOUNDATION}{2023a}
+{THE RAILS FOUNDATION. \emph{Action Controller Overview}. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/action\_controller\_overview.html}.}
+
+\bibitem[The Rails Foundation 2023]{actionview-overview}
+\abntrefinfo{The Rails Foundation}{THE RAILS FOUNDATION}{2023b}
+{THE RAILS FOUNDATION. \emph{Action View Overview}. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/action\_view\_overview.html}.}
+
+\bibitem[The Rails Foundation 2023]{actionpack-action-caching}
+\abntrefinfo{The Rails Foundation}{THE RAILS FOUNDATION}{2023c}
+{THE RAILS FOUNDATION. \emph{Actionpack Action Caching}. 2023.
+Acesso em: 12 de dezembro de 2023.
+Dispon{\'\i}vel em: \url{https://github.com/rails/actionpack-action\_caching}.}
+
+\bibitem[The Rails Foundation 2023]{actionpack-page-caching}
+\abntrefinfo{The Rails Foundation}{THE RAILS FOUNDATION}{2023d}
+{THE RAILS FOUNDATION. \emph{Actionpack Page Caching}. 2023.
+Acesso em: 12 de dezembro de 2023.
+Dispon{\'\i}vel em: \url{https://github.com/rails/actionpack-page\_caching}.}
+
+\bibitem[The Rails Foundation 2023]{activemodel-basics}
+\abntrefinfo{The Rails Foundation}{THE RAILS FOUNDATION}{2023e}
+{THE RAILS FOUNDATION. \emph{Active Model Basics}. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/active\_model\_basics.html}.}
+
+\bibitem[The Rails Foundation 2023]{activerecord-basics}
+\abntrefinfo{The Rails Foundation}{THE RAILS FOUNDATION}{2023f}
+{THE RAILS FOUNDATION. \emph{Active Record Basics}. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/active\_record\_basics.html}.}
+
+\bibitem[The Rails Foundation 2023]{caching-with-rails-overview}
+\abntrefinfo{The Rails Foundation}{THE RAILS FOUNDATION}{2023g}
+{THE RAILS FOUNDATION. \emph{Caching with Rails: An Overview}. 2023.
+Acesso em: 12 de dezembro de 2023.
+Dispon{\'\i}vel em:
+  \url{https://guides.rubyonrails.org/caching\_with\_rails.html}.}
+
+\bibitem[The Rails Foundation 2023]{railsapi2023}
+\abntrefinfo{The Rails Foundation}{THE RAILS FOUNDATION}{2023h}
+{THE RAILS FOUNDATION. \emph{Ruby on Rails API}. 2023.
+Acesso em: 9 de dezembro de 2023.
+Dispon{\'\i}vel em: \url{https://api.rubyonrails.org/}.}
 
 \bibitem[Williams e Smith 2004]{williams2004web}
 \abntrefinfo{Williams e Smith}{WILLIAMS; SMITH}{2004}
