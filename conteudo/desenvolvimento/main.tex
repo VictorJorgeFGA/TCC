@@ -1,0 +1,66 @@
+\chapter {Desenvolvimento}
+
+Este capítulo tem como objetivo apresentar de forma detalhada a forma como se deu o desenvolvimento dos ajustes na funcionalidade de Texto Participativo. O desenvolvimento foi caracterizado pela sua forma incremental inspirado na metodologia ágil; na Seção \ref{sec:organizacao-do-desenvolvimento} é explicada as principais características da metodologia de trabalho. Uma série de requisitos que são discutidos na Seção \ref{sec:requisitos-iniciais} foram levantados para compor o ponto de partida do desenvolvimento. Uma breve contextualização do estado inicial da funcionalidade na plataforma é feito na Seção \ref{sec:contextualizacao-da-ferramenta-de-textos-participativos}. A Seção \ref{sec:etapas-de-desenvolvimento} traz uma visão cronológica das atividades realizadas, descrevendo a abordagem utilizada e a tomada de decisões realizada em cada momento. Na Seção \ref{sec:resultados} são apresentados os resultados obtidos, tanto de forma quantitativa quanto qualitativa.
+
+\section {Organização do Desenvolvimento}
+\label{sec:organizacao-do-desenvolvimento}
+
+A organização do trabalho seguiu um modelo inspirado no desenvolvimento ágil, onde novas alterações eram feitas a cada \textit{sprint} e validada com o time de produto do Lab Livre e com os \textit{stakeholders} do projeto. Ao final de cada \textit{sprint}, após a validação do desenvolvimento realizado, com base nos \textit{feedbacks} do time de produto o desenvolvimento seguia para um novo objetivo: corrigir e alterar algo ou adicionar mais funcionalidades.
+
+\section {Requisitos Iniciais}
+\label{sec:requisitos-iniciais}
+
+O desenvolvimento teve inicio com um conjunto de requisitos levantados pelos \textit{stakeholders} da Presidência que foram posteriormente trabalhados pelo time de produto do Lab Livre. No contexto político que se encontrava a plataforma Brasil Participativo, havia, principalmente, a necessidade de trazer aspectos de uma funcionalidade semelhante da plataforma Participa+ Brasil, que também é uma plataforma de participação social do governo federal. No Participa+ Brasil, o usuário administrador submetia o texto copiando e colando.
+
+*
+
+\section {Contextualização da Ferramenta de Textos Participativos}
+\label{sec:contextualizacao-da-ferramenta-de-textos-participativos}
+
+O texto participativo.
+
+\section {Etapas de Desenvolvimento}
+\label{sec:etapas-de-desenvolvimento}
+
+No desenvolvimento dos ajustes e melhorias na ferramenta de textos participativos, no total houveram quatro \textit{sprints} de desenvolvimento, com duração média de um mês. Cada uma delas foi guiada pelos requisitos específicos levantados para aquele momento de trabalho, além dos \textit{feedbacks} fornecidos pelos usuários e pelo time de produto do Lab Livre.
+
+\subsection {Sprint 1}
+
+A \textit{Sprint} 1 pode ser caracterizada pelo início dos trabalhos, onde houve foco nos três requisitos que eram centrais na proposta de melhoria do componente:
+
+\begin{itemize}
+	\item \textbf{Requisito 1 da Sprint}: Diminuir o tempo de renderização da página de visualização do texto participativo;
+	\item \textbf{Requisito 2 da Sprint}: Possibilitar a criação de textos participativos através de um editor de textos próprio do Brasil Participativo, contando com o uso do comando copiar e colar, trazendo texto de fontes como o Microsoft Word e Google Docs;
+	\item \textbf{Requisito 3 da Sprint}: Refatoração da página de visualização do rascunho (edição de parágrafos), trazendo-a para o mesmo padrão de \textit{design} que a tela de visualização.
+\end{itemize}
+
+De acordo com o time de produto  do Lab Livre, o objetivo central era fazer um \textit{Minimum Viable Product} (MVP) para servir como uma espécie de prova de conceito, onde analisariam os resultados obtidos para eventualmente tomar uma decisão de manter ou não a mesma estratégia, a fim satisfazer as necessidades levantadas pelos \textit{stakeholders}. As próximas seções revelam detalhes da abordagem utilizada no desenvolvimento de cada requisito que foi listado acima.
+
+\subsubsection {Requisito 1 da Sprint}
+
+Aplicações \textit{Ruby on Rails} possuem um sistema de \textit{logs} que permitem que o desenvolvedor obtenha informações da execução de vários tipos e em vários níveis de detalhamento, sendo eles:
+
+\begin{itemize}
+	\item \textit{debug};
+	\item \textit{info};
+	\item \textit{warn};
+	\item \textit{error};
+	\item \textit{fatal};
+	\item \textit{unknown}.
+\end{itemize}
+
+Por padrão, aplicações \textit{Rails} executadas em modo de desenvolvimento terão seu nível de \textit{log} como \textit{debug}, e quando executada em modo produtivo será \textit{info} \cite{debugging-rails-applications}.
+
+Na condução dessa análise, o Brasil Participativo foi executado em modo desenvolvimento com nível de \textit{logs} como \textit{debug}. Com esse nível de informações, é possível visualizar na saída padrão do Puma quais consultas SQL estão sendo executadas, quais \textit{views} estão sendo renderizadas pelo \textit{Rails} durante a requisição e acessos ao ActiveStorage. Alguns desses registros são acompanhados pelo tempo gasto na execução e em alguns casos a quantidade de alocações também é informada.
+
+Para realizar o primeiro diagnóstico, foi criado um texto participativo com em torno de 600 parágrafos, em seguida foi acessada a página de visualização. A Figura \ref{fig:analise-log-600-paragrafos} mostra os \textit{logs} apresentados pela aplicação no processamento da requisição. Nota-se que a maior parte do tempo foi gasta com a renderização da \textit{views} e suas \textit{partials}, correspondendo a 96,7\% do tempo utilizado para processar toda a requisição.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Captura de tela dos \textit{logs} apresentados pelo \textit{Rails}}
+  \label{fig:analise-log-600-paragrafos}
+  \includegraphics[width=\textwidth]{figuras/analise-log-600-paragrafos.png}
+  \fonte{Próprio autor}
+\end{figure}
+
+\input{conteudo/desenvolvimento/testes_e_resultados}

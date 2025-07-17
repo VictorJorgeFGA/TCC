@@ -6,63 +6,99 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{21}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Justificativa}{22}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Objetivos}{22}{section.1.2}%
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{23}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Justificativa}{24}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivos}{24}{section.1.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Referencial Teórico}}{25}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Conceitos Gerais}{25}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Aplicações \textit {Desktop}}{25}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Aplicações \textit {Web}}{26}{subsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.2.1}Modelo Cliente/Servidor}{26}{subsubsection.2.1.2.1}%
-\contentsline {section}{\numberline {2.2}Componentes Gerais de uma Aplicação \textit {Web}}{27}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}\textit {Front-end}}{27}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}\textit {Back-end}}{27}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Banco de Dados}{28}{subsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.1}Banco de Dados Relacionais}{28}{subsubsection.2.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.2.3.2}Transações ACID}{28}{subsubsection.2.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.2.3.3}\textit {PostgreSQL}}{29}{subsubsection.2.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.4}\textit {Redis}}{29}{subsubsection.2.2.3.4}%
-\contentsline {section}{\numberline {2.3}Padrão de Projeto \textit {Model-View-Controller}}{29}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}\textit {Model}}{29}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}\textit {View}}{30}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}\textit {Controller}}{30}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}\textit {Ruby on Rails}}{31}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}\textit {Active Record}}{31}{subsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.1.1}\textit {Active Record como uma interface de ORM}}{31}{subsubsection.2.4.1.1}%
-\contentsline {subsection}{\numberline {2.4.2}\textit {Active Model}}{31}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}\textit {Action View}}{32}{subsection.2.4.3}%
-\contentsline {subsubsection}{\numberline {2.4.3.1}\textit {Templates}}{32}{subsubsection.2.4.3.1}%
-\contentsline {subsubsection}{\numberline {2.4.3.2}\textit {Partials}}{32}{subsubsection.2.4.3.2}%
-\contentsline {subsection}{\numberline {2.4.4}\textit {Action Controller}}{32}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Performance e Escalabilidade}{33}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Cache com Ruby on Rails}{33}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Tipos de cache no Ruby on Rails}{34}{subsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.1.1}Page Caching}{34}{subsubsection.2.6.1.1}%
-\contentsline {subsubsection}{\numberline {2.6.1.2}Action Caching}{34}{subsubsection.2.6.1.2}%
-\contentsline {subsubsection}{\numberline {2.6.1.3}Fragment Caching}{35}{subsubsection.2.6.1.3}%
-\contentsline {subsubsection}{\numberline {2.6.1.4}Russian Doll Caching}{35}{subsubsection.2.6.1.4}%
-\contentsline {subsection}{\numberline {2.6.2}Bases de dados para cache no Ruby on Rails}{36}{subsection.2.6.2}%
-\contentsline {subsubsection}{\numberline {2.6.2.1}Memory Store}{36}{subsubsection.2.6.2.1}%
-\contentsline {subsubsection}{\numberline {2.6.2.2}File Store}{37}{subsubsection.2.6.2.2}%
-\contentsline {subsubsection}{\numberline {2.6.2.3}Mem cache Store}{37}{subsubsection.2.6.2.3}%
-\contentsline {subsubsection}{\numberline {2.6.2.4}Redis cache Store}{37}{subsubsection.2.6.2.4}%
-\contentsline {section}{\numberline {2.7}Considerações Finais do Capítulo}{38}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Decidim}{38}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Arquitetura do Decidim}{38}{subsection.2.8.1}%
-\contentsline {subsubsection}{\numberline {2.8.1.1}Participatory Spaces}{38}{subsubsection.2.8.1.1}%
-\contentsline {subsubsection}{\numberline {2.8.1.2}Components}{40}{subsubsection.2.8.1.2}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Referencial Teórico}}{27}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Conceitos Gerais}{27}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Aplicações \textit {Desktop}}{27}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Aplicações \textit {Web}}{28}{subsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.2.1}Modelo Cliente/Servidor}{28}{subsubsection.2.1.2.1}%
+\contentsline {section}{\numberline {2.2}Componentes Gerais de uma Aplicação \textit {Web}}{29}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}\textit {Front-end}}{29}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}\textit {Back-end}}{29}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Banco de Dados}{30}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Banco de Dados Relacionais}{30}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2}Transações ACID}{30}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}\textit {PostgreSQL}}{31}{subsubsection.2.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.4}\textit {Redis}}{31}{subsubsection.2.2.3.4}%
+\contentsline {section}{\numberline {2.3}Padrão de Projeto \textit {Model-View-Controller}}{31}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}\textit {Model}}{31}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}\textit {View}}{32}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}\textit {Controller}}{32}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}\textit {Ruby on Rails}}{33}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}\textit {Active Record}}{33}{subsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1.1}\textit {Active Record como uma interface de ORM}}{33}{subsubsection.2.4.1.1}%
+\contentsline {subsection}{\numberline {2.4.2}\textit {Active Model}}{33}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}\textit {Action View}}{34}{subsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.3.1}\textit {Templates}}{34}{subsubsection.2.4.3.1}%
+\contentsline {subsubsection}{\numberline {2.4.3.2}\textit {Partials}}{34}{subsubsection.2.4.3.2}%
+\contentsline {subsection}{\numberline {2.4.4}\textit {Action Controller}}{34}{subsection.2.4.4}%
+\contentsline {section}{\numberline {2.5}Desempenho e Escalabilidade}{35}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Cache com Ruby on Rails}{35}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Tipos de cache no Ruby on Rails}{36}{subsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.1.1}Page Caching}{36}{subsubsection.2.6.1.1}%
+\contentsline {subsubsection}{\numberline {2.6.1.2}Action Caching}{36}{subsubsection.2.6.1.2}%
+\contentsline {subsubsection}{\numberline {2.6.1.3}Fragment Caching}{37}{subsubsection.2.6.1.3}%
+\contentsline {subsubsection}{\numberline {2.6.1.4}Russian Doll Caching}{37}{subsubsection.2.6.1.4}%
+\contentsline {subsection}{\numberline {2.6.2}Bases de dados para cache no Ruby on Rails}{38}{subsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.2.1}Memory Store}{38}{subsubsection.2.6.2.1}%
+\contentsline {subsubsection}{\numberline {2.6.2.2}File Store}{39}{subsubsection.2.6.2.2}%
+\contentsline {subsubsection}{\numberline {2.6.2.3}Mem cache Store}{39}{subsubsection.2.6.2.3}%
+\contentsline {subsubsection}{\numberline {2.6.2.4}Redis cache Store}{39}{subsubsection.2.6.2.4}%
+\contentsline {section}{\numberline {2.7}Decidim}{40}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Arquitetura do Decidim}{40}{subsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.1.1}Participatory Spaces}{41}{subsubsection.2.7.1.1}%
+\contentsline {subsubsection}{\numberline {2.7.1.2}Components}{41}{subsubsection.2.7.1.2}%
+\contentsline {section}{\numberline {2.8}Considerações Finais do Capítulo}{42}{section.2.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Proposta}}{41}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Contextualizando a Plataforma Brasil Participativo}{41}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Principais Problemas de Performance da Plataforma Brasil Participativo}{42}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Sobreutilização do Banco de Dados e Indisponibilidade}{42}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Ausência do Uso de Índices em Consultas Ofensoras na Plataforma}{42}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Memory Leak do Processo Ruby}{43}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Lentidão em Páginas Específicas em Condições Específicas}{43}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Proposta de Intervenção na Plataforma Brasil Participativo}{43}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Texto Participativo como Objeto de Estudo}{43}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Considerações Finais do Capítulo}{44}{section.3.4}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Proposta}}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Contextualizando a Plataforma Brasil Participativo}{43}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Principais Problemas de Desempenho da Plataforma Brasil Participativo}{44}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Sobreutilização do Banco de Dados e Indisponibilidade}{44}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Ausência do Uso de Índices em Consultas Ofensoras na Plataforma}{44}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Memory Leak do Processo Ruby}{45}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Lentidão em Páginas sob Condições Específicas}{45}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Proposta de Intervenção na Plataforma Brasil Participativo}{46}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Texto Participativo como Objeto de Estudo}{46}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Resultados Esperados}{47}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Considerações Finais do Capítulo}{47}{section.3.4}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Metodologia}}{49}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Síntese do Referencial Teórico}{49}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Ferramentas}{49}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Visual Studio Code}{49}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Git}{49}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Chrome DevTools}{50}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Yarn}{50}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}RuboCop}{50}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Nokogiri}{50}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Jodit}{50}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.8}LibreOffice Writer}{50}{subsection.4.2.8}%
+\contentsline {subsection}{\numberline {4.2.9}Webpack e Webpacker}{51}{subsection.4.2.9}%
+\contentsline {subsection}{\numberline {4.2.10}Notion}{51}{subsection.4.2.10}%
+\contentsline {section}{\numberline {4.3}Abordagem}{51}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Abordagem Organizacional}{51}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Abordagem Técnica}{51}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Compilação de Resultados}{52}{section.4.4}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Desenvolvimento}}{53}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Organização do Desenvolvimento}{53}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Requisitos Iniciais}{53}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Contextualização da Ferramenta de Textos Participativos}{53}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Etapas de Desenvolvimento}{54}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Sprint 1}{54}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}Requisito 1 da Sprint}{54}{subsubsection.5.4.1.1}%
+\contentsline {section}{\numberline {5.5}Testes e Resultados}{55}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Teste de Carga de Visualização do Rascunho}{57}{subsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}Contexto}{57}{subsubsection.5.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.2}Execução e Resultados}{59}{subsubsection.5.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.5.1.3}Testes Extremos}{59}{subsubsection.5.5.1.3}%
+\contentsline {subsection}{\numberline {5.5.2}Teste de Carga de Visualização do Texto}{59}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}Contexto}{59}{subsubsection.5.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}Execução e Resultados}{60}{subsubsection.5.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.3}Testes Extremos}{60}{subsubsection.5.5.2.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{45}{section*.15}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{61}{section*.15}%

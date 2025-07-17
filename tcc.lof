@@ -1,5 +1,9 @@
 \babel@toc {brazil}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Comunicação entre as entidades do MVC}}{30}{figure.2.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Exemplo de \textit {template} que renderiza objetos com \textit {caches} aninhados}}{35}{figure.2.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Inclusão da opção \textit {touch} na declaração de relacionamento entre \textit {models}}}{36}{figure.2.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Arquitetura do \textit {Decidim}}}{39}{figure.2.4}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Comunicação entre as entidades do MVC}}{32}{figure.2.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Exemplo de \textit {template} que renderiza objetos com \textit {caches} aninhados}}{37}{figure.2.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Inclusão da opção \textit {touch} na declaração de relacionamento entre \textit {models}}}{38}{figure.2.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Arquitetura do \textit {Decidim}}}{40}{figure.2.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Relatório da controladora de comentários gerado pelo Elastic APM}}{45}{figure.3.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Captura de tela dos \textit {logs} apresentados pelo \textit {Rails}}}{55}{figure.5.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Consulta SQL para classificação dos dias com maior carga de criação de textos participativos}}{57}{figure.5.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Consulta SQL para classificação dos textos participativos com maior quantidade de parágrafos}}{58}{figure.5.8}%

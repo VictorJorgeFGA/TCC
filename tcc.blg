@@ -37,6 +37,8 @@ Warning--entry type for "actionpack-page-caching" isn't style-file defined
 --line 217 of file bibliografia.bib
 Warning--entry type for "actionpack-action-caching" isn't style-file defined
 --line 225 of file bibliografia.bib
+Warning--entry type for "debugging-rails-applications" isn't style-file defined
+--line 233 of file bibliografia.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -46,45 +48,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 26 entries,
+You've used 27 entries,
             6714 wiz_defined-function locations,
-            1331 strings with 13010 characters,
-and the built_in function-call counts, 32727 in all, are:
-= -- 3935
+            1336 strings with 13164 characters,
+and the built_in function-call counts, 34463 in all, are:
+= -- 4176
 > -- 445
-< -- 712
-+ -- 954
+< -- 777
++ -- 1019
 - -- 134
-* -- 1955
-:= -- 3822
-add.period$ -- 114
-call.type$ -- 26
-change.case$ -- 222
-chr.to.int$ -- 33
-cite$ -- 25
-duplicate$ -- 2953
-empty$ -- 1715
+* -- 2046
+:= -- 4000
+add.period$ -- 119
+call.type$ -- 27
+change.case$ -- 228
+chr.to.int$ -- 34
+cite$ -- 26
+duplicate$ -- 3175
+empty$ -- 1781
 format.name$ -- 634
-if$ -- 7108
+if$ -- 7449
 int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 449
-newline$ -- 142
+missing$ -- 466
+newline$ -- 148
 num.names$ -- 70
-pop$ -- 621
+pop$ -- 646
 preamble$ -- 1
-purify$ -- 92
+purify$ -- 95
 quote$ -- 0
-skip$ -- 3301
+skip$ -- 3524
 stack$ -- 1
-substring$ -- 1527
-swap$ -- 1116
-text.length$ -- 34
+substring$ -- 1612
+swap$ -- 1192
+text.length$ -- 35
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 29
 warning$ -- 0
-while$ -- 144
+while$ -- 146
 width$ -- 0
-write$ -- 405
-(There were 12 warnings)
+write$ -- 420
+(There were 13 warnings)

@@ -1,6 +1,6 @@
 \chapter{Proposta}
 
-Este capítulo tem como objetivo apresentar a proposta de intervenção na plataforma Brasil Participativo, trazendo a debate alguns dos problemas de desempenho conhecidos, e esclarecendo os detalhes do que será feito. A Seção \ref{sec:contextualizando_a_plataforma_brasil_participativo} explica o que é a plataforma, sobre como ela nasceu, seus objetivos futuros e os já alcançados. Na Seção \ref{sec:principais_problemas_de_performance_da_plataforma_brasil_participativo}, são expostos os desafios enfrentados pela plataforma no ano de 2023, explorando as possibilidades de intervenção para otimização. A Seção \ref{sec:proposta_de_intervencao_na_plataforma_brasil_participativo} traz as justificativas e define o foco do trabalho, elucidando a forma de intervenção a fim de melhorar o desempenho da plataforma e consequentemente satisfazer a necessidade do usuário final.
+Este capítulo tem como objetivo apresentar a proposta de intervenção na plataforma Brasil Participativo, trazendo a debate alguns dos problemas de desempenho conhecidos, e esclarecendo os detalhes do que será feito. A Seção \ref{sec:contextualizando_a_plataforma_brasil_participativo} explica o que é a plataforma, sobre como ela nasceu, seus objetivos futuros e os já alcançados. Na Seção \ref{sec:principais_problemas_de_desempenho_da_plataforma_brasil_participativo}, são expostos os desafios enfrentados pela plataforma no ano de 2023, explorando as possibilidades de intervenção para otimização. A Seção \ref{sec:proposta_de_intervencao_na_plataforma_brasil_participativo} traz as justificativas e define o foco do trabalho, elucidando a forma de intervenção a fim de melhorar o desempenho da plataforma e consequentemente satisfazer a necessidade do usuário final.
 
 \section{Contextualizando a Plataforma Brasil Participativo}
 \label{sec:contextualizando_a_plataforma_brasil_participativo}
@@ -9,16 +9,16 @@ A Plataforma Brasil Participativo é uma iniciativa do governo federal voltada p
 
 A plataforma tem como propósito possibilitar que a população contribua ativamente na criação e melhoria das políticas públicas. Uma de suas primeiras iniciativas foi o Plano Plurianual Participativo, assinado pela SGPR e pelo Ministério do Planejamento e Orçamento (MPO). Durante o período de 11 de maio a 16 de julho de 2023, a plataforma permitiu a coleta de propostas da sociedade e a priorização de programas e propostas para o Plano Plurianual (PPA) 2024-2027.
 
-A participação ativa na etapa digital do PPA atingiu mais de um milhão e seiscentos mil (1.600.000) usuários, conquistando o título de maior experiência de participação social na internet realizada pelo governo federal. A plataforma continuará evoluindo, permitindo que conselhos nacionais criem suas páginas, ministérios realizem consultas públicas e órgãos federais promovam a participação da população na definição de decretos, portarias e outras ações.
+A participação ativa na etapa digital do PPA atingiu mais de um milhão e quatrocentos mil (1.400.000) usuários, conquistando o título de maior experiência de participação social na internet realizada pelo governo federal. A plataforma continuará evoluindo, permitindo que conselhos nacionais criem suas páginas, ministérios realizem consultas públicas e órgãos federais promovam a participação da população na definição de decretos, portarias e outras ações.
 
 Essa abertura à participação digital representa um marco importante para a democracia, possibilitando que cidadãos influenciem diretamente nas decisões governamentais. A Plataforma Brasil Participativo oferece a oportunidade de criação de perfis individuais para facilitar a participação ativa dos interessados \cite{brasilparticipativo-sobre}.
 
 A plataforma no presente momento se apoia totalmente nas funcionalidades disponibilizadas pela \textit{gem Decidim}, preocupando-se apenas em implementar em sua instância correções de \textit{bugs}, customizações de estilo, comportamento de regras de negócio, e pequenas funcionalidades extras. De fato, a maior parte do código executado na plataforma não é visto em seu repositório oficial, pois este está abstraído dentro da \textit{gem Decidim}. O repositório oficial do Brasil Participativo está disponível no \textit{Gitlab} no endereço: \href{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr}{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr}. Já o repositório oficial do \textit{Decidim} está disponível no \textit{Github} no endereço: \href{https://github.com/decidim/decidim}{https://github.com/decidim/decidim}.
 
-\section{Principais Problemas de Performance da Plataforma Brasil Participativo}
-\label{sec:principais_problemas_de_performance_da_plataforma_brasil_participativo}
+\section{Principais Problemas de Desempenho da Plataforma Brasil Participativo}
+\label{sec:principais_problemas_de_desempenho_da_plataforma_brasil_participativo}
 
-No ano de 2023 o Brasil Participativo acumulou um milhão e quatrocentos mil usuários únicos. Tal volume de usuários implicou que a plataforma exibisse seus primeiros problemas de performance que foi observado pelos usuários através da indisponibilidade do serviço durante o período de alta demanda. Conforme apontado pela Dataprev, empresa responsável pela infraestrutura da aplicação no ambiente produtivo, muitos problemas de diferentes naturezas foram notados: sobreutilização do banco de dados e a indisponibilidade do mesmo, falta do uso de índices e \textit{memory leak}.
+No ano de 2023 o Brasil Participativo acumulou um milhão e quatrocentos mil usuários únicos. Tal volume de usuários implicou que a plataforma exibisse seus primeiros problemas de desempenho que foi observado pelos usuários através da indisponibilidade do serviço durante o período de alta demanda. Conforme apontado pela Dataprev, empresa responsável pela infraestrutura da aplicação no ambiente produtivo, muitos problemas de diferentes naturezas foram notados: sobreutilização do banco de dados e a indisponibilidade do mesmo, falta do uso de índices e \textit{memory leak}.
 
 \subsection{Sobreutilização do Banco de Dados e Indisponibilidade}
 
@@ -32,19 +32,46 @@ Foi constatado pela Dataprev que as sete principais consultas mais ofensoras da 
 
 A Dataprev observou que, com o tempo, a memória alocada para a execução da aplicação \textit{Rails} aumenta sem dar qualquer indícios de recuo, o que implicou em um trabalho extra por parte da equipe para reiniciar a aplicação sempre que esta atingisse um determinado teto de uso de memória.
 
-\subsection{Lentidão em Páginas Específicas em Condições Específicas}
+\subsection{Lentidão em Páginas sob Condições Específicas}
 
-Durante a navegação pelas páginas da plataforma, é evidente para o usuário final a lentidão da plataforma em algumas páginas ou páginas em condições específicas. Estas são: a exibição de propostas com um alto número de comentários, e a exibição de textos participativos que possuiam muitos parágrafos em sua composição. Este problema não teve sua causa diagnosticada pela Dataprev nessa rodada de investigação feita por eles.
+Durante a navegação pelas páginas da plataforma, foi notada lentidão em algumas delas. Essa lentidão ocorria na escala de segundos, e em casos mais graves na escala de minutos. Notavelmente, algumas das páginas que demonstraram baixo desempenho foram: a exibição de propostas com um alto número de comentários, e a exibição de textos participativos que possuiam algumas centenas de parágrafos em sua composição. Uma das evidências fornecidas pela Dataprev pode ser vista na Figura \ref{fig:report-data-prev-comments-elastic-apm}; esta demonstra o desempenho da controladora de comentários da aplicação. A ferramenta utilizada para síntese dessa informação foi o Elastic APM. Contudo, o problema não teve sua causa raiz diagnosticada pela Dataprev nessa rodada de investigação.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Relatório da controladora de comentários gerado pelo Elastic APM}
+  \label{fig:report-data-prev-comments-elastic-apm}
+  \includegraphics[width=\textwidth]{figuras/report-data-prev-comments-elastic-apm.png}
+  \fonte{Dataprev}
+\end{figure}
 
 \section{Proposta de Intervenção na Plataforma Brasil Participativo}
 \label{sec:proposta_de_intervencao_na_plataforma_brasil_participativo}
 
-O Brasil Participativo diariamente recebe atualizações, estas sendo solicitadas diretamente pelos \textit{stakeholders} da Presidência do Brasil, e coordenadas pelo time de desenvolvimento do Laboratório de Competência em Software Livre da UnB (Lab Livre). Mediante às oportunidades de intevenção no código fonte da plataforma por solicitação dos \textit{stakeholders}, este trabalho tem como proposta, além de levantar alguns dos principais problemas de desempenho da plataforma Brasil Participativo, escolher uma funcionalidade ou conjunto de funcionalidades que estejam com uma percepção negativa em termos de desempenho por parte do usuário como objeto de estudo principal. O objetivo é realizar os desenvolvimentos solicitados, visando satisfazer a necessidade dos interessados com uma abordagem primariamente voltada para o ganho de desempenho computacional.
+O Brasil Participativo diariamente recebe atualizações, estas sendo solicitadas diretamente pelos \textit{stakeholders} da Presidência do Brasil, e coordenadas pelo time de desenvolvimento do Laboratório de Competência em Software Livre da UnB (Lab Livre). Mediante às oportunidades de intevenção no código fonte da plataforma por solicitação dos \textit{stakeholders}, este trabalho tem como proposta, além de levantar alguns dos principais problemas de desempenho da plataforma Brasil Participativo, escolher uma funcionalidade ou conjunto de funcionalidades que já estejam cotadas para desenvolvimento como objeto de estudo principal. Para essa escolha, será mandatório que a funcionalidade tenha problemas de desempenho relatados ou pelos usuários ou pelos relatórios da Dataprev.
+
+O objetivo é realizar os desenvolvimentos solicitados, visando satisfazer a necessidade dos interessados com uma abordagem primariamente voltada para o ganho de desempenho computacional.
 
 \subsection{Texto Participativo como Objeto de Estudo}
 
-Durante o ano de 2024 surgiu para o Brasil Participativo a necessidade de adequar a funcionalidade de Textos Participativos vinda do \textit{Decidim}. Esta adequação deveria cobrir os requisitos que foram levantados pelos \textit{stakeholders} e que posteriormente foram trabalhados pelo time de produto do Lab Livre. Destaca-se o fato de que algumas rodadas de desenvolvimento foram feitas pelo time de desenvolvimento do Lab Livre no começo de 2024. Entretanto, um dos problemas que já era percebido mesmo na versão original da funcionalidade, isto é: vinda do \textit{Decidim} sem receber qualquer ajuste de desenvolvimento, mostrou-se persistente mesmo após algumas rodadas de ajustes feitos pelo time do Lab Livre. O problema é o baixo desempenho computacional, onde a renderização da página de visualização e edição do texto leva minutos para ser feita, a depender da quantidade parágrafos presentes. Outro notável problema de desempenho é a lentidão da página para responder ao comando do usuário, uma vez renderizada. Comandos como o \textit{scroll} e clique do mouse podem levar segundos para serem processados pelo navegador devido ao alto volume de conteúdo presente na página. Sendo assim, diante desta oportunidade, a funcionalidade escolhida como foco para este trabalho é a ferramenta de Textos Participativos. O estudo e a realização de desenvolvimentos será feita de tal forma que a ferramenta esteja aderente aos requisitos levantados, e cumpra, principalmente, o requisito de desempenho.
+Durante o ano de 2024 surgiu para o Brasil Participativo a necessidade de adequar a funcionalidade de Textos Participativos vinda do \textit{Decidim}. Esta adequação deveria cobrir os requisitos que foram levantados pelos \textit{stakeholders} e que posteriormente foram trabalhados pelo time de produto do Lab Livre. Destaca-se o fato de que algumas rodadas de desenvolvimento já foram feitas pelo time de desenvolvimento do Lab Livre no começo de 2024. Entretanto, um dos problemas que já era percebido mesmo na versão original da funcionalidade, mostrou-se persistente mesmo após essas entregas do time do Lab Livre, dado que o objetivo não era a completa refatoração da ferramenta.
+
+O problema pode ser caracterizado pelo baixo desempenho computacional, onde a renderização da página de visualização e edição do texto leva minutos para ser feita, a depender da quantidade parágrafos presentes. Outro notável problema de desempenho é a lentidão da página para responder ao comando do usuário, uma vez renderizada. Comandos como o \textit{scroll} e clique do mouse podem levar segundos para serem processados pelo navegador devido ao alto volume de conteúdo presente na página.
+
+Sendo assim, diante desta oportunidade, a funcionalidade escolhida como foco para este trabalho é a ferramenta de Textos Participativos. O estudo e a realização de desenvolvimentos será feita de tal forma que a ferramenta esteja aderente aos requisitos levantados, e cumpra, principalmente, o requisito de desempenho.
+
+\subsection{Resultados Esperados}
+
+Com a correta execução da análise, estudo e intervenção na ferramenta de Textos Participativos do Brasil Participativo, espera-se que alguns dos resultados deste trabalho sejam:
+
+\begin{itemize}
+  \item Adição de novas funcionalidades na ferramenta de Texto Participativo;
+  \item Satisfação dos requisitos funcionais levantados;
+  \item Melhora perceptível no desempenho da ferramenta, reduzindo o tempo gasto pelo servidor para processar requisições do usuário;
+  \item Aplicação das melhorias em ambiente produtivo do Brasil Participativo.
+\end{itemize}
+
+Apesar do foco do estudo ser o cumprimento dos objetivos listados acima, entende-se também que um dos frutos deste trabalho é a exposição da metodologia de análise e desenvolvimento de funcionalidades em aplicações \textit{web} MVC com preocupação em desempenho, especialmente \textit{Ruby on Rails}. É esperado que que as etapas de trabalho aqui exploradas sejam reproduzíveis para outros casos semelhantes onde se há a necessidade de realizar o desenvolvimento cumprindo com requisitos de desempenho mais rigorosos.
 
 \section{Considerações Finais do Capítulo}
 
-Neste capítulo, foram explorados alguns dos problemas encontrados na plataforma Brasil Participativo. Destacou-se a característica de seu uso no contexto do Brasil, e seu impacto no cenário de participação social e utilização da tecnologia. Considerando o cenário Compreender a arquitetura é fundamental para otimizar o desempenho da aplicação e proporcionar uma experiência aprimorada aos usuários. Para aprimorar a performance da plataforma, foi traçado um plano de ações consistente que envolverá pesquisa, desenvolvimento e testes. A execução dessas atividades visam não apenas a melhoria do desempenho da aplicação, mas também a garantia de uma experiência mais satisfatória para os usuários da plataforma Brasil Participativo, possibilitando maior facilidade na participação digital.
+Neste capítulo, foram expostos alguns dos problemas encontrados na plataforma Brasil Participativo. Destacou-se a característica de seu uso no contexto do Brasil, e seu impacto no cenário de participação social e utilização da tecnologia. Considerando o cenário de desenvolvimento continuo da plataforma sob direção do Lab Livre da UnB, a proposta central deste trabalho foi firmada sobre o desenvolvimento de melhorias e adaptação da funcionalidade de Textos Participativos. Esta funcionalidade hoje apresenta gargalos de desempenho, além da necessidade de adequação para as necessidades dos usuários. A execução dessas atividades visam não apenas a melhoria do desempenho da aplicação, mas também a garantia de uma experiência mais satisfatória para os usuários da plataforma Brasil Participativo, possibilitando maior facilidade na participação digital.
