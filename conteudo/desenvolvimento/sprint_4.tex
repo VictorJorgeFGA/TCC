@@ -1,20 +1,39 @@
 \subsection {Sprint 4}
 
-Após todos os ajustes já realizados no \textit{frontend} para se adequar aos padrões visuais expostos no protótipo feito pelo time de \textit{design} do Lab Livre, a quarta \textit{sprint} foi caracaterizada por um único requisito: ter tabelas no texto. No respositório oficial do Trix há uma \textit{issue}, já fechada, onde usuários questionam se há planos de adicionar o suporte a tabelas; até a data deste trabalho não houve indícios de que mantenedores do projeto irão atuar nessa demanda. A \textit{issue} mencionada pode ser acessada em \url{https://github.com/basecamp/trix/issues/539}.
+Após todos os ajustes já realizados no \textit{frontend} para se adequar aos padrões visuais expostos no protótipo feito pelo time de \textit{design} do Lab Livre, a quarta \textit{sprint} foi caracaterizada por um único requisito:
+
+\begin{itemize}
+	\item \textbf{Requisito 1 da Sprint 4}: Adicionar suporte à criação e edição de tabelas nos parágrafos do texto participativo.
+\end{itemize}
+
+No respositório oficial do Trix há uma \textit{issue}, já fechada, onde usuários questionam se há planos de adicionar o suporte a tabelas; até a data deste trabalho não houve indícios de que mantenedores do projeto irão atuar nessa demanda.
+A \textit{issue} mencionada pode ser acessada em \url{https://github.com/basecamp/trix/issues/539}.
 
 \subsubsection {Requisito 1 da Sprint 4}
 
-Dada a limitação do Trix em relação ao uso de tabelas, anteriormente foi acordado com o time de produto do Lab Livre que estas seriam inseridas no texto no formato de imagens. Entretanto, em reuniões de \textit{feedback} com os \textit{stakeholders}, viu-se que era impraticável em termos de experiência do usuário e usabilidade proceder dessa maneira.
-Foram feitas reuniões de descorberta com o time responsável pela plataforma Participa+ Brasil, onde existe funcionalidade semelhante ao texto participativo, e que existe o suporte a tabelas. Como saída dessa reunião foram sugeridos alguns editores de texto, dentre eles: Jodit, CKEditor 5 e o TinyMCE. No Participa+ Brasil é utilizado o editor Jodit. Com base na premissa de que alguns usuários poderiam migrar do Participa+ Brasil para o Brasil Participativo, o Jodit foi escolhido como potencial escolha.
+Com a limitação do Trix em relação ao uso de tabelas, anteriormente foi acordado com o time de produto do Lab Livre que estas seriam inseridas no texto no formato de imagens.
+Entretanto, em reuniões de \textit{feedback} com os \textit{stakeholders}, viu-se que era impraticável em termos de experiência do usuário e usabilidade proceder dessa maneira.
+Foram feitas reuniões de descorberta com o time responsável pela plataforma Participa+ Brasil, onde existe funcionalidade semelhante ao texto participativo, e que existe o suporte a tabelas.
+Como saída dessa reunião foram sugeridos alguns editores de texto, dentre eles: Jodit, CKEditor 5 e o TinyMCE. No Participa+ Brasil é utilizado o editor Jodit.
+Com base na premissa de que alguns usuários poderiam migrar do Participa+ Brasil para o Brasil Participativo, o Jodit foi escolhido como potencial escolha.
 
-Para garantir que haveria compatibilidade com a ferramenta de textos do Brasil Participativo, foi realizado um teste localmente, trocando o Trix pelo Jodit na página de inserção de conteúdo para criação de texto participativo.
-O teste foi realizado inserindo na própria \textit{view} da página \textit{links} para o JavaScript e o CSS do Jodit, conforme descrito na própria documentação do editor. Para validar a viabilidade de uso do editor, foram feitas várias provas inserindo tabelas, imagens e textos formatados através do comando de copiar e colar, todos os textos vindo do Google Docs, Microsoft Word e LibreOffice Writer. Foram manualmente persistidos alguns parágrafos que continham tabelas, e posteriormente exibidos com sucesso na tela de visualização do texto participativo.
+Para garantir que o Jodit haveria compatibilidade com o Brasil Participativo, foi realizado um teste localmente, trocando o Trix pelo Jodit na página de inserção de conteúdo para criação de texto participativo.
+O teste foi realizado inserindo na própria \textit{view} da página \textit{links} para o JavaScript e o CSS do Jodit, conforme descrito na própria documentação do editor.
+Para validar a viabilidade de uso do editor, foram feitas várias provas inserindo tabelas, imagens e textos formatados através do comando de copiar e colar, todos os textos vindo do Google Docs, Microsoft Word e LibreOffice Writer.
+Foram manualmente persistidos alguns parágrafos que continham tabelas, e posteriormente exibidos com sucesso na tela de visualização do texto participativo.
 
-Com o sucesso desses testes, o desenvolvimento finalmente seguiria com foco total na implantação do Jodit no Brasil Participativo. Como próximo passo, era preciso, da mesma forma como foi feito para o Trix, achar formas de persistir as imagens inseridas no editor no \texttt{storage}. O Jodit possui a opção \texttt{uploader.insertImageAsBase64}, que guarda o conteúdo da imagem no formato de Data URL na própria estrutura do HTML.
-Data URL é uma maneira de embutir o conteúdo de arquivo de forma \textit{inline} em documentos \cite{data-urls-mdn}. O atributo \texttt{src} de \textit{tags} \texttt{<img>} é preenchido com o próprio conteúdo da imagem codificado em Base64, ao invés de ter um \textit{link} para onde esta estaria guardada.
+Com o sucesso desses testes, o desenvolvimento finalmente seguiu com foco total para a implantação do Jodit no Brasil Participativo.
 
-Dessa maneira, ao invés de tentar guardar a imagem no \texttt{storage} logo que for inserida no texto, pode-se guardá-la apenas quando o usuário submeter o texto para criação.
-Na forma como era feita com o Trix, caso o usuário arrastasse uma imagem para o editor e depois a removesse antes mesmo de submeter o texto, esta ficaria sem qualquer uso, e mesmo assim continuaria persistida no \texttt{storage}. Com o uso de Data URLs, é possível evitar esses casos e ter maior controle do ciclo de vida das imagens.
+Como próximo passo, era preciso, da mesma forma como foi feito para o Trix, achar formas de persistir as imagens inseridas no editor no \texttt{storage}. Um dos problemas com a persistência de imagens realizada pelo Trix era de que o \textit{upload} da imagem era feito no momento em que o usuário a inseria no texto, estando à mercê de problemas de rede, ou impedindo que o texto fosse escrito \textit{offline} para ser enviado posteriormente.
+
+Em termos de desempenho em relação ao uso de armazenamento, havia também o agravante de que o usuário poderia inserir imagens e apagá-las logo em seguida.
+Dessa forma a imagem nunca seria associada a um parágrafo de texto, permanecendo órfã no \texttt{storage} da aplicação até que fosse removida manualmente ou por alguma automação.
+
+O Jodit possui a opção \texttt{uploader.insertImageAsBase64}, que guarda o conteúdo da imagem no formato de Data URL na própria estrutura do HTML.
+Data URL é uma maneira de embutir o conteúdo de arquivos de forma \textit{inline} em documentos \cite{data-urls-mdn}.
+Com isso, o atributo \texttt{src} de \textit{tags} \texttt{<img>} é preenchido com o próprio conteúdo da imagem codificado em Base64, ao invés de ser preenchido com um \textit{link} para local onde ela estaria guardada.
+
+Dessa maneira, ao invés de tentar guardar a imagem no \texttt{storage} logo que for inserida no texto, pode-se guardá-la apenas quando o usuário submeter o texto para criação, resolvendo então o problema de desempenho no uso de armazenamento.
 
 Sendo assim, o próximo passo seria, então, fazer o \textit{parsing} do \textit{input} HTML e realizar a divisão dos parágrafos. Diferentemente do Trix que por padrão inseria novos paragrafos envoltos de \textit{tags} \texttt{<div>}, da forma como foi configurado, no Jodit os parágrafos são envoltos de \textit{tags} \texttt{<p>}, e a cada quebra de linha uma nova \textit{tag} \texttt{<p>} é criada para servir de container para o texto.
 O único problema é a formatação de alguns textos quando copiados do Google Docs e do Microsft Word. Alguns utilizam \textit{tags} \texttt{<p>} para servir de container para \textit{tags} \texttt{<img>}, além de em alguns momentos o texto de vários parágrafos estar envolto de uma única \textit{tag} \texttt{<strong>}. Esse comportamento foi classificado neste trabalho como "\textit{tags} modificadoras de texto sendo utilizadas como \texttt{<div>}", e guiou o desenvolvimento do \textit{parser} para suportar a migração para o Jodit.
@@ -49,36 +68,11 @@ A verificação começa no nó raiz, que é o próprio \texttt{DocumentFragment}
   \fonte{Próprio autor}
 \end{figure}
 
-O algoritmo para definir se um determinado nó está sendo usado como \texttt{<div>} também é de caráter recursivo. A análise começa no primeiro nó passado como parâmetro. Primeiro se verifica se o nó é uma \textit{tag} modificadora de texto, se não for, o algoritmo para e a resposta é falso. Caso contrário, o algoritmo segue em frente e verifica se o nó atual possui filhos, se não tiver, ele para e a resposta é falso. Caso contrário, o algoritmo segue em frente e passa a avaliar todos os filhos diretos do nó que está sendo avaliado. Recursivamente o algoritmo irá avaliar para cada filho se este é uma \textit{tag} modificadora sendo usada como \texttt{<div>}. Se ao menos um de seus filhos for uma \textit{tag} modificadora sendo usada como \texttt{<div>}, o próprio nó também será considerado, e o algoritmo retorna verdadeiro. Na Tabela \ref{tab:tags-html-modificadoras-de-texto} está a relação de \textit{tags} que são consideradas modificadoras de texto. Vale notar que a \textit{tag} \texttt{<img>} está entre elas, pois uma imagem, nesse contexto, tem o valor semântico que um texto puro dentro de um parágrafo. Isto é, uma imagem não é fator determinante para dividir um parágrafo. O código fonte dessa verificação pode ser visto na Figura \ref{fig:text-modifier-beign-used-as-div-jodit}.
+O algoritmo para definir se um determinado nó está sendo usado como \texttt{<div>} também é de caráter recursivo. A análise começa no primeiro nó passado como parâmetro. Primeiro se verifica se o nó é uma \textit{tag} modificadora de texto, se não for, o algoritmo para e a resposta é falso. Caso contrário, o algoritmo segue em frente e verifica se o nó atual possui filhos, se não tiver, ele para e a resposta é falso. Caso contrário, o algoritmo segue em frente e passa a avaliar todos os filhos diretos do nó que está sendo avaliado. Recursivamente o algoritmo irá avaliar para cada filho se este é uma \textit{tag} modificadora sendo usada como \texttt{<div>}. Se ao menos um de seus filhos for uma \textit{tag} modificadora sendo usada como \texttt{<div>}, o próprio nó também será considerado, e o algoritmo retorna verdadeiro.
 
-\begin{table}[h]
-	\centering
-	\caption{\textit{Tags} HTML modificadoras de texto}
-	\label{tab:tags-html-modificadoras-de-texto}
-	\begin{tabular}{c}
-    \toprule
-		p \\
-		title \\
-		span \\
-		br \\
-		text \\
-		strong \\
-		b \\
-		em \\
-		i \\
-		u \\
-		s \\
-		del \\
-		mark \\
-		small \\
-		sup \\
-		code \\
-		pre \\
-		img \\
-		a \\
-		\bottomrule
-	\end{tabular}
-\end{table}
+No contexto de uso do Jodit, considera-se como \textit{tags} modificadoras de texto: \texttt{<p>}, \texttt{<title>}, \texttt{<span>}, \texttt{<br>}, \texttt{<text>}, \texttt{<strong>}, \texttt{<b>}, \texttt{<em>}, \texttt{<i>}, \texttt{<u>}, \texttt{<s>}, \texttt{<del>}, \texttt{<mark>}, \texttt{<small>}, \texttt{<sup>}, \texttt{<code>}, \texttt{<pre>}, \texttt{<img>} e \texttt{<a>}.
+É importante saber que a \textit{tag} \texttt{<img>} está entre elas pois uma imagem tem o mesmo valor semântico que um texto puro dentro de um parágrafo, nesse contexto.
+Isto é, uma imagem não é fator determinante para dividir um parágrafo. O código fonte dessa verificação pode ser visto na Figura \ref{fig:text-modifier-beign-used-as-div-jodit}.
 
 \begin{figure}[htbp]
   \centering
@@ -88,4 +82,33 @@ O algoritmo para definir se um determinado nó está sendo usado como \texttt{<d
   \fonte{Próprio autor}
 \end{figure}
 
-O \textit{Merge Request} com as alterações dessa \textit{sprint} pode ser encontrado em \url{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr/-/merge_requests/641}
+Depois de implementado a funcionalidade de copiar e colar texto, foram realizadas algumas experimentações para checar o nível de desempenho. Primeiro foi submetido um texto copiado do LibreOffice Writer com 106.055 caracteres.
+Na Figura \ref{fig:log-desempenho-copiar-colar-100k} é exibida uma captura de tela dos \textit{logs} da aplicação demonstrando o tempo gasto pela requisição. Nota-se que foram gastos 18 segundos para processar a requisição, sendo 4 segundos gastos pelo banco. O texto foi dividido em 381 parágrafos
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Tempo de execução para criação de texto com 106.055 caracteres e com 381 parágrafos}
+  \label{fig:log-desempenho-copiar-colar-100k}
+  \includegraphics[width=\textwidth]{figuras/log-desempenho-copiar-colar-100k.png}
+  \fonte{Próprio autor}
+\end{figure}
+
+Depois foi submetido um texto, também copiado do LibreOffice Writer, com 157.883 caracteres. Na Figura \ref{fig:log-desempenho-copiar-colar-100k} é exibida uma captura de tela dos \textit{logs} da aplicação demonstrando o tempo gasto pela requisição. Nota-se que foram gastos 38 segundos para processar a requisição, sendo 9 segundos gastos pelo banco. O texto foi dividido em 647 parágrafos.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Tempo de execução para criação de texto com 157.883 caracteres e 647 parágrafos}
+  \label{fig:log-desempenho-copiar-colar-100k}
+  \includegraphics[width=\textwidth]{figuras/log-desempenho-copiar-colar-160k.png}
+  \fonte{Próprio autor}
+\end{figure}
+
+Um dos problemas arquiteturais da ferramenta de textos participativos do Decidim é o uso de propostas como objeto para persistência dos parágrafos.
+No Decidim as propostas possuem diversos relacionamentos com outros objetos como: votos, seguidores, categoria, referência, múltiplos autores e também \textit{logs} de auditória, algo que traz \textit{overhead} desnecessário para a funcionalidade.
+
+A fim de melhorar a experiência do usuário, evitando que o mesmo enfrente demoras para criar textos com copiar e colar, principalmente para textos com muitos parágrafos, fica como oportunidade para próximos trabalhos a implementação de mecanismos de criação de textos participativos de forma assíncrona.
+Isto é, a requisição de criação do texto é respondida instantaneamente, redirecionando o usuário para tela onde verá os parágrafos enquanto a criação é processada em segundo plano pela aplicação. Uma possível melhoria também seria a separação do componente de textos participativos do componente de propostas, reduzindo significativamente o \textit{overhead} de informações inutilizadas.
+
+Apesar destes problemas serem conhecidos e terem possíveis soluções mapeadas, com a limitação de tempo de quatro \textit{sprints}, os resultados se limitarão aos já aqui apresentados.
+
+O \textit{merge request} com as alterações dessa \textit{sprint} está disponível em \url{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr/-/merge_requests/641}.

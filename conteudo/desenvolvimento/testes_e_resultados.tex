@@ -1,7 +1,16 @@
 \section {Testes e Resultados}
 \label{sec:resultados}
 
-Os testes de carga serão executados para medir quantitativamente os resultados obtidos pelas modificações realizadas na ferramenta de textos participativos do Brasil Participativo que visaram o ganho de desempenho. Para a execução dos testes, será utilizada a ferramenta de linha de comando \textit{Apache HTTP Server Benchmarking Tool} (ApacheBench). Os testes serão executados em um computador com sistema operacional Linux, distribuição Ubuntu 24.04.2 LTS. As configurações de \textit{hardware} podem ser vistas na Tabela \ref{tab:especificacao-hardware-de-teste}. Os testes utilizarão a aplicação do Brasil Participativo com execução em modo produção. O protocolo utilizado será HTTP, e o próprio \textit{Rails} servirá os \textit{assets}. O \textit{web-server Puma} será executado em \textit{single mode} com cinco \textit{threads}.
+Os requisitos centrais das entregas realizadas neste trabalho eram sobre melhorar o desempenho das páginas de visualização e de edição do texto participativo.
+Sendo assim, os testes de carga serão executados para medir quantitativamente os resultados obtidos pelas modificações realizadas na ferramenta de textos participativos do Brasil Participativo que visaram o ganho de desempenho.
+
+É importante observar que as funcionalidades de \textit{parsing} de texto do usuário através do comando copiar e colar são completamente novas na plataforma, o que impossibilita um comparativo.
+
+Para a execução dos testes, será utilizada a ferramenta de linha de comando \textit{Apache HTTP Server Benchmarking Tool} (ApacheBench).
+Os testes serão executados em um computador com sistema operacional Linux, distribuição Ubuntu 24.04.2 LTS. As configurações de \textit{hardware} podem ser vistas na Tabela \ref{tab:especificacao-hardware-de-teste}.
+Os testes utilizarão a aplicação do Brasil Participativo com execução em modo produção.
+O protocolo utilizado será HTTP, e o próprio \textit{Rails} servirá os \textit{assets}.
+O \textit{web-server Puma} será executado em \textit{single mode} com cinco \textit{threads}.
 
 \begin{table}[h]
 	\centering
@@ -16,15 +25,16 @@ Os testes de carga serão executados para medir quantitativamente os resultados 
 	\end{tabular}
 \end{table}
 
-Os testes consistirão em submeter sob carga as páginas de visualização do texto participativo e visualização do rascunho (edição do texto participativo), dado que estas foram as páginas que receberam o foco para otimização de desempenho neste trabalho, com as outras funcionalidades sendo criadas para satisfação dos demais requisitos funcionais embutidos no pacote de desenvolvimento.
+Os testes consistirão em submeter sob carga as páginas de visualização e edição do texto participativo.
 
-Sendo assim, serão levantados dados para comparação com a realidade do cotidiano e os resultados dos testes apresentados pelo ApacheBench, trazendo a noção do impacto causado pelas modificações realizadas. Para trazer variabilidade nos testes, serão executados tanto os testes com volumetria de parágrafos histórica, quanto com volumetria de parágrafos extremas.
+Serão levantados dados para comparação com a realidade do cotidiano e os resultados dos testes apresentados pelo ApacheBench, trazendo a noção do impacto causado pelas modificações realizadas. Para trazer variabilidade nos testes, serão executados tanto os testes com volumetria de parágrafos histórica, quanto com volumetria de parágrafos extremas.
 
 Para ambos os cenários de teste, cada parágrafo terá seu conteúdo preenchido com um texto de exemplo "\textit{Lorem Ipsum}" de 563 caracteres cada. O conteúdo utilizado será:
 
 \textit{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in odio non mi auctor commodo. Aenean consequat metus massa, eget vulputate nibh suscipit vitae. Aliquam sagittis vel odio eleifend posuere. Curabitur hendrerit est elit, ac hendrerit nulla laoreet sit amet. Proin dictum tempor vulputate. Etiam cursus, quam sed cursus laoreet, dui nisi efficitur quam, at maximus dui nibh et velit. Curabitur ullamcorper ligula vitae mauris cursus rhoncus. Suspendisse laoreet felis euismod lorem accumsan, sit amet imperdiet mauris laoreet. Fusce vel tristique felis.}
 
-A ideia central é checar o quão bem a plataforma possivelmente operará no dia-dia e em cenários de alta demanda. Para os cenários extremos, será adotada a volumetria de 2 mil parágrafos por texto participativo, e 10 administradores utilizando a ferramenta paralelamente.
+A ideia central é checar o quão bem estas páginas da plataforma possivelmente operarão no dia-dia e em cenários de alta demanda.
+Para os cenários extremos, será adotada a volumetria de 2 mil parágrafos por texto participativo, e 10 administradores utilizando a ferramenta paralelamente.
 
 A versão anterior às modificações descritas neste trabalho utilizada para comparação nos testes é a \textit{tag} 1.5.0, que está disponível no respositório oficial do Brasil Participativo.
 
@@ -60,7 +70,7 @@ A fim de obter um parâmetro para comparação com teste de carga da página de 
   \fonte{Próprio autor}
 \end{table}
 
-No dia 29 de novembro de 2024, houveram quarenta e cinco (45) componentes de texto participativo criados na plataforma. Uma segunda consulta foi executada para descobrir a classificação dos cinco textos participativos dessa data com a maior quantidade de parágrafos. A consulta SQL pode ser conferida na Figura \ref{fig:consulta-top-textos-participativos-paragrafos}, e o seu resultado na Tabela \ref{tab:resultado-consulta-top-textos-participativos-paragrafos}. Nota-se que para essa data, o texto participativo com a maior quantidade de parágrafos foi de 124.
+No dia 29 de novembro de 2024, houveram 45 componentes de texto participativo criados na plataforma. Uma segunda consulta foi executada para descobrir a classificação dos cinco textos participativos dessa data com a maior quantidade de parágrafos. A consulta SQL pode ser conferida na Figura \ref{fig:consulta-top-textos-participativos-paragrafos}, e o seu resultado na Tabela \ref{tab:resultado-consulta-top-textos-participativos-paragrafos}. Nota-se que para essa data, o texto participativo com a maior quantidade de parágrafos foi de 124.
 
 \begin{figure}[htbp]
   \centering
@@ -88,17 +98,20 @@ No dia 29 de novembro de 2024, houveram quarenta e cinco (45) componentes de tex
   \fonte{Próprio autor}
 \end{table}
 
-Com base nessas informações, considerar-se-á um dia com pico de uso com 50 componentes sendo criados, cada um deles com 130 parágrafos. Considera-se nesse trabalho que o usuaŕio administrador possivelmente trabalha na plataforma entre os horários das nove horas da manhã até meio dia (12 horas), e das 13 horas até às 18 horas, significando uma janela de trabalho de oito horas, o que significa em aproximadamente de seis a sete componentes criados por hora.
+Com base nessas informações, será considerado um dia com pico de uso com 50 componentes sendo criados, cada um deles com 130 parágrafos.
+Será levado em conta que o usuaŕio administrador possivelmente trabalha na plataforma entre os horários das nove horas da manhã até meio dia (12 horas), e das 13 horas até às 18 horas, significando uma janela de trabalho de oito horas. O que significa em aproximadamente de seis a sete componentes criados por hora.
 
-Assumindo um possível pior cenário, também por convenção, considerarar-se-á neste trabalho que o administrador realiza em média no mínimo todas as cinco operações em cada parágrafo, isto é: editar, mesclar, mover, ocultar e desabilitar interações. Para este teste será também ignorado o fato de que a operação de mesclagem diminui a contagem de parágrafos em uma unidade. A realização de cada operação acarreta na atualização da página de visualização do rascunho, portanto considerando os seis a sete componentes por hora (nesse caso será considerado sete, simplesmente), a quantidade de 150 parágrafos e as cinco operações por parágrafo, tem-se que a página de visualização do rascunho será renderizada 5.250 vezes em uma hora, ou 87 vezes por minuto, ou 1,46 vezes por segundo.
+Assumindo um possível pior cenário, também por convenção, será considerado que o administrador realiza em média no mínimo todas as cinco operações em cada parágrafo, isto é: editar, mesclar, mover, ocultar e desabilitar interações.
+Para este teste será ignorado o fato de que a operação de mesclagem diminui a contagem de parágrafos em uma unidade.
+A realização de cada operação acarreta na atualização da página de visualização do rascunho, portanto considerando os seis a sete componentes por hora (nesse caso será considerado sete, simplesmente), a quantidade de 150 parágrafos e as cinco operações por parágrafo, tem-se que a página de visualização do rascunho será renderizada 5.250 vezes em uma hora, ou 87 vezes por minuto, ou 1,46 vezes por segundo.
 
 \subsubsection {Execução e Resultados}
 
-Os testes foram realizados disparando 100 requisições com o fator de paralelismo igual a cinco. Os resultados podem ser visualizados na Tabela \ref{tab:teste-carga-visualizar-rascunho}
+Os testes foram realizados disparando 100 requisições com o fator de paralelismo igual a cinco, isto é, ocupando todas as cinco threads do servidor cada uma com um único usuário. Os resultados podem ser visualizados na Tabela \ref{tab:teste-carga-visualizar-rascunho}
 
 \begin{table}[h]
 	\centering
-	\caption{Teste da página de visualização de rascunho}
+	\caption{Teste da página de edição do texto}
 	\label{tab:teste-carga-visualizar-rascunho}
 	\begin{tabular}{ccc}
 		\toprule
@@ -119,7 +132,7 @@ Os testes extremos foram realizados com 10 requisições com fator de paralelism
 
 \begin{table}[h]
 	\centering
-	\caption{Teste extremo da página de visualização de rascunho}
+	\caption{Teste extremo da página de edição do texto}
 	\label{tab:teste-carga-extremo-visualizar-rascunho}
 	\begin{tabular}{ccc}
 		\toprule
@@ -182,8 +195,16 @@ As alterações abordadas neste trabalho foram devidamente incluídas no código
 
 \chapter {Considerações Finais}
 
-Este trabalho teve como objetivo demonstrar a explorar uma jornada de desenvolvimento de funcionalidades levando em consideração requisitos levantados por \textit{stakeholders} e outros times, tendo como foco principal o desenvolvimento de funcionalidades com alto desempenho computacional.
+Este trabalho teve como objetivo demonstrar a explorar uma jornada de desenvolvimento de funcionalidades levando em consideração requisitos levantados por \textit{stakeholders} e outros times, tendo como foco principal o desenvolvimento de funcionalidades com requisitos de desempenho mais rigorosos.
 
-A metodologia adotada se baseou no desenvolvimento continuo, onde em cada ciclo de desenvolvimento novos requisitos eram priorizados e executados. A mudança de escopo, apesar de não ser o foco de detalhamento desse trabalho, foi algo presente na jornada de desenvolvimento, mas em nenhum momento foi motivo para impedir de realizar entregas.
+A metodologia adotada se baseou no desenvolvimento continuo, onde em cada ciclo de desenvolvimento novos requisitos eram priorizados e executados. A mudança de escopo, apesar de não ser o foco de detalhamento desse trabalho, foi algo presente na jornada de desenvolvimento, mas em nenhum momento foi impeditivo para realização de entregas.
 
-Apesar do enfoque em otimização de desempenho, muitos outros tópicos relacionados ao desenvolvimento foram abordados, trazendo maior profundidade em relação às contribuições realizadas no projeto. Muitos dos tópicos aqui abordados podem vir a ser objeto de evolução futuramente, principalmente em relação a desempenho. É esperado que a medida que a funcionalidade for sendo utilizada por usuários reais no cotidiano, correções e ajustes serão feitos, trazendo maior maturidade e grau de confiança na solução.
+Apesar do enfoque em otimização de desempenho, muitos outros tópicos relacionados ao desenvolvimento foram abordados, trazendo maior profundidade em relação às contribuições realizadas no projeto.
+
+É esperado que a medida que a funcionalidade seja utilizada por usuários reais, correções e ajustes sejam feitos pelo time desenvolvimento do Lab Livre, trazendo maior maturidade e grau de confiança na solução.
+
+Muitos dos tópicos aqui abordados podem vir a ser objeto de evolução futuramente, principalmente em relação a desempenho.
+
+Sabe-se que ainda há oportunidades de desenvolvimento que potencialmente trarão melhorias de desempenho para a plataforma e para a ferramenta de textos participativos.
+Como mencionado, existem diversos outros problemas de desempenho em partes específicas do sistema.
+
