@@ -1,6 +1,6 @@
 \subsection {Sprint 2}
 
-A \textit{sprint} 2 foi caracterizada pela correção de comportamentos inesperados que surgiram durante os testes de aceitação conduzido pelo time de produto, além de outros ajustes. Os trabalhos começaram assim que a lista de ajustes necessários foi levantada, e pode ser sumarizada nos seguintes requisitos:
+A \textit{sprint} 2 foi caracterizada pela realização de ajustes e correção de comportamentos inesperados que surgiram durante os testes de aceitação das funcionalidades entregues na \textit{sprint} 1, conduzidos pelo time de produto. Os trabalhos começaram assim que a lista de ajustes necessários foi levantada, e pode ser sumarizada nos seguintes requisitos:
 
 \begin{itemize}
 	\item \textbf{Requisito 1 da Sprint 2}: Corrigir problema onde um parágrafo que possua trechos em itálico e negrito são erroneamente divididos em mais de um parágrafo;
@@ -62,13 +62,13 @@ Para resolver esse problema, foi criado um método para fazer a extração dos p
 
 \subsubsection {Requisito 2 da Sprint 2}
 
-Ao utilizar o comando copiar e colar em editores de texto como o Google, na maioria das vezes o conteúdo da imagem em si não era copiado, mas sim um \textit{link} para onde está guardada. Para esses casos, a imagem (\texttt{<img>}) já era inserida no texto com o seu atributo \texttt{src} preenchido, e não era automaticamente enviada para o \texttt{storage} do \textit{Rails}, pois o seu conteúdo sequer estava lá.
+Ao utilizar o comando copiar em editores de texto como o Google Docs, na maioria das vezes o conteúdo da imagem em si não era copiado, mas sim um \textit{link} para onde ela está guardada. Para esses casos, a imagem (\texttt{<img>}) já era inserida no texto com o seu atributo \texttt{src} preenchido, e não era automaticamente enviada para o \texttt{storage} do \textit{Rails}, pois o seu conteúdo (\texttt{blob}) sequer estava lá.
 
-Para resolver esse problema, uma das possibilidades seria fazer uma requisição para a fonte da  para em seguida enviá-la para o \texttt{storage} usando a \textit{controller} \texttt{Attachments}. Mas, essa alternativa tinha dois problemas: problemas com \textit{Cross-Origin Resource Sharing} (CORS), e disponibilidade limitada do recurso.
+Para resolver esse problema, uma das possibilidades seria fazer uma requisição para a fonte da imagem, para em seguida enviá-la para o \texttt{storage} usando a \textit{controller} \texttt{Attachments}. Mas, essa alternativa tinha dois problemas: barreiras com o \textit{Cross-Origin Resource Sharing} (CORS), e disponibilidade limitada do recurso.
 
 CORS é um mecanismo para controle de requisições entre domínios distintos quando a requisição é feita pelo \textit{browser}, fazendo com que nem sempre o Brasil Participativo tenha permissão para baixar imagens de outras fontes automaticamente \cite{cors-explanation}.
 
-Outra possibilidade seria deixar o elemento HTML que representa a imagem intocado e referenciando o \textit{link} externo, porém, algumas fontes possuem mecanimos de \textit{throttle} para impedir que uma determinada origem faça requisições demais, além de que não há garantias de que o recurso estará disponível a qualquer instante que se queira buscá-lo.
+Outra possibilidade seria deixar o elemento HTML que representa a imagem intocado e referenciando o \textit{link} externo mesmo depois de salvar o parágrafo no banco de dados. Porém, algumas fontes possuem mecanimos de \textit{throttle} para impedir que uma determinada origem faça requisições demais, além de que não há garantias de que o recurso estará disponível a qualquer instante que se queira buscá-lo.
 
 Portanto, para garantir a consistência na inserção de imagens no texto, o usuário não conseguirá mais inserir imagens através do comando copiar e colar. Será necessário manualmente baixar a imagem no computador e inserí-la no corpo do texto, seja arrastando, seja utilizando a funcionalidade de upload de arquivos do Trix.
 

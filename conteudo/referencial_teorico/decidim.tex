@@ -19,21 +19,21 @@ O \textit{Decidim} possui várias entidades em sua arquitetura. As mais importan
 
 Os \textit{participatory spaces} são \textit{frameworks} que definem como a participação será realizada, os canais ou meios pelos quais cidadãos ou membros de uma organização podem processar solicitações ou coordenar propostas e tomar decisões. Iniciativas, processos, assembleias e consultas são todos espaços participativos, estes referidos na documentação como \textit{initiatives}, \textit{participatory processes}, \textit{assemblies} e \textit{consultations}, respectivamente. Exemplos específicos incluem: uma iniciativa cidadã para alterar diretamente uma regulamentação; uma assembleia geral ou conselho de trabalhadores; um orçamento participativo, planejamento estratégico ou processo eleitoral; um referendo ou uma convocação para votar "Sim" ou "Não" para mudar o nome de uma organização \cite{decidim-descriptionpage}.
 
-A nível de código, cada implementação de um novo \textit{participatory space} é feita em um submódulo separado em uma \textit{gem} própria. Uma relação entre cada um dos espaços participativos já existentes por padrão no \textit{Decidim} e o seu respectivo submódulo pode ser vista no Quadro \ref{tab:modulos-participatoryspaces}.
+A nível de código, cada implementação de um novo \textit{participatory space} é feita em um submódulo separado em uma \textit{gem} própria. Uma relação entre cada um dos espaços participativos já existentes por padrão no \textit{Decidim} e o seu respectivo submódulo pode ser vista na Tabela \ref{tab:modulos-participatoryspaces}.
 
 \begin{table}
   \centering
   \caption{Módulos dos espaços participativos padrões do \textit{Decidim}}
   \label{tab:modulos-participatoryspaces}
-  \begin{tabular}{|c|c|c|}
-    \hline
+  \begin{tabular}{cc}
+    \toprule
     Espaço Participativo & Módulo \\
-    \hline
+    \midrule
     Assembleias & decidim-assemblies \\
     Consultas ou Eleição & decidim-elections \\
     Iniciativas & decidim-initiatives \\
     Processos Participativos & decidim-participatory\_processes \\
-    \hline
+    \bottomrule
   \end{tabular}
   \fonte{\cite{decidim-descriptionpage}}
 \end{table}
@@ -42,16 +42,16 @@ A nível de código, cada implementação de um novo \textit{participatory space
 
 Os \textit{components} são os mecanismos participativos que permitem uma série de operações e interações entre os usuários da plataforma dentro de cada um dos espaços participativos. No \textit{Decidim} há disponível por exemplo os seguintes componentes: comentários, propostas, debates, pesquisas, sorteios, blogs e reuniões. Outros componentes que se baseiam nos componentes básicos são: textos participativos, responsabilidade e conferências \cite{decidim-descriptionpage}.
 
-Da mesma forma que ocorre com os espaços participativos, os componentes são implementados através de submódulos em formato de novas \textit{gems}. No Quadro \ref{tab:modulos-components} é possível conferir o nome do módulo de cada componente fornecido por padrão pelo \textit{Decidim}.
+Da mesma forma que ocorre com os espaços participativos, os componentes são implementados através de submódulos em formato de novas \textit{gems}. Na Tabela \ref{tab:modulos-components} é possível conferir o nome do módulo de cada componente fornecido por padrão pelo \textit{Decidim}.
 
 \begin{table}
   \centering
   \caption{Módulos dos componentes padrões do \textit{Decidim}}
   \label{tab:modulos-components}
-  \begin{tabular}{|c|c|c|}
-    \hline
+  \begin{tabular}{cc}
+    \toprule
     Componente & Módulo \\
-    \hline
+    \midrule
     Comentários & decidim-comments \\
     Propostas & decidim-proposals \\
     Debates & decidim-debates \\
@@ -59,7 +59,7 @@ Da mesma forma que ocorre com os espaços participativos, os componentes são im
     Sorteios & decidim-sortitions \\
     \textit{Blogs} & decidim-blogs \\
     Reuniões & decidim-meetings \\
-    \hline
+    \bottomrule
   \end{tabular}
   \fonte{\cite{decidim-descriptionpage}}
 \end{table}

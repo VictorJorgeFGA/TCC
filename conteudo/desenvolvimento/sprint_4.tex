@@ -15,7 +15,7 @@ Com a limitação do Trix em relação ao uso de tabelas, anteriormente foi acor
 Entretanto, em reuniões de \textit{feedback} com os \textit{stakeholders}, viu-se que era impraticável em termos de experiência do usuário e usabilidade proceder dessa maneira.
 Foram feitas reuniões de descorberta com o time responsável pela plataforma Participa+ Brasil, onde existe funcionalidade semelhante ao texto participativo, e que existe o suporte a tabelas.
 Como saída dessa reunião foram sugeridos alguns editores de texto, dentre eles: Jodit, CKEditor 5 e o TinyMCE. No Participa+ Brasil é utilizado o editor Jodit.
-Com base na premissa de que alguns usuários poderiam migrar do Participa+ Brasil para o Brasil Participativo, o Jodit foi escolhido como potencial escolha.
+Com base na premissa de que alguns usuários poderiam migrar do Participa+ Brasil para o Brasil Participativo, o Jodit foi cotado como potencial escolha.
 
 Para garantir que o Jodit haveria compatibilidade com o Brasil Participativo, foi realizado um teste localmente, trocando o Trix pelo Jodit na página de inserção de conteúdo para criação de texto participativo.
 O teste foi realizado inserindo na própria \textit{view} da página \textit{links} para o JavaScript e o CSS do Jodit, conforme descrito na própria documentação do editor.
@@ -46,7 +46,7 @@ A versão final do \textit{parser} de textos participativos executa três passos
 	\item Separar parágrafos removendo aqueles que estivem em branco.
 \end{enumerate}
 
-A figura \ref{fig:jodit-parser-final} demonstra o código fonte da etapa de \textit{parsing} do \textit{input}.
+A Figura \ref{fig:jodit-parser-final} demonstra o código fonte da etapa de \textit{parsing} do \textit{input}.
 
 \begin{figure}[htbp]
   \centering
@@ -56,7 +56,7 @@ A figura \ref{fig:jodit-parser-final} demonstra o código fonte da etapa de \tex
   \fonte{Próprio autor}
 \end{figure}
 
-O método \texttt{split\_paragraphs} é um método também criado a mão para satisfazer os casos de bordas classificados como "\textit{tags} modificadoras de texto sendo utilizadas como \texttt{<div>}". Para resolver esse problema, foi utilizada uma estratégia recursiva para percorrer a árvore de nós do Nokogiri e determinar quais nós pertencem ao mesmo parágrafo ou não.
+O método \texttt{split\_paragraphs} é um método também criado à mão para satisfazer os casos de bordas classificados como "\textit{tags} modificadoras de texto sendo utilizadas como \texttt{<div>}". Para resolver esse problema, foi utilizada uma estratégia recursiva para percorrer a árvore de nós do Nokogiri e determinar quais nós pertencem ao mesmo parágrafo ou não.
 
 A verificação começa no nó raiz, que é o próprio \texttt{DocumentFragment}. Se o nó que está sendo avaliado nesse momento for uma \texttt{<div>} ou o \texttt{DocumentFragment}, recursivamente chama a verificação para todos os seus nós filhos retornados pelo método \texttt{children}, pegando o resultado e compilando em um \texttt{Array} achatado, isto é, um \texttt{Array} que não possui elementos do tipo \texttt{Array} dentro de si. A mesma coisa também é feita caso o nó seja um modificador de texto sendo usado como \texttt{<div>}. Caso contrário, é retornado um \texttt{Array} envolvendo o próprio nó apenas. A ideia central por trás desse algoritmo é a de eliminar elementos que sejam uma \texttt{<div>} ou que ajam como uma \texttt{<div>}, e escolher ramos da árvore para serem parágrafos. O código fonte dessa verificação pode ser visto na Figura \ref{fig:split-paragraphs-jodit}.
 

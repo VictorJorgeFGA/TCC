@@ -37,7 +37,7 @@ Para realizar o primeiro diagnóstico, foi criado um texto participativo com em 
   \fonte{Próprio autor}
 \end{figure}
 
-O Decidim possui um mecanismo de representação para UI chamado de \textit{View Models}, também conhecido como \textit{cells}, em português células. Uma célula é um objeto que representa fragmentos da UI, podendo conter desde uma página inteira até um container de comentário ou imagem, por exemplo \cite{decidim-view-models-aka-cells}.
+O Decidim possui um mecanismo de representação para UI chamado de \textit{View Models}, também conhecido como \textit{cells} (em português: células). Uma célula é um objeto que representa fragmentos da UI, podendo conter desde uma página inteira até um container de comentário ou imagem, por exemplo \cite{decidim-view-models-aka-cells}.
 
 A célula \texttt{ParticipatoryTextProposalCell} é usada para realizar a renderização dos parágrafos do texto participativo. Nessa célula, são utilizados dois arquivos de \textit{view}: \texttt{show.erb} e \texttt{buttons.erb}. Para realizar a renderização de cada parágrafo, o Decidim fará duas chamadas de renderização de \textit{partials}, uma para o arquivo \texttt{show.erb} e outra para o arquivo \texttt{buttons.erb}, que é referenciado pelo arquivo \texttt{show.erb}. Esse comportamento pode ser percebido através do recorte das mensagens de \textit{log} no processamento da requisição, que é mostrado na Figura \ref{fig:logs-partials-show-buttons-evidencia}.
 
@@ -59,7 +59,7 @@ Dessa forma, a primeira tentativa de ajustes realizada foi a substituição do u
 	\end{tabular}
 \end{table}
 
-Após realizar a substituição, foi observado novamente os \textit{logs} do processamento da requisição de renderização da página do texto participativo. O tempo de processamento total da requisição diminuiu de 34.397 milissegundos para 1.139 milissegundos, representando uma redução de 3.019,9\%, e que foi considerada como suficiente para o requisito. Uma captura de tela dos \textit{logs} é exibida na Figura \ref{fig:analise-log-apos-substituicao-celulas}.
+Após realizar a substituição, foi observado novamente os \textit{logs} do processamento da requisição de renderização da página do texto participativo. O tempo de processamento total da requisição diminuiu de 34.397 milissegundos para 1.253 milissegundos, representando uma redução de 96,36\%, e que foi considerada como suficiente para o requisito. Uma captura de tela dos \textit{logs} é exibida na Figura \ref{fig:analise-log-apos-substituicao-celulas}.
 
 Para elucidar a alteração, dado o enfoque deste trabalho na otimização de desempenho, o código fonte será demonstrado em capturas de tela. Contudo, as alterações estão disponíveis no repositório oficial do Brasil Participativo no \textit{Merge Request} em \url{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr/-/merge\_requests/560}.
 
@@ -95,7 +95,7 @@ Para cumprir com o segundo requisito, foi adicionado no Brasil Participativo, o 
 
 Um requisito implícito no requisito 2 era a necessidade de inserir imagens no texto. Por padrão, o Trix posiciona a imagem no texto como um documento "pendente", portanto, é necessário que a aplicação guarde a imagem remotamente e forneça ao Trix um \textit{link} permanente.
 
-Para realizar isso, a \textit{controller} \texttt{Decidim::Govbr::AttachmentsController} foi criada no Brasil Participativo. Esta \textit{controller} possui como papel: receber um arquivo, salvá-lo no \texttt{storage} da aplicação e devolver a URL permanente para aquele arquivo em uma resposta no formato JSON. Essa \textit{controller} ficou expôs a \textit{action} \texttt{create} na rota \texttt{/attachments}. A \textit{action} verifica antes de processar a requisição se o emissor é um usuário logado. O código da \textit{controller} é exibido na Figura \ref{fig:attachments-controller}.
+Para realizar isso, a \textit{controller} \texttt{Decidim::Govbr::AttachmentsController} foi criada no Brasil Participativo. Esta \textit{controller} possui como papel: receber um arquivo, salvá-lo no \texttt{storage} da aplicação e devolver a URL permanente para aquele arquivo em uma resposta no formato JSON. Essa \textit{controller} expôs a \textit{action} \texttt{create} na rota \texttt{/attachments}. A \textit{action} verifica antes de processar a requisição se o emissor é um usuário administrador logado. O código da \textit{controller} é exibido na Figura \ref{fig:attachments-controller}.
 
 \begin{figure}[htbp]
   \centering
@@ -105,14 +105,14 @@ Para realizar isso, a \textit{controller} \texttt{Decidim::Govbr::AttachmentsCon
   \fonte{Próprio autor}
 \end{figure}
 
-Outro desafio relacionado à inserção do texto através do comando copiar e colar é separar corretamente cada parágrafo de texto. O input do usuário, apesar de parecer apenas texto, na verdade é enviado para o \textit{backend} como uma \texttt{string} HTML, como por exemplo:
+Outro desafio relacionado à inserção do texto através do comando copiar e colar é separar corretamente cada parágrafo de texto. O \textit{input} do usuário, apesar de parecer apenas texto, na verdade é enviado para o \textit{backend} como uma \texttt{string} HTML, como por exemplo:
 
-\texttt{
-<h1>Título do Texto</h1>
-<div>
-  Parágrafo! Aqui vem o conteúdo do parágrafo do usuário.<br>
-  Aqui é outro parágrafo.<br>
-</div>
+\textit{
+\texttt{<h1>}Título do Texto\texttt{</h1>}
+\texttt{<div>}
+  Parágrafo! Aqui vem o conteúdo do parágrafo do usuário.\texttt{<br>}
+  Aqui é outro parágrafo.\texttt{<br>}
+\texttt{</div>}
 }
 
 Para processar o \textit{input} HTML e transformar em uma estrutura mais flexível de se trabalhar, foi adotada a \textit{gem} Nokogiri. Com o uso do Nokogiri, o texto HTML é transformado em uma estrutura de dados semelhante a uma árvore, onde cada \textit{tag} HTML se torna um nó, com seus elementos filhos, que podem ser outras \textit{tags} ou texto puro, estando disponíveis no atributo \texttt{\#children}.

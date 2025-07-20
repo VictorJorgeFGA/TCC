@@ -33,10 +33,10 @@ Para ambos os cenários de teste, cada parágrafo terá seu conteúdo preenchido
 
 \textit{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in odio non mi auctor commodo. Aenean consequat metus massa, eget vulputate nibh suscipit vitae. Aliquam sagittis vel odio eleifend posuere. Curabitur hendrerit est elit, ac hendrerit nulla laoreet sit amet. Proin dictum tempor vulputate. Etiam cursus, quam sed cursus laoreet, dui nisi efficitur quam, at maximus dui nibh et velit. Curabitur ullamcorper ligula vitae mauris cursus rhoncus. Suspendisse laoreet felis euismod lorem accumsan, sit amet imperdiet mauris laoreet. Fusce vel tristique felis.}
 
-A ideia central é checar o quão bem estas páginas da plataforma possivelmente operarão no dia-dia e em cenários de alta demanda.
+A ideia central é verificar o quão bem estas páginas da plataforma possivelmente operarão no dia-dia e em cenários de alta demanda.
 Para os cenários extremos, será adotada a volumetria de 2 mil parágrafos por texto participativo, e 10 administradores utilizando a ferramenta paralelamente.
 
-A versão anterior às modificações descritas neste trabalho utilizada para comparação nos testes é a \textit{tag} 1.5.0, que está disponível no respositório oficial do Brasil Participativo.
+A versão anterior às modificações descritas neste trabalho utilizada para comparação nos testes é a \textit{tag} 1.5.0, que está disponível no respositório oficial do Brasil Participativo em \url{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr/-/tags/1.5.0}.
 
 \subsection {Teste de Carga de Visualização do Rascunho}
 
@@ -171,6 +171,8 @@ Os testes foram realizados disparando 100 requisições com o fator de paralelis
 \end{table}
 
 \subsubsection {Testes Extremos}
+
+A execução dos testes extremos da página de visualização do texto seguiu a configuração de 10 requisições com fator de paralelismo igual a 10. O resultado pode ser verificado na Tabela \ref{tab:teste-carga-extremo-visualizar-texto}
 
 \begin{table}[h]
 	\centering
