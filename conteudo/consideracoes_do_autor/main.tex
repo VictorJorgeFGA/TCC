@@ -1,0 +1,55 @@
+\chapter {Considerações do Autor}
+
+Neste capítulo são abordados assuntos pertinentes à execução do trabalho na perspectiva do autor.
+Durante o desenvolvimento, diversos problemas surgiram trazendo desafios extras para cumprimento dos objetivos levantados.
+
+Na Seção \ref{sec:mudanca-de-requisitos-e-retrabalho} é abordado o assunto sobre retrabalho e redefinição de requisitos, na Seção \ref{sec:testes-de-aceitacao} é levado a debate a forma como as funcionalidades foram testadas e validadas durante o ciclo de desenvolvimento, e, por fim, na Seção \ref{sec:rotina-de-trabalho-no-lab-livre} são apresentados alguns detalhes de como funcionou o esquema de colaboração para o Brasil Participativo junto dos times do Lab Livre e também dos \textit{stakeholders}.
+
+\section {Mudança de Requisitos e Retrabalho}
+\label{sec:mudanca-de-requisitos-e-retrabalho}
+
+Sob a ótica da engenharia de \textit{software}, um dos problemas que surgiram durante as etapas de desenvolvimento foi o retrabalho.
+Nesse contexto, entende-se como retrabalho o ato de refazer atividades já finalizadas com o intuito de implementar mudanças de requisitos, seja por conta de alterações de contexto do projeto, seja por conta da melhor definição de outros requisitos que não estavam tão claros, ou seja pela simples mudança de desejo do cliente.
+Esse tipo de atividade geralmente acarreta no aumento do custo e do tempo de desenvolvimento do projeto, podendo representar 50\% ou mais do valor total \cite{jayatilleke2021-rework-in-software-development}.
+
+Neste trabalho, no início foi definido como premissa que os usuários administradores fariam a inserção de tabelas dentro do texto no formato de imagens.
+Porém, após a entrega da funcionalidade disponibilizando o Trix como editor de textos, alguns dos usuários \textit{stakeholders} que participaram dos testes de aceitação, juntamente do time de produto do Lab Livre, concluíram que era inviável em termos de usabilidade e experiência de usuário inserir tabelas como imagens.
+Diversos textos de exemplo utilizados nos testes possuíam dezenas de tabelas.
+Considerando a jornada de uso do texto participativo, essas tabelas ainda poderiam sofrer modificações após a publicação do conteúdo, o que seria extremamente difícil de se realizar, dada essa limitação.
+
+Para sanar esse problema, foi necessário substituir o Trix pelo editor de textos Jodit, e também redesenhar a solução de detecção de parágrafos, uma vez que o algoritmo de detecção utilizado para o Trix não cobria corretamente os cenários avaliados durante o uso do Jodit.
+Essa alteração constituiu grande parte do trabalho aqui realizado, e por alguns momentos direcionou os esforços de desenvolvimento mais para a resolução de desafios de implementação do que para a busca por melhoria de desempenho na ferramenta.
+
+Esse caso exemplifica a necessidade de uma boa definição de requisitos e premissas de desenvolvimento.
+Apesar de haver um levantamento prévio de requisitos, decisões tomadas no início ou durante a etapa de desenvolvimento devem ser acordadas junto dos \textit{stakeholders}, a fim de garantir que elas não firam as necessidades dos usuários.
+
+\section {Testes de Aceitação}
+\label{sec:testes-de-aceitacao}
+
+Ao final de cada \textit{sprint} de trabalho, o desenvolvedor liberava para testes as alterações feitas.
+Em geral, isso era comunicado ao gestor do time de desenvolvimento, que assim que possível disponibilizava uma \textit{release} de testes no Lab Decide, o ambiente de testes do Brasil Participativo.
+Apesar do desenvolvedor ter a possibilidade de realizar testes de aceitação das funcionalidades com base nos requisitos, as rodadas de testes definitivas eram feitas pelo time de produto de forma isolada.
+O time de produto muitas vezes também contava com a participação de alguns \textit{stakeholders} para terem papel opinativo sobre funcionamento da melhoria entregue.
+
+Entretanto, na execução desses testes, os envolvidos nem sempre conheciam as limitações e a forma de uso das funcionalidades lançadas, além de não estarem conscientes das decisões técnicas e funcionais tomadas ao longo do desenvolvimento.
+A participação do desenvolvedor nos testes de aceitação acontecia para eventuais esclarecimentos de dúvidas, e muita das vezes de forma tardia.
+Essas situações geralmente levavam o responsável pelo teste a interpretar um comportamento da funcionalidade como uma inconsistência ou como um defeito, mesmo que não fosse o caso, o que resultava em desacordos entre os times e/ou \textit{stakeholders}.
+Além disso, esses desacordos geravam atrasos no projeto, e poderiam potencialmente comprometer a confiança sobre a qualidade dos artefatos entregues pelo desenvolvedor.
+
+Como melhoria de processo, pode-se adotar uma colaboração ativa do desenvolvedor durante os testes, trazendo maior celeridade na atividade e enriquecendo o fornecimento de \textit{feedbacks}.
+Nota-se também a necessidade de que os profissionais envolvidos no projeto estejam em constante comunicação, para garantir que as decisões tomadas sejam do conhecimento de todos os interessados.
+
+\section {Rotina de trabalho no Lab Livre}
+\label{sec:rotina-de-trabalho-no-lab-livre}
+
+O projeto Brasil Participativo é executado hoje primariamente pelo Lab Livre da UnB.
+Durante a execução deste trabalho, além do desenvolvimento relacionado ao texto participativo, foram feitas pelo autor inúmeras outras funcionalidades, correção de defeitos e atividades de engenharia de \textit{software} para assuntos secundários da plataforma.
+Portanto, apesar do formato aqui apresentado se assemelhar bastante a uma rotina que segue metodologias ágeis com foco total na ferramenta de textos, os pacotes de trabalho executados não seguiram uma padronização em termos de esforço e de cronograma, uma vez que era necessário executar múltiplas outras tarefas juntamente destas relacionadas aos textos participativos e ao cadastro de usuários.
+
+O time do Lab Livre, principalmente para esta atividade, era dividido entre produto, \textit{design} e desenvolvimento.
+O time de produto era responsável por gerir os requisitos, realizar a tomada de decisões e acordar prazos de entrega com os \textit{stakeholders}.
+O time de \textit{design} era responsável pela elaboração da UX/UI da ferramenta, onde, em geral, era discutido com o time de produto quais resultados eram desejáveis para a aplicação, levando em conta as necessidades dos usuários.
+O time de desenvolvimento era responsável pela criação do código fonte da plataforma, buscando alcançar os requisitos funcionais e não funcionais levantados pelo time de produto e de \textit{design}.
+
+Neste trabalho, vale destacar que as atividades foram apresentadas sob a ótica de um desenvolvedor.
+Portanto, detalhes minuciosos de execução das atividades dos demais times não foram abordados.

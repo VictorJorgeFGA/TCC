@@ -1,4 +1,4 @@
-\section {Sprint para Ajustes na Ferramenta de Cadastro de Usuários}
+\subsection {Sprint para Ajustes na Ferramenta de Cadastro de Usuários}
 
 O fluxo de trabalho contou com quatro \textit{sprints} dedicadas para realização do desenvolvimento sobre a ferramenta de textos participativos.
 Uma quinta \textit{sprint} foi dedicada unicamente para resolução do problema de desempenho no cadastro de usuários na plataforma. O único requisito da \textit{sprint} é descrito como:
@@ -34,7 +34,7 @@ Para isso, foi utilizado o operador \texttt{LOWER} disponível no PostgreSQL par
   \fonte{Próprio autor}
 \end{figure}
 
-A fim de comparação, foi executado no ambiente produtivo do Brasil Participativo ambas consultas SQL utilizadas no método \texttt{disambiguate} com o comando \texttt{EXPLAIN ANALYZE}.
+A fim de comparação, foi executado no ambiente produtivo do Brasil Participativo ambas as consultas SQL utilizadas no método \texttt{disambiguate} com o comando \texttt{EXPLAIN ANALYZE}.
 As consultas receberam um parâmetro extra \texttt{LIMIT 1} para não trazer todas as tuplas que satisfazem a condição. Isso foi necessário pois a ferramenta utilizada para executar a consulta no ambiente produtivo foi a \texttt{Rails DB}, que é executada no próprio \textit{frontend} da aplicação.
 
 Na Figura \ref{fig:execucao-consulta-com-ilike} é mostrada a consulta executada no ambiente produtivo utilizando \texttt{ILIKE}, enquanto na Figura \ref{fig:execucao-consulta-com-lower} é mostrada a que utiliza \texttt{LOWER}.
@@ -75,6 +75,6 @@ A plataforma no momento da consulta contava com mais de 1 milhão e 600 mil usu�
 \end{figure}
 
 Nota-se que a consulta que utiliza o \texttt{LOWER} gasta cerca de 25\% menos tempo para ser processada em comparação à consulta que utiliza o \texttt{ILIKE}.
-Dado fato de que até o presente momento deste trabalho não houveram cenários de uso da plataforma na mesma escala que foi vista com o PPA em 2023, esta solução foi considerada como satisfatória. Mas, ainda existem pontos para serem explorados em futuras oportunidades, como por exemplo o uso de índices sobre o \textit{nickname} em \textit{lowercase}.
+Dado fato de que até o presente momento deste trabalho não houve cenários de uso da plataforma na mesma escala que foi vista com o PPA em 2023, esta solução foi considerada como satisfatória. Mas, ainda existem pontos para serem explorados em futuras oportunidades, como por exemplo o uso de índices sobre o \textit{nickname} em \textit{lowercase}.
 
 As modificações realizadas nessa \textit{sprint} estão disponíveis no \textit{merge request} em \url{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr/-/merge_requests/41}

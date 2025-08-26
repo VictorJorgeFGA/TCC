@@ -25,7 +25,7 @@ Aplicações \textit{Ruby on Rails} possuem um sistema de \textit{logs} que perm
 
 Por padrão, aplicações \textit{Rails} executadas em modo de desenvolvimento terão seu nível de \textit{log} como \textit{debug}, e quando executada em modo produtivo será \textit{info} \cite{debugging-rails-applications}.
 
-Na condução dessa análise, o Brasil Participativo foi executado em modo desenvolvimento com nível de \textit{logs} como \textit{debug}. Com esse nível de informações, é possível visualizar na saída padrão do Puma quais consultas SQL estão sendo executadas, quais \textit{views} estão sendo renderizadas pelo \textit{Rails} durante a requisição e acessos ao ActiveStorage. Alguns desses registros são acompanhados pelo tempo gasto na execução e em alguns casos a quantidade de alocações também é informada.
+Na condução dessa análise, o Brasil Participativo foi executado em modo desenvolvimento com nível de \textit{logs} como \textit{debug}. Com esse nível de informações, é possível visualizar na saída padrão do Puma, o servidor \textit{web}, quais consultas SQL estão sendo executadas, quais \textit{views} estão sendo renderizadas pelo \textit{Rails} durante a requisição, e os acessos ao ActiveStorage. Alguns desses registros são acompanhados pelo tempo gasto na execução e em alguns casos a quantidade de alocações também é informada.
 
 Para realizar o primeiro diagnóstico, foi criado um texto participativo com em torno de 600 parágrafos, em seguida foi acessada a página de visualização do texto. A Figura \ref{fig:analise-log-600-paragrafos} mostra os \textit{logs} apresentados pela aplicação no processamento da requisição. Nota-se que a maior parte do tempo foi utilizado na renderização da \textit{views} e suas \textit{partials}, correspondendo a 96,7\% do tempo total gasto para processar a requisição.
 
@@ -49,7 +49,7 @@ A célula \texttt{ParticipatoryTextProposalCell} é usada para realizar a render
   \fonte{Próprio autor}
 \end{figure}
 
-No repositório oficial do \textit{Ruby on Rails} existe uma \textit{issue} que relata problemas de desempenho com o uso de \textit{partials} em contextos onde há aninhamento, destacando que a renderização de HTML planos acontece com maior agilidade. A \textit{issue} pode ser acessada em \url{https://github.com/rails/rails/issues/41452}.
+No repositório oficial do \textit{Ruby on Rails} existe uma \textit{issue} que relata problemas de desempenho com o uso de \textit{partials} em contextos em que há aninhamento, destacando que a renderização de HTML planos acontece com maior agilidade. A \textit{issue} pode ser acessada em \url{https://github.com/rails/rails/issues/41452}.
 
 Dessa forma, a primeira tentativa de ajustes realizada foi a substituição do uso das células na renderização de textos participativos pela renderização \textit{inline} do conteúdo do parágrafo diretamente no arquivo principal da \textit{view}:
 
@@ -63,7 +63,7 @@ Após realizar a substituição, foi observado novamente os \textit{logs} do pro
 
 Para elucidar a alteração, dado o enfoque deste trabalho na otimização de desempenho, o código fonte será demonstrado em capturas de tela. Contudo, as alterações estão disponíveis no repositório oficial do Brasil Participativo no \textit{Merge Request} em \url{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr/-/merge\_requests/560}.
 
-A versão anterior à modificação pode ser vista na Figura \ref{fig:versao-com-celula}, e a versão ajustada para melhora de desempenho pode ser vista na Figura \ref{fig:versao-inline}.
+A versão anterior à modificação pode ser vista na Figura \ref{fig:versao-com-celula}, e a versão ajustada para melhoria de desempenho pode ser vista na Figura \ref{fig:versao-inline}.
 
 \begin{figure}[htbp]
   \centering
@@ -137,20 +137,20 @@ Depois de extrair o \texttt{signed\_id}, a próxima etapa é a criação de fato
 
 \begin{itemize}
 	\item Título (enumerador \texttt{section}), caso seja \texttt{<h1>};
-	\item Sub-título (enumerador \texttt{sub\_section}), caso seja \texttt{<h2>} e \texttt{<h3>};
+	\item Subtítulo (enumerador \texttt{sub\_section}), caso seja \texttt{<h2>} e \texttt{<h3>};
 	\item Imagem (enumerador \texttt{image}), caso seja \texttt{<figure>};
 	\item Artigo (enumerador \texttt{article}), caso seja qualquer outra \textit{tag} HTML.
 \end{itemize}
 
-Caso o parágrafo seja do tipo imagem, o atributo \texttt{signed\_id} é usado para localizar o arquivo no \texttt{storage} e realizar o vinculo.
+Caso o parágrafo seja do tipo imagem, o atributo \texttt{signed\_id} é usado para localizar o arquivo no \texttt{storage} e realizar o vínculo.
 
 \subsubsection {Requisito 3 da Sprint 1}
 
-A refatoração da página de visualização do rascunho, que é a página utilizada para fazer edições no texto submetido, tinha como propósito ser o mais parecida quanto possível com a tela de visualização do texto já publicado. Segundo o time de produto do Lab Livre, esta abordagem traria melhor experiência ao usuário administrador, que no momento da edição do rascunho teria ideia de como o texto se pareceria com o que o usuário vê.
+A página de visualização do rascunho refatorada, que é a página utilizada para fazer edições no texto submetido, tinha como propósito parecer o máximo possível com a tela de visualização do texto já publicado. Segundo o time de produto do Lab Livre, esta abordagem traria melhor experiência ao usuário administrador, que no momento da edição do rascunho teria ideia de como o texto se pareceria com o que o usuário vê.
 
-Sendo assim, a primeira ideia foi a de extrair o padrão visual da \textit{view} utilizada na renderização do texto, e utilizá-la em outra página dedicada para a edição do texto. Ora, o Decidim segmenta o sistema em três contextos diferentes: o \texttt{system admin}, \texttt{admin} e \texttt{public}, cada um deles tem o seu próprio \texttt{namespace} dentro do código-fonte, fazendo uma separação entre os estilos, permissionamentos, \textit{views} e \textit{controllers}.
+Sendo assim, a primeira ideia foi a de extrair o padrão visual da \textit{view} utilizada na renderização do texto, e utilizá-la em outra página dedicada para a edição do texto. Ora, o Decidim segmenta o sistema em três contextos diferentes: o \texttt{system admin}, \texttt{admin} e \texttt{public}, cada um deles tem o seu próprio \texttt{namespace} dentro do código-fonte, fazendo uma separação entre os estilos, controle de permissões, \textit{views} e \textit{controllers}.
 
-A página de visualização do texto fica no contexto \texttt{public}, equanto a página de edição do texto fica no contexto \texttt{admin}. Para que a transição entre a edição e a visualização do texto fosse irrisória, uma das decisões foi a de implementar a página de edição refatorada no contexto \texttt{public}. Dessa maneira, o \textit{layout} e a lógica de renderização dos parágrafos, já com a otimização de desempenho, foi separada em uma \textit{partial}, que é renderizada tanto pela página de visualização quanto pela de edição.
+A página de visualização do texto fica no contexto \texttt{public}, enquanto a página de edição do texto fica no contexto \texttt{admin}. Para que a transição entre a edição e a visualização do texto fosse irrisória, uma das decisões foi a de implementar a página de edição refatorada no contexto \texttt{public}. Dessa maneira, o \textit{layout} e a lógica de renderização dos parágrafos, já com a otimização de desempenho, foi separada em uma \textit{partial}, que é renderizada tanto pela página de visualização quanto pela de edição.
 
 A \textit{partial} criada (\texttt{\_lightweight\_text\_render.html.erb}) faz verificações sobre o estado do texto, e o usuário que a está acessando. Caso o usuário seja um administrador e o texto ainda não tenha sido publicado, botões de ações aparecerão para manipular o texto. A página de edição do texto com os seus botões de ação pode ser vista na Figura \ref{fig:edicao-texto-v1}.
 

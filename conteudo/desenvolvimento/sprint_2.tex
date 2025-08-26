@@ -3,13 +3,13 @@
 A \textit{sprint} 2 foi caracterizada pela realização de ajustes e correção de comportamentos inesperados que surgiram durante os testes de aceitação das funcionalidades entregues na \textit{sprint} 1, conduzidos pelo time de produto. Os trabalhos começaram assim que a lista de ajustes necessários foi levantada, e pode ser sumarizada nos seguintes requisitos:
 
 \begin{itemize}
-	\item \textbf{Requisito 1 da Sprint 2}: Corrigir problema onde um parágrafo que possua trechos em itálico e negrito são erroneamente divididos em mais de um parágrafo;
+	\item \textbf{Requisito 1 da Sprint 2}: Corrigir problema onde um parágrafo que possua trechos em itálico e negrito é erroneamente dividido em mais de um parágrafo;
 	\item \textbf{Requisito 2 da Sprint 2}: Corrigir problema de imagens quebradas quando copiadas do Google Docs ou Microsft Word;
 \end{itemize}
 
 \subsubsection {Requisito 1 da Sprint 2}
 
-Alguns parágrafos que possuiam itálico e negrito em seu conteúdo, eram erroneamente divididos em multiplos parágrafos. Por exemplo o \textit{input} HTML:
+Alguns parágrafos que possuíam itálico e negrito em seu conteúdo, eram erroneamente divididos em múltiplos parágrafos. Por exemplo o \textit{input} HTML:
 
 \begin{table}[h]
 	\begin{tabular}{c}
@@ -68,9 +68,9 @@ Para resolver esse problema, uma das possibilidades seria fazer uma requisição
 
 CORS é um mecanismo para controle de requisições entre domínios distintos quando a requisição é feita pelo \textit{browser}, fazendo com que nem sempre o Brasil Participativo tenha permissão para baixar imagens de outras fontes automaticamente \cite{cors-explanation}.
 
-Outra possibilidade seria deixar o elemento HTML que representa a imagem intocado e referenciando o \textit{link} externo mesmo depois de salvar o parágrafo no banco de dados. Porém, algumas fontes possuem mecanimos de \textit{throttle} para impedir que uma determinada origem faça requisições demais, além de que não há garantias de que o recurso estará disponível a qualquer instante que se queira buscá-lo.
+Outra possibilidade seria deixar o elemento HTML que representa a imagem intocado e referenciando o \textit{link} externo mesmo depois de salvar o parágrafo no banco de dados. Porém, algumas fontes possuem mecanismos de \textit{throttle} para impedir que uma determinada origem faça requisições demais, além de que não há garantias de que o recurso estará disponível a qualquer instante que se queira buscá-lo.
 
-Portanto, para garantir a consistência na inserção de imagens no texto, o usuário não conseguirá mais inserir imagens através do comando copiar e colar. Será necessário manualmente baixar a imagem no computador e inserí-la no corpo do texto, seja arrastando, seja utilizando a funcionalidade de upload de arquivos do Trix.
+Portanto, para garantir a consistência na inserção de imagens no texto, o usuário não conseguirá mais inserir imagens através do comando copiar e colar. Será necessário manualmente baixar a imagem no computador e inseri-la no corpo do texto, seja arrastando, seja utilizando a funcionalidade de upload de arquivos do Trix.
 
 Para realizar esse comportamento, foi escrito uma nova customização no Trix para observar o evento \texttt{trix-before-paste}, que é disparado antes do conteúdo ser inserido no \textit{input}. Caso seja detectado algum elemento de imagem no conteúdo colado, este será substituído por uma mensagem de aviso, além de alertar o usuário com uma mensagem do próprio navegador de que ele deve seguir outro procedimento para realizar a inserção daquela imagem. Na Figura \ref{fig:trix-removendo-imagens} é exibido o código JavaScript que realiza essa verificação.
 

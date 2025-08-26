@@ -1,0 +1,86 @@
+\chapter {Considerações Finais}
+
+Neste capítulo é apresentado um resumo dos objetivos, desafios e soluções deste trabalho.
+Na Seção \ref{sec:atividades-e-resultados} é apresentado o resumo da obra, e na Seção \ref{sec:trabalhos-futuros} são discutidos potenciais pontos de atuação para trabalhos futuros.
+
+\section {Atividades e Resultados}
+\label{sec:atividades-e-resultados}
+
+Este trabalho teve como objetivo demonstrar uma jornada de desenvolvimento de funcionalidades levando em consideração requisitos levantados por \textit{stakeholders} e outros times, tendo como foco principal o desenvolvimento de funcionalidades com requisitos de desempenho mais rigorosos.
+
+Com o surgimento de problemas na plataforma Brasil Participativo em 2023 e com a análise realizada pela Dataprev, um plano de atividades foi traçado considerando também as necessidades levantadas pelos \textit{stakeholders}.
+As funcionalidades de textos participativos e cadastro de usuários foram tomadas como objetos de estudo e de melhorias.
+
+A metodologia adotada se baseou no desenvolvimento contínuo.
+Uma série de requisitos iniciais foram definidos, e em cada ciclo de desenvolvimento novos requisitos eram priorizados para serem trabalhados. Em suma, os requisitos foram:
+
+\begin{itemize}
+	\item Diminuir o tempo de renderização da página de visualização e de edição do texto participativo;
+	\item Possibilitar a criação de textos participativos através de um editor de textos próprio do Brasil Participativo, contando com o uso do comando copiar e colar, trazendo texto de fontes como o Microsoft Word e Google Docs;
+	\item Refatoração da página de visualização do rascunho (edição de parágrafos), trazendo-a para o mesmo padrão de \textit{design} que a tela de visualização;
+	\item Refatorar a jornada de criação de textos participativos de acordo com o acordado com o time de produto;
+  \item Resolver o problema de lentidão e indisponibilidade da funcionalidade de cadastro de usuários exibido durante o PPA.
+\end{itemize}
+
+Durante a jornada de desenvolvimento, uma série de modificações foram realizadas desde as páginas de exibição de conteúdo do texto até mesmo na forma como o usuário administrador submete o material na ferramenta.
+
+Na primeira \textit{sprint} foi posta à prova as principais ideias de solução, removendo o uso indiscriminado de \textit{partials} do \textit{frontend}, e adicionando um editor de textos \textit{rich text} para envio de texto.
+Juntamente, foi criado um algoritmo de \textit{parser}, a fim de separar parágrafos, de tal forma que cada um deles seja exibido e receba interações de forma isolada.
+Melhorias de interface também foram conduzidas para que a ferramenta seguisse o padrão de estilo \texttt{Gov.Br} já adotado na plataforma.
+
+Na segunda e terceira \textit{sprint} houve ajustes de usabilidade, aparência e também a correção de defeitos no \textit{parser} da ferramenta.
+Pode-se dizer que esses dois ciclos foram utilizados para polir o que foi entregue já no primeiro.
+
+Na quarta \textit{sprint}, surgiu a necessidade de implementar de forma diferente a edição e criação de textos, de tal maneira que fosse possível manipular tabelas nativamente na plataforma.
+O editor de textos inicialmente disponibilizado, o Trix, foi substituído pelo editor de textos Jodit; e com isso foi também necessária a substituição do algoritmo de \textit{parser}.
+
+E, por fim, na quinta \textit{sprint} foi abordado o problema de lentidão na criação de novos usuários, realizando ajustes em um ponto específico: a desambiguação de \textit{nicknames}, melhorando em 25\% o desempenho da consulta raiz do problema.
+
+Ao final, foram conduzidos testes de carga para avaliar os ganhos de desempenho com as alterações propostas no trabalho.
+Os resultados foram promissores, com reduções de tempo gasto de até 96\%.
+
+\section {Trabalhos Futuros}
+\label{sec:trabalhos-futuros}
+
+No ponto em que se encerraram as atividades mencionadas neste trabalho, nota-se que existem diversas aberturas para melhorias, correções e evoluções da plataforma e das funcionalidades trabalhadas.
+De forma não exaustiva as oportunidades de atuação são discutidas a seguir.
+
+\subsection {Texto Participativo}
+
+Com o uso do Jodit para captura do \textit{input} do usuário, existe a possibilidade, e também necessidade de adicionar validação sobre o conteúdo a ser processado e guardado no banco de dados.
+O texto submetido pelo usuário é enviado no formato HTML, e dado que essa linguagem permite, além de estruturar textos, especificar \textit{scripts} e estilo em seu conteúdo, é necessário que seja feito um pós-processamento no lado \textit{backend}.
+O Jodit foi configurado de forma que atributos de estilo e \textit{scripts} sejam removidos após a colagem de textos advindos de fontes externas.
+Mas, nada impede que um usuário mal-intencionado sequestre uma conta de um usuário administrador para submeter HTML com conteúdo malicioso.
+
+Com a remoção de \textit{tags} de estilo e \textit{script} do texto, algumas inconsistências surgem ao copiar e colar textos vindos do Google Docs, por exemplo.
+Após observar o comportamento do copiar durante os testes, notou-se que a estilização do texto, como negrito, itálico e espaçamento é feita com o uso das \textit{tags} de estilo.
+Isto é, um texto negrito, por exemplo, ao invés de ser representado através de uma \textit{tag} HTML, era representado através de atributos CSS.
+Para esses casos, o conteúdo colado trazia o texto inteiro envolto sob uma \textit{tag} \texttt{<strong>}, dando a impressão de que tudo está em negrito, mesmo que no Google Docs isso não fosse o caso.
+
+Na perspectiva de segurança, existe também a necessidade da criação de um mecanismo inteligente para validação das imagens submetidas.
+Hoje as imagens são enviadas \textit{inline} no corpo do texto no formato \texttt{Data URL}.
+Uma vez que o texto é processado pelo \textit{backend}, essas imagens são transformadas em \texttt{blobs} e enviadas ao \texttt{ActiveStorage} sem muita preocupação com seu conteúdo e tamanho.
+
+Ainda sobre imagens, uma possível melhoria seria a criação de um mecanismo de envio assíncrono para o \textit{backend}.
+Com uma \textit{controller} dedicada para o processamento dessas imagens, as rotinas de validação e persistência aconteceriam de forma granular e independente, removendo do \textit{parser} um pouco da sua complexidade.
+Para que essa melhoria seja efetiva, também é necessário que seja implementado um mecanismo de limpeza do \texttt{storage}, de tal forma que imagens órfãs sejam removidas posteriormente, dado que uma imagem pode ser submetida e apagada logo em seguida sem nem mesmo persistir o texto no banco de dados.
+
+A criação de textos grandes ainda sofre com o problema de lentidão, uma vez que é necessário separar cada parágrafo em um objeto único para ser salvo no formato de proposta no banco de dados.
+Esses objetos possuem relacionamentos com outras entidades e também levam à criação de outros objetos para guardar metadados de autoria e auditoria.
+Visando o ganho de desempenho, idealmente cada parágrafo do texto não deveria utilizar o modelo de propostas para operar, mas sim um modelo próprio, ou uma estrutura de dados que permita sua manipulação e exibição de forma rápida.
+
+\subsection {Cadastro de Usuários}
+
+No cadastro de usuários, com a troca do \texttt{ILIKE} pelo uso da função \texttt{LOWER}, observou-se uma melhora de desempenho.
+Porém, existem formas atingir resultados ainda melhores na desambiguação de \textit{nicknames} através do uso de índices ou removendo a função \texttt{LOWER} da consulta.
+A adoção de um índice poderia melhorar o desempenho da consulta, garantindo que a função \texttt{LOWER} não precise ser executada para cada tupla.
+Outra forma seria remover o uso do \texttt{LOWER}, mas traria consigo uma série de cuidados necessários: garantir que os \textit{nicknames} são submetidos ao banco sempre em minúsculo, e os \textit{nicknames} já existentes estejam em minúsculo.
+
+\subsection {Vazamento de Memória e Indisponibilidade do Banco de Dados}
+
+Pela análise da Dataprev, foi visto que o vazamento de memória é um problema real, e que exige esforço do time de infraestrutura para corrigir essa falha de tempos em tempos.
+Outro problema constatado foi a indisponibilidade do banco em diversos momentos de alta carga de acesso de usuários.
+Existem ferramentas que podem ser adotadas na camada do \textit{backend} para potencialmente mitigar esses problemas.
+
+Para melhorar o sistema de \textit{pool} do banco, pode-se explorar a utilização de ferramentas como o \texttt{pg-bouncer}.
+E, para aprimorar o uso de memória, pode-se examinar o uso de outros mecanismos de alocação de memória, como, por exemplo, o \texttt{jemalloc}.

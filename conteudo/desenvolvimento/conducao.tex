@@ -1,0 +1,66 @@
+\section {Condução e Foco do Desenvolvimento}
+\label{sec:conducao-e-foco-do-desenvolvimento}
+
+O Brasil Participativo diariamente recebe atualizações solicitadas pelos \textit{stakeholders} da Presidência da República, e elas são executadas pelo time de desenvolvimento do Laboratório de Competência em Software Livre da UnB (Lab Livre).
+
+Durante o ano de 2024 surgiu para o Brasil Participativo a necessidade de adequar a funcionalidade de textos participativos vinda do \textit{Decidim}.
+Esta adequação deveria cobrir os requisitos que foram levantados pelos \textit{stakeholders} e que posteriormente foram trabalhados pelo time de produto do Lab Livre.
+
+Destaca-se o fato de que algumas rodadas de ajustes já tinham sido feitas pelo time de desenvolvimento do Lab Livre no começo do ano de 2024. Entretanto, problemas de desempenho que já eram percebidos na versão original da funcionalidade se mostraram persistentes mesmo após algumas entregas realizadas, dado que o objetivo não era refatoração da ferramenta nem muito menos a busca por ganho de desempenho.
+
+Mediante às oportunidades de intervenção no código fonte da plataforma por solicitação dos \textit{stakeholders}, e munido dos insumos de análise disponibilizados pela Dataprev, o desenvolvimento teve como foco a realização de ajustes na ferramenta de textos participativos do Brasil Participativo. Além disso, o problema no cadastro de novos usuários também será abordado, uma vez que ele foi um dos pontos considerados prioritários pela equipe do Lab Livre.
+
+\subsection {Objetivos}
+
+O problema observado na ferramenta de textos participativos pode ser caracterizado pelo baixo desempenho computacional, onde a renderização da página de visualização e edição do texto leva minutos para ser feita, a depender da quantidade parágrafos presentes.
+Outro notável problema de desempenho é a lentidão da página para responder ao comando do usuário, uma vez renderizada. Comandos como o \textit{scroll} e clique do mouse podem levar segundos para serem processados pelo navegador devido ao alto volume de conteúdo presente na página.
+
+Sendo assim, com a correta execução da análise, estudo e ajustes na ferramenta de textos participativos do Brasil Participativo, espera-se que alguns dos resultados sejam:
+
+\begin{itemize}
+  \item Adição de novas funcionalidades na ferramenta de texto participativo;
+  \item Satisfação dos requisitos funcionais levantados;
+  \item Melhora perceptível no desempenho da ferramenta, reduzindo o tempo gasto pelo servidor para processar requisições do usuário;
+  \item Aplicação das melhorias em ambiente produtivo do Brasil Participativo.
+\end{itemize}
+
+Apesar do foco do estudo ser o cumprimento dos objetivos listados acima, entende-se também que um dos frutos deste trabalho é a exposição da metodologia de análise e desenvolvimento de funcionalidades em aplicações \textit{web} MVC com preocupação em desempenho, especialmente \textit{Ruby on Rails}.
+É esperado que que as etapas de trabalho aqui exploradas sejam reproduzíveis para outros casos semelhantes onde se há a necessidade de realizar o desenvolvimento cumprindo com requisitos de desempenho mais rigorosos.
+
+\subsection {Organização do Desenvolvimento}
+\label{sec:organizacao-do-desenvolvimento}
+
+A execução das atividades de trabalho ocorreu em múltiplas entregas, onde o período entre uma entrega e outra tinha duração média de um mês.
+
+Foi levantada uma série de requisitos cuja origem foi: as necessidades expressadas pelos \textit{stakeholders} da Presidência, e também as características de uma funcionalidade semelhante ao texto participativo disponível na plataforma Participa+ Brasil.
+
+O time de produto do Lab Livre foi responsável por processar os insumos das solicitações dos usuários e separá-los em requisitos entregáveis, sintetizando o "\textit{backlog}" de trabalho que pode ser conferido na Seção \ref{sec:requisitos-iniciais}.
+
+A comunicação com o time de produto e de desenvolvimento do Lab Livre foi realizada de forma presencial e por vezes de forma remota. Em média, os rituais de \textit{status report} foram realizados com o gestor do time de desenvolvimento duas vezes por semana. Durante esses encontros eram debatidos impeditivos no cumprimento de requisitos, reajustes de cronogramas e formalização de decisões técnicas.
+
+Ao final de cada \textit{sprint}, foi feita uma \textit{release} contendo as alterações feitas. Essas \textit{releases} foram disponibilizadas no ambiente de testes do Brasil Participativo, o Lab Decide.
+
+Após o lançamento de cada \textit{release}, rodadas de testes de aceitação foram conduzidas pelo time de produto.
+Como resultado desses testes, eram levantadas atividades de correção de defeitos e ajustes nas funcionalidades já entregues caso houvesse necessidade. Essas necessidades de correção eram adicionadas ao \textit{backlog}, e que na maioria das vezes já eram priorizadas para a próxima \textit{sprint}.
+
+Os \textit{feedbacks} sobre cada \textit{release} eram dados através de reuniões presenciais e remotas com o time de produto, e algumas vezes com o gestor do time de desenvolvimento do Lab Livre.
+Após o fornecimento de \textit{feedbacks}, o time de produto priorizava o que deveria ser executado na próxima \textit{sprint}.
+
+\subsection {Requisitos Iniciais}
+\label{sec:requisitos-iniciais}
+
+No contexto político que se encontrava a plataforma Brasil Participativo, havia a necessidade de trazer características de uma funcionalidade utilizada com mesmo propósito do texto participativo na aplicação Participa+ Brasil. O Participa+ Brasil também é uma plataforma de participação social do governo federal, e nela o usuário consegue submeter um novo texto copiando o conteúdo de um editor de textos externo, como o Google Docs e o Microsft Word, e colando em um editor de textos próprio da plataforma.
+Dessa forma, os requisitos iniciais foram definidos como:
+
+\begin{itemize}
+	\item Diminuir o tempo de renderização da página de visualização e de edição do texto participativo;
+	\item Possibilitar a criação de textos participativos através de um editor de textos próprio do Brasil Participativo, contando com o uso do comando copiar e colar, trazendo texto de fontes como o Microsoft Word e Google Docs;
+	\item Refatoração da página de visualização do rascunho (edição de parágrafos), trazendo-a para o mesmo padrão de \textit{design} que a tela de visualização;
+	\item Refatorar a jornada de criação de textos participativos de acordo com a especificação do time de produto.
+\end{itemize}
+
+Além dos requisitos específicos do texto participativo, foi levantada também a necessidade de resolver problemas na funcionalidade de cadastro de usuários:
+
+\begin{itemize}
+	\item Resolver o problema de lentidão e indisponibilidade da funcionalidade de cadastro de usuários exibido durante o PPA.
+\end{itemize}

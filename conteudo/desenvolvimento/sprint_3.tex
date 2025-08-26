@@ -1,6 +1,6 @@
 \subsection {Sprint 3}
 
-A \textit{sprint} 3 foi o momento onde houve maior foco em questões de usabilidade e experiência do usuário. Nessa \textit{sprint} houve a participação do time de \textit{design} do Lab Livre para auxiliar na definição dos elementos visuais e na organização do fluxo de uso da ferramenta. Em geral, os requisitos da \textit{sprint} foram definidos como:
+A \textit{sprint} 3 foi o momento em que houve maior foco em questões de usabilidade e experiência do usuário. Nessa \textit{sprint} houve a participação do time de \textit{design} do Lab Livre para auxiliar na definição dos elementos visuais e na organização do fluxo de uso da ferramenta. Em geral, os requisitos da \textit{sprint} foram definidos como:
 
 \begin{itemize}
 	\item \textbf{Requisito 1 da Sprint 3}: Adequar os componentes visuais da tela de visualização e edição do texto de acordo com o protótipo elaborado pelo time de \textit{design};
@@ -25,7 +25,7 @@ Para utilizar da estilização por classes, na própria \textit{partial} \texttt
 
 \begin{figure}[htbp]
   \centering
-  \caption{Exemplo código fonte para estilização dinâmica com classes}
+  \caption{Exemplo de código fonte para estilização dinâmica com classes}
   \label{fig:estilizacao-classes-partial}
   \includegraphics[width=\textwidth]{figuras/estilizacao-classes-partial.png}
   \fonte{Próprio autor}
@@ -54,7 +54,7 @@ Um comparativo do antes e depois do visual da tela de edição do texto pode ser
 
 \subsubsection {Requisito 2 da Sprint 3}
 
-O fluxo de uso da ferramenta de textos participativos ainda possuia sobreposições com a versão anterior à adequação da página de edição do texto. Por conta da tela de edição estar junta da tela de visualização do texto no contexto \texttt{public}, várias transições ocorriam entre contexto \texttt{admin} para contexto \texttt{public}, que são visualmente diferentes, durante a jornada de uso da funcionalidade.
+O fluxo de uso da ferramenta de textos participativos ainda possuía sobreposições com a versão anterior à adequação da página de edição do texto. Por conta de a tela de edição estar junta da tela de visualização do texto no contexto \texttt{public}, várias transições ocorriam entre contexto \texttt{admin} para contexto \texttt{public}, que são visualmente diferentes, durante a jornada de uso da funcionalidade.
 Para que o usuário administrador acessasse a página de edição do texto, era preciso primeiramente navegar pela página do componente no painel \textit{admin}, para só então clicar em um botão para o redirecionar para a tela desejada.
 
 Sendo assim, foram realizados ajustes para que o usuário seja direcionado diretamente para páginas que façam sentido para o estado atual do texto participativo. Essas modificações foram feitas apenas com o uso de redirecionamentos nas \textit{controllers} com o uso do método \texttt{redirect\_to}.

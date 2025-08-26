@@ -1,10 +1,10 @@
 \chapter {Metodologia}
 
-Este capitulo explica a metodologia adotada neste trabalho, descrevendo suas etapas, ferramentas utilizadas e os perfis envolvidos na resolução da problemática central. O trabalho segue o formato de estudo de caso, com características de pesquisa aplicada mista.
+Este capítulo explica a metodologia adotada neste trabalho, descrevendo suas etapas, ferramentas utilizadas e os perfis envolvidos na resolução da problemática central. O trabalho segue o formato de estudo de caso, com características de pesquisa aplicada mista.
 
 \section {Síntese do Referencial Teórico}
 
-A fundamentação teórica presente neste trabalho foi feita com objetivo de trazer o conhecimento necessário para completo entendimento dos tópicos envolvidos na solução do problema de desempenho e adequação da ferramenta de Textos Participativos do Brasil Participativo. Os tópicos envolvidos na execução deste trabalho incluem desde técnicas organizacionais de desenvolvimento de \textit{software} até a abordagens de desenvolvimento sob o rigor de requisitos de desempenho mais restritos, especialmente com o uso do \textit{framework Ruby on Rails}.
+A fundamentação teórica presente neste trabalho foi feita com objetivo de trazer o conhecimento necessário para completo entendimento dos tópicos envolvidos na solução do problema de desempenho e adequação das ferramentas de textos participativos e de cadastro de novos usuários do Brasil Participativo. Os tópicos envolvidos na execução deste trabalho incluem desde técnicas organizacionais de desenvolvimento de \textit{software} até a abordagens de desenvolvimento sob o rigor de requisitos de desempenho mais restritos, especialmente com o uso do \textit{framework Ruby on Rails}.
 
 \section {Ferramentas}
 
@@ -28,7 +28,7 @@ O RuboCop é um analisador de estilo de código e formatador \textit{Ruby} que s
 
 \subsection {Nokogiri}
 
-O Nokogiri é uma \textit{gem Ruby} usada para manipular documentos HTML e XML. A biblioteca conta com uma conjunto grande de funções que auxiliam o processamento de HTML, permitindo com que o desenvolvedor não precise se preocupar com problemas específicos de representação de XML e HTML no \textit{Ruby}.
+O Nokogiri é uma \textit{gem Ruby} usada para manipular documentos HTML e XML. A biblioteca conta com um grande conjunto de funções que auxiliam o processamento de HTML, permitindo com que o desenvolvedor não precise se preocupar com problemas específicos de representação de XML e HTML no \textit{Ruby}.
 
 \subsection {Jodit}
 
@@ -36,7 +36,7 @@ O Jodit é um editor de textos para navegadores. Este editor segue o formato \te
 
 \subsection {LibreOffice Writer}
 
-O LibreOffice Writer é uma ferramenta de edição de textos de código aberto similar ao Microsoft Word. O LibreOffice Writer permite a escritra de textos, exportação em formato PDF e afins. O LibreOffice Writer é utilizado para trabalhar com os arquivos do formato \textit{docx}, que é utilizado para a primeira confecção dos Textos Participativos pelos usuários.
+O LibreOffice Writer é uma ferramenta de edição de textos de código aberto similar ao Microsoft Word. O LibreOffice Writer permite a escrita de textos, exportação em formato PDF e afins. O LibreOffice Writer é utilizado para trabalhar com os arquivos do formato \textit{docx}, que é utilizado para a primeira confecção dos Textos Participativos pelos usuários.
 
 \subsection {Webpack e Webpacker}
 
@@ -52,7 +52,7 @@ O ApacheBench é uma ferramenta de linha de comando utilizado para realizar test
 
 \subsection {Draw.io}
 
-O Draw.io é uma ferramenta de criação de diagamas online gratuita, permitindo a criação de diagramas clássicos como UML, ER e afins.
+O Draw.io é uma ferramenta de criação de diagramas online gratuita, permitindo a criação de diagramas clássicos como UML, ER e afins.
 
 \section {Abordagem}
 
@@ -66,8 +66,8 @@ A fim de alcançar os objetivos destacados foi adotada a metodologia de desenvol
 
 A abordagem técnica será o desenvolvimento orientado à busca por desempenho. Nesse contexto, partes do sistema que devem receber ajustes serão previamente analisadas em termos de desempenho através da checagem das requisições usando da própria ferramenta de \textit{logs} do \textit{framework}. Uma boa ferramenta de logs fornecerá ao desenvolvedor detalhes de tempo gasto por cada componente chave do sistema. Nesse momento é importante que as mesmas condições do ambiente produtivo sejam replicadas no ambiente local de desenvolvimento sempre que possível.
 
-Caso os ajuste em uma determinada parte da funcionalidade envolva a melhoria de desempenho, após a realização das modificações, a mesma análise é conduzida para validar a qualidade dos ajustes e seguir adiante.
+Caso o ajuste em uma determinada parte da funcionalidade envolva a melhoria de desempenho, após a realização das modificações, a mesma análise é conduzida para validar a qualidade dos ajustes e seguir adiante.
 
 \section {Compilação de Resultados}
 
-Como artefato final deste trabalho, será feita a compilação dos resultados obtidos com os ajustes realizados na plataforma do Brasil Participativo sobre o uso da ferramenta de Textos Participativos. Para demonstrar de forma quantitativa os resultados alcançados, será feita uma tabela comparando os dados de desempenho da aplicação em testes de simulação realizados com a ferramenta ApacheBench.
+Como artefato final deste trabalho, será feita a compilação dos resultados obtidos com os ajustes realizados na plataforma do Brasil Participativo sobre o uso das ferramentas de texto participativo e de cadastro de novos usuários. Para demonstrar de forma quantitativa os resultados alcançados, será feita uma tabela comparando os dados de desempenho da aplicação em testes de simulação realizados com a ferramenta ApacheBench.

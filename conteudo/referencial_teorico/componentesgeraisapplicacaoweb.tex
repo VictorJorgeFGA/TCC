@@ -1,6 +1,6 @@
 \section{Componentes Gerais de uma Aplicação \textit{Web}}
 
-Uma aplicação \textit{web} moderna em geral pode ser vista dividida em duas partes: \textit{back-end} e \textit{front-end}. Ao contrário de aplicações \textit{standalone} convencionais que possuem a lógica de negócio altamente acoplada com a lógica de exibição, aplicações \textit{web} tendem a ter uma divisão mais clara nesse aspecto, permitindo com que a lógica de negócio não necessariamente interfira na renderização. Vale notar ainda a grande semelhança dessa abordagem com o modelo cliente/servidor \cite{gong2020architecture}. Outro importante componente no contexto de aplicações \textit{web} é o banco de dados, que cumpre o papel de persistir informações da aplicação. A seção Componentes Gerais de uma Aplicação \textit{Web} possui como objetivo introduzir cada um desses conceitos e elucidar seus papeis, trazendo maior clareza para cada um de seus papeis e como estes influenciam no funcionamento da aplicação \textit{web}, e consequentemente na sua desempenho.
+Uma aplicação \textit{web} moderna em geral pode ser vista dividida em duas partes: \textit{back-end} e \textit{front-end}. Ao contrário de aplicações \textit{standalone} convencionais que possuem a lógica de negócio altamente acoplada com a lógica de exibição, aplicações \textit{web} tendem a ter uma divisão mais clara nesse aspecto, permitindo com que a lógica de negócio não necessariamente interfira na renderização. Vale notar ainda a grande semelhança dessa abordagem com o modelo cliente/servidor \cite{gong2020architecture}. Outro importante componente no contexto de aplicações \textit{web} é o banco de dados, que cumpre o papel de persistir informações da aplicação. A seção Componentes Gerais de uma Aplicação \textit{Web} possui como objetivo introduzir cada um desses conceitos e elucidar seus papeis, trazendo maior clareza para cada um de seus papeis e como estes influenciam no funcionamento da aplicação \textit{web}, e consequentemente no seu desempenho.
 
 \subsection{\textit{Front-end}}
 
@@ -18,7 +18,7 @@ Banco de Dados, nesse contexto, uma forma reduzida do termo Sistema Gerenciador 
 
 \subsubsection{Banco de Dados Relacionais}
 
-Bancos de dados relacionais são bancos cujo os dados são guardados no formato de tabelas, também denominadas relações. As tabelas são compostas por colunas e linhas, semelhante a planilhas, onde cada linha representa um registro, denominado tupla, na tabela. Bancos de dados relacionais permitem a criação de relacionamentos entre tabelas, sendo essa a motivação do termo "relacional". A maioria dos bancos de dados permitem manipular e consultar seus dados através do uso da linguagem de consulta \textit{Structured Query Language} (SQL) \cite{jatana2012survey}.
+Bancos de dados relacionais são bancos cujo dados são guardados no formato de tabelas, também denominadas relações. As tabelas são compostas por colunas e linhas, semelhante a planilhas, onde cada linha representa um registro, denominado tupla, na tabela. Bancos de dados relacionais permitem a criação de relacionamentos entre tabelas, sendo essa a motivação do termo "relacional". A maioria dos bancos de dados permitem manipular e consultar seus dados através do uso da linguagem de consulta \textit{Structured Query Language} (SQL) \cite{jatana2012survey}.
 
 \subsubsection{Transações ACID}
 
@@ -39,5 +39,5 @@ Segundo a documentação, o PostgreSQL é um gerenciador de banco de dados relac
 
 \subsubsection{\textit{Redis}}
 
-Bancos de dados chave-valor são sistemas gerenciadores de banco de dados que armazenam seus dados de forma não relacional utilizando de chaves e valores. Cada registro consistirá em uma chave e em um valor, podendo este ser armazenado tanto na memoria RAM, quanto no disco. Uma das principais características de bancos de dados chave-valor é a sua velocidade quando comparado com bancos relacionais. O \textit{Redis} é um banco de dados chave valor \textit{open-source} extremamente rápido que guarda seus dados em forma persistente no disco ou na memória RAM \cite{redis-in-action}.
+Bancos de dados chave-valor são sistemas gerenciadores de banco de dados que armazenam seus dados de forma não relacional utilizando de chaves e valores. Cada registro consistirá em uma chave e em um valor, podendo este ser armazenado tanto na memória RAM, quanto no disco. Uma das principais características de bancos de dados chave-valor é a sua velocidade quando comparado com bancos relacionais. O \textit{Redis} é um banco de dados chave valor \textit{open-source} extremamente rápido que guarda seus dados em forma persistente no disco ou na memória RAM \cite{redis-in-action}.
 

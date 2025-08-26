@@ -1,25 +1,25 @@
 \subsection {Sprint 4}
 
-Após todos os ajustes já realizados no \textit{frontend} para se adequar aos padrões visuais expostos no protótipo feito pelo time de \textit{design} do Lab Livre, a quarta \textit{sprint} foi caracaterizada por um único requisito:
+Após todos os ajustes já realizados no \textit{frontend} para se adequar aos padrões visuais expostos no protótipo feito pelo time de \textit{design} do Lab Livre, a quarta \textit{sprint} foi caracterizada por um único requisito:
 
 \begin{itemize}
 	\item \textbf{Requisito 1 da Sprint 4}: Adicionar suporte à criação e edição de tabelas nos parágrafos do texto participativo.
 \end{itemize}
 
-No respositório oficial do Trix há uma \textit{issue}, já fechada, onde usuários questionam se há planos de adicionar o suporte a tabelas; até a data deste trabalho não houve indícios de que mantenedores do projeto irão atuar nessa demanda.
+No repositório oficial do Trix há uma \textit{issue}, já fechada, onde usuários questionam se há planos de adicionar o suporte a tabelas; até a data deste trabalho não houve indícios de que mantenedores do projeto irão atuar nessa demanda.
 A \textit{issue} mencionada pode ser acessada em \url{https://github.com/basecamp/trix/issues/539}.
 
 \subsubsection {Requisito 1 da Sprint 4}
 
 Com a limitação do Trix em relação ao uso de tabelas, anteriormente foi acordado com o time de produto do Lab Livre que estas seriam inseridas no texto no formato de imagens.
 Entretanto, em reuniões de \textit{feedback} com os \textit{stakeholders}, viu-se que era impraticável em termos de experiência do usuário e usabilidade proceder dessa maneira.
-Foram feitas reuniões de descorberta com o time responsável pela plataforma Participa+ Brasil, onde existe funcionalidade semelhante ao texto participativo, e que existe o suporte a tabelas.
+Foram feitas reuniões de descoberta com o time responsável pela plataforma Participa+ Brasil, onde existe funcionalidade semelhante ao texto participativo, e que existe o suporte a tabelas.
 Como saída dessa reunião foram sugeridos alguns editores de texto, dentre eles: Jodit, CKEditor 5 e o TinyMCE. No Participa+ Brasil é utilizado o editor Jodit.
 Com base na premissa de que alguns usuários poderiam migrar do Participa+ Brasil para o Brasil Participativo, o Jodit foi cotado como potencial escolha.
 
 Para garantir que o Jodit haveria compatibilidade com o Brasil Participativo, foi realizado um teste localmente, trocando o Trix pelo Jodit na página de inserção de conteúdo para criação de texto participativo.
 O teste foi realizado inserindo na própria \textit{view} da página \textit{links} para o JavaScript e o CSS do Jodit, conforme descrito na própria documentação do editor.
-Para validar a viabilidade de uso do editor, foram feitas várias provas inserindo tabelas, imagens e textos formatados através do comando de copiar e colar, todos os textos vindo do Google Docs, Microsoft Word e LibreOffice Writer.
+Para validar a viabilidade de uso do editor, foram feitas várias provas inserindo tabelas, imagens e textos formatados através do comando de copiar e colar, todos os textos vindos do Google Docs, Microsoft Word e LibreOffice Writer.
 Foram manualmente persistidos alguns parágrafos que continham tabelas, e posteriormente exibidos com sucesso na tela de visualização do texto participativo.
 
 Com o sucesso desses testes, o desenvolvimento finalmente seguiu com foco total para a implantação do Jodit no Brasil Participativo.
@@ -35,7 +35,7 @@ Com isso, o atributo \texttt{src} de \textit{tags} \texttt{<img>} é preenchido 
 
 Dessa maneira, ao invés de tentar guardar a imagem no \texttt{storage} logo que for inserida no texto, pode-se guardá-la apenas quando o usuário submeter o texto para criação, resolvendo então o problema de desempenho no uso de armazenamento.
 
-Sendo assim, o próximo passo seria, então, fazer o \textit{parsing} do \textit{input} HTML e realizar a divisão dos parágrafos. Diferentemente do Trix que por padrão inseria novos paragrafos envoltos de \textit{tags} \texttt{<div>}, da forma como foi configurado, no Jodit os parágrafos são envoltos de \textit{tags} \texttt{<p>}, e a cada quebra de linha uma nova \textit{tag} \texttt{<p>} é criada para servir de container para o texto.
+Sendo assim, o próximo passo seria, então, fazer o \textit{parsing} do \textit{input} HTML e realizar a divisão dos parágrafos. Diferentemente do Trix que por padrão inseria novos parágrafos envoltos de \textit{tags} \texttt{<div>}, da forma como foi configurado, no Jodit os parágrafos são envoltos de \textit{tags} \texttt{<p>}, e a cada quebra de linha uma nova \textit{tag} \texttt{<p>} é criada para servir de container para o texto.
 O único problema é a formatação de alguns textos quando copiados do Google Docs e do Microsft Word. Alguns utilizam \textit{tags} \texttt{<p>} para servir de container para \textit{tags} \texttt{<img>}, além de em alguns momentos o texto de vários parágrafos estar envolto de uma única \textit{tag} \texttt{<strong>}. Esse comportamento foi classificado neste trabalho como "\textit{tags} modificadoras de texto sendo utilizadas como \texttt{<div>}", e guiou o desenvolvimento do \textit{parser} para suportar a migração para o Jodit.
 
 A versão final do \textit{parser} de textos participativos executa três passos:

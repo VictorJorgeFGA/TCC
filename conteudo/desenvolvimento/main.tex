@@ -1,46 +1,31 @@
 \chapter {Desenvolvimento}
 
-Este capítulo tem como objetivo apresentar de forma detalhada a maneira como se deu o desenvolvimento dos ajustes na funcionalidade de textos participativos e em outros pontos de gargalo do sistema.
-O desenvolvimento foi caracterizado pela sua forma incremental inspirado na metodologia ágil; na Seção \ref{sec:organizacao-do-desenvolvimento} é explicada as principais características da metodologia de trabalho. Uma série de requisitos que são discutidos na Seção \ref{sec:requisitos-iniciais} foram levantados para compor o ponto de partida do desenvolvimento. Uma breve contextualização do estado inicial da funcionalidade na plataforma é feito na Seção \ref{sec:contextualizacao-da-ferramenta-de-textos-participativos}. A Seção \ref{sec:etapas-de-desenvolvimento} traz uma visão cronológica das atividades realizadas, descrevendo a abordagem utilizada e a tomada de decisões realizada em cada momento. Na Seção \ref{sec:resultados} são apresentados os resultados obtidos, tanto de forma quantitativa quanto qualitativa.
+Neste capítulo será apresentado de forma detalhada a maneira como se deu o desenvolvimento dos ajustes nas funcionalidades de textos participativos e de cadastro de novos usuários do Brasil Participativo.
 
-\section {Organização do Desenvolvimento}
-\label{sec:organizacao-do-desenvolvimento}
+Na Seção \ref{sec:problematica} são levantados alguns dos problemas de desempenho da plataforma.
+Na Seção \ref{sec:conducao-e-foco-do-desenvolvimento} são apresentados o contexto e a motivação central para a escolha do foco deste trabalho, além de listar de forma clara os objetivos e os requisitos a serem trabalhados.
 
-A organização do trabalho seguiu um modelo inspirado no desenvolvimento ágil, onde novas alterações eram feitas a cada \textit{sprint} e validadas com o time de produto do Lab Livre e com os \textit{stakeholders} do projeto. Ao final de cada \textit{sprint}, após a validação do desenvolvimento realizado, com base nos \textit{feedbacks} recebidos, o desenvolvimento seguia para um novo objetivo: corrigir e alterar algo ou adicionar mais funcionalidades.
+A Seção \ref{sec:etapas-de-desenvolvimento} descreve em pormenores as atividades realizadas em cada \textit{sprint}, abordando aspectos de desenvolvimento e decisões técnicas.
 
-Os \textit{feedbacks} eram dados através de reuniões presenciais e remotas com o time de produto, e algumas vezes com o time de desenvolvimento do Lab Livre. O time de produto era responsável por validar as alterações entregues e confrontar com os objetivos propostos com os \textit{stakeholders}.
+Na Seção \ref{sec:resultados} são apresentadas as apurações dos testes de carga das funcionalidades desenvolvidas, exibindo quantitativamente os ganhos de desempenho.
+Um resumo do desenvolvimento e dos resultados deste capítulo é apresentado na Seção \ref{sec:desenvolvimento-resumo-do-capitulo}.
 
-\section {Requisitos Iniciais}
-\label{sec:requisitos-iniciais}
+\input{conteudo/desenvolvimento/problematica}
+\input{conteudo/desenvolvimento/conducao}
 
-O desenvolvimento teve inicio com um conjunto de requisitos levantados pelos \textit{stakeholders} da Presidência que foram posteriormente trabalhados pelo time de produto do Lab Livre. No contexto político que se encontrava a plataforma Brasil Participativo, havia, principalmente, a necessidade de trazer aspectos de uma funcionalidade semelhante da plataforma Participa+ Brasil, que também é uma plataforma de participação social do governo federal. No Participa+ Brasil, o usuário administrador submetia o texto copiando e colando. Os requisitos iniciais são:
+\section {Execução do Desenvolvimento}
+\label{sec:etapas-de-desenvolvimento}
 
-\begin{itemize}
-	\item Diminuir o tempo de renderização da página de visualização e de edição do texto participativo;
-	\item Possibilitar a criação de textos participativos através de um editor de textos próprio do Brasil Participativo, contando com o uso do comando copiar e colar, trazendo texto de fontes como o Microsoft Word e Google Docs;
-	\item Refatoração da página de visualização do rascunho (edição de parágrafos), trazendo-a para o mesmo padrão de \textit{design} que a tela de visualização;
-	\item Refatorar a jornada de criação de textos participativos de acordo com o acordado com o time de produto.
-\end{itemize}
-
-Além dos requisitos específicos do texto participativo, foi trabalhada de forma extraordinária a resolução de problemas na funcionalidade de cadastro de usuários:
-
-\begin{itemize}
-	\item Resolver o problema de lentidão e indisponibilidade da funcionalidade de cadastro de usuários exibido durante o PPA.
-\end{itemize}
-
-\section {Contextualização da Ferramenta de Textos Participativos}
-\label{sec:contextualizacao-da-ferramenta-de-textos-participativos}
-
-No Brasil Participativo, a ferramenta de textos vinha recebendo modificações para tentar se adequar aos requisitos que eram acordados junto dos \textit{stakeholders}. No ponto de partida deste trabalho, a ferramenta, apesar de funcionar, exibia comportamentos que impactavam negativamente a experiência de usuário.
+No Brasil Participativo, a ferramenta de textos já vinha recebendo modificações para tentar se adequar aos requisitos que eram acordados junto dos \textit{stakeholders}. No ponto de partida deste trabalho, a ferramenta exibia comportamentos que impactavam negativamente a experiência de usuário, apesar de funcionar.
 
 A tela de edição do rascunho do texto participativo demonstrava bastante lentidão para carregar e operar sobre os parágrafos. O mesmo ocorria com a tela de visualização do texto publicado, onde textos com algumas centenas de parágrafos faziam com que o usuário experimentasse navegações cada vez mais demoradas.
 
-A criação de textos se dava unicamente pela submissão de arquivos no formato \texttt{docx}, e que não traziam corretamente os elementos de texto, tais como negrito e itálico.
+A criação de textos se dava unicamente pelo envio de arquivos no formato \texttt{docx}.
+Esse envio não trazia corretamente as formatações de texto, tais como negrito e itálico.
 
-\section {Etapas de Desenvolvimento}
-\label{sec:etapas-de-desenvolvimento}
+\subsection {Etapas de Desenvolvimento}
 
-No total houveram quatro \textit{sprints} de desenvolvimento dedicadas para o desenvolvimento de ajustes no texto participativo, cada uma delas com duração média de um mês.
+No total houveram quatro \textit{sprints} dedicadas para o desenvolvimento de ajustes no texto participativo, cada uma delas com duração média de um mês.
 O trabalho foi guiado pelos requisitos específicos levantados para aquele momento de projeto, além dos \textit{feedbacks} fornecidos pelos usuários e pelo time de produto do Lab Livre.
 Além disso, houve uma quinta \textit{sprint} dedicada para resolver o problema de desempenho na ferramenta de cadastros de usuários.
 
@@ -49,5 +34,5 @@ Além disso, houve uma quinta \textit{sprint} dedicada para resolver o problema 
 \input{conteudo/desenvolvimento/sprint_3}
 \input{conteudo/desenvolvimento/sprint_4}
 \input{conteudo/desenvolvimento/sprint_extra}
-
 \input{conteudo/desenvolvimento/testes_e_resultados}
+\input{conteudo/desenvolvimento/resumo_desenvolvimento}

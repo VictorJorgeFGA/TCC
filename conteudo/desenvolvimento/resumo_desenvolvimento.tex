@@ -1,0 +1,46 @@
+\section {Resumo do Capítulo}
+\label{sec:desenvolvimento-resumo-do-capitulo}
+
+Neste capítulo foram discutidos os principais problemas de desempenho do Brasil Participativo apontados pela Dataprev. Dentre esses problemas se destacaram: sobreutilização do banco de dados, falta de uso de índices, \textit{memory leak} e lentidão em páginas específicas.
+
+Como foco de desenvolvimento deste trabalho, foram escolhidas as funcionalidades de textos participativos e também de cadastro de usuários, onde ambas apresentaram problemas de desempenho na análise realizada pela Dataprev.
+
+A ferramenta de textos participativos já estava cotada para receber desenvolvimentos no ano de 2024.
+Portanto, vários requisitos foram levantados junto dos \textit{stakeholders} do projeto e também do time de produto.
+As medidas adotadas para satisfação desses requisitos foram diversas, e são resumidas a seguir:
+
+\begin{enumerate}
+  \item \textbf{Requisito 1}: diminuir o tempo de renderização da página de visualização e de edição do texto
+participativo. \textbf{Solução}: remover o uso de \textit{partials} em laços de repetição, dando preferência para renderização de conteúdo \textit{inline};
+  \item \textbf{Requisito 2}: possibilitar a criação de textos participativos através de um editor de textos próprio do Brasil Participativo, contando com o uso do comando copiar e colar, trazendo texto de fontes como o Microsoft Word e Google Docs. \textbf{Solução}: utilizar o editor de texto Jodit, munido de um algoritmo de detecção de parágrafos e de um sistema de persistência de imagens no \texttt{storage};
+  \item \textbf{Requisito 3}: refatoração da página de visualização do rascunho (edição de parágrafos), trazendo-a para o mesmo padrão de design que a tela de visualização. \textbf{Solução}: utilizar a mesma \textit{view} usada para renderização do texto para o usuário público, acrescida de botões de ações para o usuário administrador;
+  \item \textbf{Requisito 4}: refatorar a jornada de criação de textos participativos de acordo com o acordado com o time de produto. \textbf{Solução}: adicionar chamadas de \texttt{redirect\_to} nas \textit{actions} envolvidas, levando o usuário para uma página mais adequada de acordo com o estado atual do componente;
+  \item \textbf{Requisito 5}: resolver o problema de lentidão e indisponibilidade da funcionalidade de cadastro de usuários exibido durante o PPA. \textbf{Solução}: trocar o uso do operador \texttt{ILIKE} do SQL pela combinação da função \texttt{LOWER} e operador de igualdade.
+\end{enumerate}
+
+Um dos problemas notáveis que foi resolvido neste trabalho é a detecção de parágrafos dentro de um texto estruturado no formato HTML. Editores de texto como o Microsoft Word e Google Docs utilizam organizações de \textit{tags} que tornam complexa a elaboração de uma solução.
+
+Como saída foi adotado o uso da biblioteca \texttt{Nokogiri} para converter o HTML do formato de texto (\textit{string}) para uma estrutura de dados em formato de árvore.
+Foi desenvolvido um algoritmo recursivo para percorrer essa estrutura de dados e decidir quais fragmentos deveriam ser considerados como parágrafos ou não.
+Um nó e seus filhos eram considerados um parágrafo caso ele não fosse o elemento raiz da árvore, ou não fosse uma \texttt{<div>}, ou não fosse uma \textit{tag} de texto contendo múltiplos parágrafos independentes dentro de si.
+
+Sobre a síntese do trabalho em geral, houve cinco \textit{sprints} de desenvolvimento, cada uma delas com um mês de duração.
+O trabalho de desenvolvimento foi realizado em parceria com o time de produto e também com o time de desenvolvimento do Lab Livre.
+O time de produto esteve a cargo principalmente da realização da validação das entregas, enquanto o time de desenvolvimento, principalmente o gestor, esteve a cargo de fazer a validação técnica.
+
+Na Tabela \ref{tab:ganho-desempenho-apos-modificacoes} são exibidos os ganhos de desempenho para as páginas de edição e visualização de texto participativo, e também da consulta SQL usada para desambiguação de \textit{nicknames} utilizada no cadastro de novos usuários.
+
+\begin{table}[h]
+	\centering
+	\caption{Ganhos de desempenho após as modificações}
+	\label{tab:ganho-desempenho-apos-modificacoes}
+	\begin{tabular}{cc}
+    \toprule
+    \textbf{Funcionalidade} & \textbf{Redução do tempo} \\
+    \midrule
+    Tela de visualização do Texto Participativo & 96,7\% \\
+    Tela de edição do Texto Participativo & 84,5\% \\
+    Consulta de verificação de existência de \textit{nickname} & 25\% \\
+		\bottomrule
+	\end{tabular}
+\end{table}

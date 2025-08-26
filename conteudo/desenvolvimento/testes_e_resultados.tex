@@ -1,4 +1,4 @@
-\section {Testes e Resultados}
+\section {Testes de Resultados}
 \label{sec:resultados}
 
 Os requisitos centrais das entregas realizadas neste trabalho eram sobre melhorar o desempenho das páginas de visualização e de edição do texto participativo.
@@ -36,13 +36,13 @@ Para ambos os cenários de teste, cada parágrafo terá seu conteúdo preenchido
 A ideia central é verificar o quão bem estas páginas da plataforma possivelmente operarão no dia-dia e em cenários de alta demanda.
 Para os cenários extremos, será adotada a volumetria de 2 mil parágrafos por texto participativo, e 10 administradores utilizando a ferramenta paralelamente.
 
-A versão anterior às modificações descritas neste trabalho utilizada para comparação nos testes é a \textit{tag} 1.5.0, que está disponível no respositório oficial do Brasil Participativo em \url{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr/-/tags/1.5.0}.
+A versão anterior às modificações descritas neste trabalho utilizada para comparação nos testes é a \textit{tag} 1.5.0, que está disponível no repositório oficial do Brasil Participativo em \url{https://gitlab.com/lappis-unb/decidimbr/decidim-govbr/-/tags/1.5.0}.
 
 \subsection {Teste de Carga de Visualização do Rascunho}
 
 \subsubsection {Contexto}
 
-A fim de obter um parâmetro para comparação com teste de carga da página de edição de rascunho, foi executada no ambiente produtivo do Brasil Participativo uma consulta SQL para descobrir o dia que houveram mais criações de componentes de texto participativo. A consulta considera o período entre o primeiro dia do ano de 2024 até o último dia do mês de maio de 2025, admitindo apenas componentes que foram publicados e que são textos participativos. A consulta SQL pode ser conferida na Figura \ref{fig:consulta-top-5-dia-textos-criados}, e o seu resultado é demonstrado na Tabela \ref{tab:resultado-consulta-top-5-dia-textos-criados}.
+A fim de obter um parâmetro para comparação com teste de carga da página de edição de rascunho, foi executada no ambiente produtivo do Brasil Participativo uma consulta SQL para descobrir o dia que houve mais criações de componentes de texto participativo. A consulta considera o período entre o primeiro dia do ano de 2024 até o último dia do mês de maio de 2025, admitindo apenas componentes que foram publicados e que são textos participativos. A consulta SQL pode ser conferida na Figura \ref{fig:consulta-top-5-dia-textos-criados}, e o seu resultado é demonstrado na Tabela \ref{tab:resultado-consulta-top-5-dia-textos-criados}.
 
 \begin{figure}[htbp]
   \centering
@@ -70,7 +70,7 @@ A fim de obter um parâmetro para comparação com teste de carga da página de 
   \fonte{Próprio autor}
 \end{table}
 
-No dia 29 de novembro de 2024, houveram 45 componentes de texto participativo criados na plataforma. Uma segunda consulta foi executada para descobrir a classificação dos cinco textos participativos dessa data com a maior quantidade de parágrafos. A consulta SQL pode ser conferida na Figura \ref{fig:consulta-top-textos-participativos-paragrafos}. Como resultado, houveram textos com 124, 85, 80, 76 e 74 parágrafos.
+No dia 29 de novembro de 2024, houve 45 componentes de texto participativo criados na plataforma. Uma segunda consulta foi executada para descobrir a classificação dos cinco textos participativos dessa data com a maior quantidade de parágrafos. A consulta SQL pode ser conferida na Figura \ref{fig:consulta-top-textos-participativos-paragrafos}. Como resultado, houve textos com 124, 85, 80, 76 e 74 parágrafos.
 
 \begin{figure}[htbp]
   \centering
@@ -81,7 +81,7 @@ No dia 29 de novembro de 2024, houveram 45 componentes de texto participativo cr
 \end{figure}
 
 Com base nessas informações, será considerado um dia com pico de uso com 50 componentes sendo criados, cada um deles com 130 parágrafos.
-Será levado em conta que o usuaŕio administrador possivelmente trabalha na plataforma entre os horários das nove horas da manhã até meio dia (12 horas), e das 13 horas até às 18 horas, significando uma janela de trabalho de oito horas. O que significa em aproximadamente de seis a sete componentes criados por hora.
+Será levado em conta que o usuário administrador possivelmente trabalha na plataforma entre os horários das nove horas da manhã até meio dia (12 horas), e das 13 horas até às 18 horas, significando uma janela de trabalho de oito horas. O que significa em aproximadamente de seis a sete componentes criados por hora.
 
 Assumindo um possível pior cenário, também por convenção, será considerado que o administrador realiza em média no mínimo todas as cinco operações em cada parágrafo, isto é: editar, mesclar, mover, ocultar e desabilitar interações.
 Para este teste será ignorado o fato de que a operação de mesclagem diminui a contagem de parágrafos em uma unidade.
@@ -129,11 +129,14 @@ Os testes extremos foram realizados com 10 requisições com fator de paralelism
   \fonte{Próprio autor}
 \end{table}
 
+Considerando ambos os testes, nota-se que em média houve uma redução de 84,9\% do tempo gasto para processar a requisição.
+
 \subsection {Teste de Carga de Visualização do Texto}
 
 \subsubsection {Execução e Resultados}
 
-Os testes foram realizados disparando 100 requisições com o fator de paralelismo igual a cinco. Os resultados podem ser visualizados na Tabela \ref{tab:teste-carga-visualizar-texto}. Para esse teste não se faz necessário o uso de Cookie de sessão de usuário, uma vez que a página é pública e possível de visualizar sem estar logado na plataforma.
+Os testes foram realizados disparando 100 requisições com o fator de paralelismo igual a cinco. Os resultados podem ser visualizados na Tabela \ref{tab:teste-carga-visualizar-texto}.
+Para esse teste não se faz necessário o uso de Cookie de sessão de usuário, uma vez que a página é pública e possível de visualizar sem estar logado na plataforma.
 
 \begin{table}[h]
 	\centering
@@ -154,7 +157,8 @@ Os testes foram realizados disparando 100 requisições com o fator de paralelis
 
 \subsubsection {Testes Extremos}
 
-A execução dos testes extremos da página de visualização do texto seguiu a configuração de 10 requisições com fator de paralelismo igual a 10. O resultado pode ser verificado na Tabela \ref{tab:teste-carga-extremo-visualizar-texto}
+A execução dos testes extremos da página de visualização do texto seguiu a configuração de 10 requisições com fator de paralelismo igual a 10.
+O resultado pode ser verificado na Tabela \ref{tab:teste-carga-extremo-visualizar-texto}.
 
 \begin{table}[h]
 	\centering
@@ -173,22 +177,9 @@ A execução dos testes extremos da página de visualização do texto seguiu a 
   \fonte{Próprio autor}
 \end{table}
 
+Nota-se pelos resultados que houve uma redução de aproximadamente 96,7\% do tempo de processamento da requisição.
+
 \subsection {Resultados Gerais}
 
-As alterações abordadas neste trabalho foram devidamente incluídas no código fonte do Brasil Participativo e utilizadas no ambiente produtivo. Até o presente momento a ferramenta está sendo utilizada e posta à prova. Considera-se como um sucesso o atingimento de todos os requisitos levantados dado fato que foi realizada uma cerimonia de validação juntamente com o time de produto do Lab Livre.
-
-\chapter {Considerações Finais}
-
-Este trabalho teve como objetivo demonstrar a explorar uma jornada de desenvolvimento de funcionalidades levando em consideração requisitos levantados por \textit{stakeholders} e outros times, tendo como foco principal o desenvolvimento de funcionalidades com requisitos de desempenho mais rigorosos.
-
-A metodologia adotada se baseou no desenvolvimento continuo, onde em cada ciclo de desenvolvimento novos requisitos eram priorizados e executados. A mudança de escopo, apesar de não ser o foco de detalhamento desse trabalho, foi algo presente na jornada de desenvolvimento, mas em nenhum momento foi impeditivo para realização de entregas.
-
-Apesar do enfoque em otimização de desempenho, muitos outros tópicos relacionados ao desenvolvimento foram abordados, trazendo maior profundidade em relação às contribuições realizadas no projeto.
-
-É esperado que a medida que a funcionalidade seja utilizada por usuários reais, correções e ajustes sejam feitos pelo time desenvolvimento do Lab Livre, trazendo maior maturidade e grau de confiança na solução.
-
-Muitos dos tópicos aqui abordados podem vir a ser objeto de evolução futuramente, principalmente em relação a desempenho.
-
-Sabe-se que ainda há oportunidades de desenvolvimento que potencialmente trarão melhorias de desempenho para a plataforma e para a ferramenta de textos participativos.
-Como mencionado, existem diversos outros problemas de desempenho em partes específicas do sistema.
+As alterações abordadas neste trabalho foram devidamente incluídas no código fonte do Brasil Participativo e utilizadas no ambiente produtivo. Até o presente momento a ferramenta está sendo utilizada e posta à prova. Considera-se como um sucesso o atingimento de todos os requisitos levantados dado fato que foi realizada uma cerimônia de validação juntamente com o time de produto do Lab Livre.
 
